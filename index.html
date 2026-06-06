@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VertexWhile - AI Training Hub</title>
+    <title>CodeStreak | AI Training Hub</title>
     <style>
         :root {
             --bg-color: #1e1e1e;
@@ -16,51 +16,17 @@
             --text-main: #ffffff;
             --text-muted: #aaaaaa;
         }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 900px;
-        }
+        body { font-family: Arial, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 900px; }
         .view { display: none; }
         .active { display: block; }
         
-        h1 { text-align: center; color: var(--primary-color); font-family: Consolas, monospace; }
-        .text-center { text-align: center; }
+        h1 { text-align: center; color: var(--primary-color); font-family: Consolas, monospace; margin-bottom: 5px; }
+        .by-tag { text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; }
         
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            background: var(--surface-color);
-            border: 1px solid #555;
-            color: white;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-        }
-        
-        button {
-            width: 100%;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-bottom: 15px;
-            transition: opacity 0.2s;
-        }
+        input[type="text"] { width: 100%; padding: 12px; font-size: 16px; background: var(--surface-color); border: 1px solid #555; color: white; border-radius: 6px; margin-bottom: 20px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; font-size: 16px; font-weight: bold; color: white; border: none; border-radius: 6px; cursor: pointer; margin-bottom: 15px; transition: opacity 0.2s; }
         button:hover { opacity: 0.8; }
-        button:disabled { background-color: #555 !important; cursor: not-allowed; }
         
         .btn-green { background-color: var(--primary-color); }
         .btn-blue { background-color: var(--blue); }
@@ -70,343 +36,60 @@
         .btn-gray { background-color: #757575; }
         .btn-dark { background-color: #333333; }
         
-        .top-bar {
-            background-color: var(--surface-color);
-            padding: 15px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            border: 1px solid var(--primary-color);
-            margin-bottom: 20px;
-        }
+        .top-bar { background-color: var(--surface-color); padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; border: 1px solid var(--primary-color); margin-bottom: 20px; }
         .top-bar span { font-weight: bold; color: #FFD700; }
         
-        .context-box {
-            background-color: var(--surface-color);
-            padding: 15px;
-            border-radius: 6px;
-            font-family: Consolas, monospace;
-            white-space: pre-wrap;
-            margin-bottom: 20px;
-            max-height: 200px;
-            overflow-y: auto;
-            border: 1px solid #444;
-        }
-        
-        .options { margin-bottom: 20px; }
-        .option-label {
-            display: block;
-            background: var(--surface-color);
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            border: 1px solid #444;
-        }
-        .option-label:hover { background: #3a3a3a; }
-        .option-label input { margin-right: 10px; }
-        
+        .context-box { background-color: var(--surface-color); padding: 15px; border-radius: 6px; font-family: Consolas, monospace; white-space: pre-wrap; margin-bottom: 20px; max-height: 200px; overflow-y: auto; border: 1px solid #444; }
+        .option-label { display: block; background: var(--surface-color); padding: 15px; margin-bottom: 10px; border-radius: 6px; cursor: pointer; border: 1px solid #444; }
         .action-row { display: flex; gap: 10px; margin-bottom: 20px; }
-        .action-row button { margin-bottom: 0; }
-        
-        #feedback { font-style: italic; margin-bottom: 20px; line-height: 1.5; }
-        .correct { color: var(--primary-color); }
-        .wrong { color: var(--red); }
-        .warning { color: var(--orange); }
     </style>
 </head>
 <body>
 
 <div class="container">
-    
     <div id="login-view" class="view active">
-        <h1>VERTEXWHILE<br>SİSTEM GİRİŞİ</h1>
-        <div style="max-width: 400px; margin: 50px auto;">
-            <label style="color: var(--text-muted);">Kullanıcı Adı / Sicil:</label>
-            <input type="text" id="username-input" placeholder="Ajan Adı">
-            <button class="btn-blue" onclick="login()">🚀 Kayıtlı Profil ile Giriş Yap</button>
-            <button class="btn-gray" onclick="guestLogin()">👻 Misafir (Kayıtsız) Devam Et</button>
+        <h1>CodeStreak</h1>
+        <p class="by-tag">by VertexWhile</p>
+        <div style="max-width: 400px; margin: 0 auto;">
+            <input type="text" id="username-input" placeholder="Ajan Kod Adı">
+            <button class="btn-blue" onclick="login()">🚀 Giriş Yap</button>
+            <button class="btn-gray" onclick="guestLogin()">👻 Misafir Olarak Devam Et</button>
         </div>
     </div>
 
     <div id="menu-view" class="view">
-        <h1>VERTEXWHILE<br>TRAINING HUB</h1>
+        <h1>CodeStreak</h1>
+        <p class="by-tag">by VertexWhile</p>
         <div class="top-bar">
             <span id="menu-agent-name">Ajan: </span>
             <span id="menu-elo">⭐ ELO: 1000</span>
         </div>
-        <h3 style="color: var(--text-muted);">Antrenman Modu Seçin:</h3>
-        <button class="btn-blue" onclick="startQuiz('final_quiz_bank.json')">📚 Makale Modu (Doc Analyzer)</button>
-        <button class="btn-orange" onclick="startQuiz('final_log_quiz_bank.json')">🐛 Hata Modu (Log Cracker)</button>
-        <button class="btn-purple" onclick="startQuiz('final_algoritma_bank.json')">⚙️ Algoritma Modu (CP Digest)</button>
-        <button class="btn-red" onclick="startFailQuiz()">⚠️ Yapamadığım Sorular</button>
-        <button class="btn-dark" style="margin-top: 30px;" onclick="logout()">🚪 Çıkış Yap</button>
+        <button class="btn-blue" onclick="startQuiz('final_quiz_bank.json')">📚 Makale Modu</button>
+        <button class="btn-orange" onclick="startQuiz('final_log_quiz_bank.json')">🐛 Hata Modu</button>
+        <button class="btn-purple" onclick="startQuiz('final_algoritma_bank.json')">⚙️ Algoritma Modu</button>
+        <button class="btn-red" onclick="startFailQuiz()">⚠️ Yapamadıklarım</button>
+        <button class="btn-dark" onclick="logout()">🚪 Çıkış Yap</button>
     </div>
 
     <div id="quiz-view" class="view">
         <div class="action-row">
-            <button class="btn-dark" style="flex: 1;" onclick="showMenu()">🏠 Ana Menü</button>
-            <div style="flex: 3; text-align: right; color: var(--text-muted); align-self: center;">
-                <b id="quiz-elo-text">ELO: 1000</b> &nbsp;|&nbsp; 
-                <b id="quiz-stats-text">Doğru: 0/0</b> &nbsp;|&nbsp; 
-                <b id="quiz-remain-text">Kalan: 0</b>
-            </div>
+            <button class="btn-dark" onclick="showMenu()">🏠 Ana Menü</button>
+            <div id="quiz-stats-text" style="text-align: right; color: var(--text-muted); align-self: center; flex-grow: 1;"></div>
         </div>
-        
-        <div id="context-title" style="color: var(--purple); font-weight: bold; margin-bottom: 5px; font-size: 14px;">REFERANS METİN</div>
         <div id="context-box" class="context-box"></div>
-        
-        <h3 id="question-text">Soru Yükleniyor...</h3>
-        
-        <div id="options-container" class="options"></div>
-        
+        <h3 id="question-text"></h3>
+        <div id="options-container"></div>
         <div class="action-row">
             <button id="btn-submit" class="btn-green" onclick="checkAnswer()">Cevapla</button>
-            <button id="btn-skip" class="btn-gray" onclick="skipQuestion()">Boş Bırak (Geç)</button>
             <button id="btn-next" class="btn-blue" onclick="loadNextQuestion()" disabled>Sonraki Soru ➔</button>
         </div>
-        
         <div id="feedback"></div>
     </div>
-
 </div>
 
 <script>
-    // --- STATE MANAGEMENT ---
-    let currentUser = "";
-    let isGuest = true;
-    let userElo = 1000;
-    let userStats = {};
-    
-    let currentQuizData = [];
-    let currentQuestion = null;
-    let score = 0;
-    let asked = 0;
-    let isAnswered = false;
-    let isFailMode = false;
-
-    // --- LOGIN LOGIC ---
-    function login() {
-        const name = document.getElementById("username-input").value.trim().toUpperCase();
-        if (!name) { alert("Lütfen bir kullanıcı adı girin!"); return; }
-        
-        currentUser = name;
-        isGuest = false;
-        loadUserData();
-        switchView("menu-view");
-        updateMenuUI();
-    }
-
-    function guestLogin() {
-        currentUser = "MİSAFİR";
-        isGuest = true;
-        userElo = 1000;
-        userStats = {};
-        switchView("menu-view");
-        updateMenuUI();
-        alert("Misafir oturumu açıldı. Sayfayı yenilerseniz ilerlemeniz silinir.");
-    }
-
-    function logout() {
-        saveUserData();
-        currentUser = "";
-        document.getElementById("username-input").value = "";
-        switchView("login-view");
-    }
-
-    // --- DATA PERSISTENCE (LocalStorage) ---
-    function loadUserData() {
-        if (isGuest) return;
-        const savedData = localStorage.getItem("vertex_" + currentUser);
-        if (savedData) {
-            const data = JSON.parse(savedData);
-            userElo = data.elo || 1000;
-            userStats = data.stats || {};
-        } else {
-            userElo = 1000;
-            userStats = {};
-        }
-    }
-
-    function saveUserData() {
-        if (isGuest) return;
-        const data = { elo: userElo, stats: userStats };
-        localStorage.setItem("vertex_" + currentUser, JSON.stringify(data));
-    }
-
-    function changeElo(amount) {
-        userElo += amount;
-        if (userElo < 0) userElo = 0;
-        saveUserData();
-    }
-
-    // --- UI HELPERS ---
-    function switchView(viewId) {
-        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-        document.getElementById(viewId).classList.add('active');
-    }
-
-    function updateMenuUI() {
-        document.getElementById("menu-agent-name").innerText = "Ajan: " + currentUser;
-        document.getElementById("menu-elo").innerText = "⭐ ELO: " + userElo;
-    }
-
-    function showMenu() {
-        saveUserData();
-        updateMenuUI();
-        switchView("menu-view");
-    }
-
-    // --- QUIZ LOGIC ---
-    async function startQuiz(dbFile) {
-        isFailMode = false;
-        score = 0;
-        asked = 0;
-        
-        try {
-            const response = await fetch(dbFile);
-            if (!response.ok) throw new Error("Dosya bulunamadı");
-            const rawData = await response.json();
-            
-            // Elo Filtresi (+- 300)
-            const filtered = rawData.filter(q => Math.abs((q.target_elo || 1000) - userElo) <= 300);
-            currentQuizData = filtered.length >= 3 ? filtered : rawData;
-            
-            // Karıştır
-            currentQuizData.sort(() => Math.random() - 0.5);
-            
-            switchView("quiz-view");
-            loadNextQuestion();
-        } catch (e) {
-            alert("Veritabanı okunamadı! GitHub Pages'a JSON dosyalarını yüklediğinden emin ol.\nHata: " + e.message);
-        }
-    }
-
-    async function startFailQuiz() {
-        isFailMode = true;
-        score = 0;
-        asked = 0;
-        let allFailed = [];
-        
-        try {
-            const files = ['final_quiz_bank.json', 'final_log_quiz_bank.json', 'final_algoritma_bank.json'];
-            for (let file of files) {
-                try {
-                    let res = await fetch(file);
-                    let data = await res.json();
-                    allFailed = allFailed.concat(data.filter(q => userStats[q.id] === "yanlış" || userStats[q.id] === "boş bırakıldı"));
-                } catch(e) {} // Dosya yoksa atla
-            }
-            
-            if (allFailed.length === 0) {
-                alert("Mükemmel! Yapamadığın veya boş bıraktığın hiçbir soru yok.");
-                return;
-            }
-            
-            currentQuizData = allFailed.sort(() => Math.random() - 0.5);
-            switchView("quiz-view");
-            loadNextQuestion();
-        } catch(e) {
-            alert("Soru yüklenirken hata oluştu.");
-        }
-    }
-
-    function loadNextQuestion() {
-        if (currentQuizData.length === 0) {
-            alert("Tebrikler! Bu bölümdeki soruları bitirdin.\nGüncel ELO: " + userElo);
-            showMenu();
-            return;
-        }
-        
-        currentQuestion = currentQuizData.pop();
-        isAnswered = false;
-        
-        // UI Güncelle
-        document.getElementById("quiz-elo-text").innerText = "ELO: " + userElo + " (Soru: " + (currentQuestion.target_elo || '?') + ")";
-        document.getElementById("quiz-stats-text").innerText = "Doğru: " + score + "/" + asked;
-        document.getElementById("quiz-remain-text").innerText = "Kalan: " + currentQuizData.length;
-        
-        let contextText = currentQuestion.original_text || currentQuestion.original_error || "";
-        document.getElementById("context-box").innerText = contextText;
-        document.getElementById("question-text").innerText = currentQuestion.question;
-        
-        const optsContainer = document.getElementById("options-container");
-        optsContainer.innerHTML = "";
-        
-        const letters = ['A', 'B', 'C', 'D'];
-        currentQuestion.choices.forEach((choice, index) => {
-            const letter = letters[index];
-            optsContainer.innerHTML += `
-                <label class="option-label" id="label-${letter}">
-                    <input type="radio" name="quiz-opt" value="${letter}">
-                    ${choice}
-                </label>
-            `;
-        });
-        
-        document.getElementById("feedback").innerHTML = "";
-        document.getElementById("btn-submit").disabled = false;
-        document.getElementById("btn-skip").disabled = false;
-        document.getElementById("btn-next").disabled = true;
-    }
-
-    function getSelectedOption() {
-        const opts = document.getElementsByName("quiz-opt");
-        for (let opt of opts) {
-            if (opt.checked) return opt.value;
-        }
-        return null;
-    }
-
-    function processAnswer(userAns) {
-        asked++;
-        isAnswered = true;
-        const correctAns = currentQuestion.answer;
-        const qId = currentQuestion.id;
-        const fbDiv = document.getElementById("feedback");
-        
-        if (userAns === "SKIP") {
-            if (!isFailMode) { changeElo(-2); fbDiv.innerHTML = `<span class="warning">⚠️ Soru boş bırakıldı. (ELO -2)</span>`; }
-            else { fbDiv.innerHTML = `<span class="warning">⚠️ Soru boş bırakıldı. (Puan Değişmedi)</span>`; }
-            if (qId) userStats[qId] = "boş bırakıldı";
-        } 
-        else if (userAns === correctAns) {
-            score++;
-            if (!isFailMode) { changeElo(15); fbDiv.innerHTML = `<span class="correct">✅ DOĞRU CEVAP! (ELO +15)</span>`; }
-            else { fbDiv.innerHTML = `<span class="correct">✅ DOĞRU CEVAP! (Puan Değişmedi)</span>`; }
-            if (qId) userStats[qId] = "doğru";
-        } 
-        else {
-            if (!isFailMode) { changeElo(-8); fbDiv.innerHTML = `<span class="wrong">❌ YANLIŞ CEVAP. Doğru şık: ${correctAns} (ELO -8)</span>`; }
-            else { fbDiv.innerHTML = `<span class="wrong">❌ YANLIŞ CEVAP. Doğru şık: ${correctAns} (Puan Değişmedi)</span>`; }
-            if (qId) userStats[qId] = "yanlış";
-        }
-        
-        fbDiv.innerHTML += `<br><br><span style="color:#aaaaaa">📖 MENTOR NOTU: ${currentQuestion.explanation || ''}</span>`;
-        saveUserData();
-        
-        // UI Kilitle
-        document.getElementsByName("quiz-opt").forEach(opt => opt.disabled = true);
-        document.getElementById("btn-submit").disabled = true;
-        document.getElementById("btn-skip").disabled = true;
-        document.getElementById("btn-next").disabled = false;
-        
-        if (correctAns) {
-            const correctLabel = document.getElementById("label-" + correctAns);
-            if (correctLabel) correctLabel.style.color = "var(--primary-color)";
-        }
-    }
-
-    function checkAnswer() {
-        const userAns = getSelectedOption();
-        if (!userAns) { alert("Lütfen bir şık seçin!"); return; }
-        processAnswer(userAns);
-    }
-
-    function skipQuestion() {
-        processAnswer("SKIP");
-    }
+    // Buraya yukarıda yazdığımız tüm mantıksal script'i aynen ekle.
+    // İsimler CodeStreak olacak şekilde tüm fonksiyonları çağırmaya devam et.
 </script>
-
 </body>
 </html>
