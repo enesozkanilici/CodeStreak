@@ -1,0 +1,1276 @@
+[
+    {
+        "id": "28052026260",
+        "target_elo": 1150,
+        "original_text": "The boost from YOLO is not simply a byproduct of model ensembling since there is little beneﬁt from combin- ing different versions of Fast R-CNN. Rather, it is precisely because YOLO makes different kinds of mistakes at test time that it is so effective at boosting Fast R-CNN’s per- formance.",
+        "question": "YOLO'nun Fast R-CNN'in performansını artırmasındaki temel etken aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) Model birleştirmenin (model ensembling) bir yan ürünü olması.",
+            "B) Fast R-CNN'in farklı versiyonlarını birleştirmekten sağlanan büyük fayda.",
+            "C) Test zamanında Fast R-CNN'den farklı türde hatalar yapması.",
+            "D) Her iki modelin de aynı hata türlerini tekrar etmesi."
+        ],
+        "answer": "C",
+        "explanation": "Metinde açıkça belirtildiği gibi, YOLO'nun Fast R-CNN performansını artırmasının nedeni, model birleştirme (model ensembling) veya Fast R-CNN'in farklı versiyonlarını birleştirmekten ziyade, YOLO'nun test zamanında Fast R-CNN'den farklı türde hatalar yapmasıdır. Bu, iki modelin birbirinin zayıf yönlerini dengelemesini sağlar."
+    },
+    {
+        "id": "28052026261",
+        "target_elo": 1050,
+        "original_text": "The goal *ArduPilot methodic Configurator* software is to automate some of the tasks involved in configuring and tuning ArduPilot-based vehicles.\nTo develop the software the standard V-Model software development method) was first used.\nIt was augmented with DevOps and CI/CD automation practices at a later stage.",
+        "question": "ArduPilot methodic Configurator yazılımının birincil amacı nedir?",
+        "choices": [
+            "A) Yazılım geliştirme için V-Model metodolojisini oluşturmak.",
+            "B) DevOps ve CI/CD otomasyon uygulamalarını geliştirmek.",
+            "C) ArduPilot tabanlı araçların yapılandırma ve ayar görevlerinin bir kısmını otomatikleştirmek.",
+            "D) ArduPilot araçları için yeni donanım tasarımları yapmak."
+        ],
+        "answer": "C",
+        "explanation": "Paragrafın ilk cümlesinde belirtildiği gibi, ArduPilot methodic Configurator yazılımının amacı 'ArduPilot tabanlı araçların yapılandırma ve ayar görevlerinin bir kısmını otomatikleştirmektir'."
+    },
+    {
+        "id": "28052026263",
+        "target_elo": 1100,
+        "original_text": "Prior work theorizes that DPM performs well because it has strong spatial models of the shape and layout of objects.",
+        "question": "Önceki çalışmalara göre, DPM'in (Deformable Part Models) iyi performans göstermesinin teorik nedeni nedir?",
+        "choices": [
+            "A) Nesnelerin şekli ve yerleşimi için güçlü uzaysal modellere sahip olması.",
+            "B) Farklı nesne algılama algoritmalarını birleştirmesi.",
+            "C) Gerçek zamanlı olarak yüz algılama yapabilmesi.",
+            "D) Geniş veri kümeleri üzerinde eğitilmiş olması."
+        ],
+        "answer": "A",
+        "explanation": "Metinde açıkça ifade edildiği gibi, önceki çalışmalar DPM'in 'nesnelerin şekli ve yerleşimi için güçlü uzaysal modellere' sahip olması nedeniyle iyi performans gösterdiğini teorize etmektedir."
+    },
+    {
+        "id": "28052026264",
+        "target_elo": 1000,
+        "original_text": "Each application separates the business logic () from the user interface logic ().\nThis improves testability and maintainability of the code.",
+        "question": "Bir uygulamada iş mantığının (business logic) kullanıcı arayüzü mantığından (user interface logic) ayrılmasının faydaları nelerdir?",
+        "choices": [
+            "A) Kodun daha karmaşık hale gelmesi.",
+            "B) Sadece test edilebilirliğin artması.",
+            "C) Test edilebilirliğin ve sürdürülebilirliğin iyileşmesi.",
+            "D) Kullanıcı arayüzünün tasarım süresinin kısalması."
+        ],
+        "answer": "C",
+        "explanation": "Metinde açıkça belirtildiği üzere, iş mantığının kullanıcı arayüzü mantığından ayrılması 'kodun test edilebilirliğini ve sürdürülebilirliğini' (testability and maintainability) artırır."
+    },
+    {
+        "id": "28052026265",
+        "target_elo": 1050,
+        "original_text": "For evaluating YOLO on P ASCAL VOC, we use S = 7 , B = 2 . P ASCAL VOC has 20 labelled classes so C = 20 .",
+        "question": "Metne göre, PASCAL VOC üzerinde YOLO'yu değerlendirmek için kullanılan parametreler aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) S = 7, B = 2, C = 20",
+            "B) S = 2, B = 7, C = 20",
+            "C) S = 20, B = 7, C = 2",
+            "D) S = 7, B = 20, C = 2"
+        ],
+        "answer": "A",
+        "explanation": "Metinde açıkça belirtildiği üzere, PASCAL VOC üzerinde YOLO'yu değerlendirmek için S = 7, B = 2 ve PASCAL VOC'nin 20 etiketli sınıfı olduğu için C = 20 parametreleri kullanılmıştır."
+    },
+    {
+        "id": "28052026266",
+        "target_elo": 1150,
+        "original_text": "Current detection systems repurpose classiﬁers to per- form detection. To detect an object, these systems take a classiﬁer for that object and evaluate it at various locations and scales in a test image. Systems like deformable parts models (DPM) use a sliding window approach where the classiﬁer is run at evenly spaced locations over the entire image [ 10].",
+        "question": "Metne göre, DPM (deformable parts models) gibi geleneksel nesne algılama sistemleri, bir nesneyi algılamak için hangi yaklaşımı kullanır?",
+        "choices": [
+            "A) Sınıflandırıcıları doğrudan algılama performansını optimize etmek için yeniden eğitirler.",
+            "B) Tek bir sınıflandırıcıyı görüntünün tamamında tek bir boyutta değerlendirirler.",
+            "C) Sınıflandırıcıları yeniden amaçlayarak, test görüntüsünün çeşitli konum ve ölçeklerinde kayan pencere (sliding window) yaklaşımıyla çalıştırırlar.",
+            "D) Her nesne için özel olarak tasarlanmış yeni sınıflandırıcılar oluştururlar."
+        ],
+        "answer": "C",
+        "explanation": "Metin, 'Current detection systems repurpose classiﬁers to perform detection. To detect an object, these systems take a classiﬁer for that object and evaluate it at various locations and scales in a test image. Systems like deformable parts models (DPM) use a sliding window approach' ifadeleriyle, geleneksel sistemlerin sınıflandırıcıları yeniden amaçladığını ve bunları test görüntüsünün farklı konum ve ölçeklerinde kayan pencere (sliding window) yaklaşımıyla çalıştırdığını belirtmektedir."
+    },
+    {
+        "id": "28052026267",
+        "target_elo": 1100,
+        "original_text": "YOLO trains on full images and directly optimizes detec- tion performance. This uniﬁed model has several beneﬁts over traditional methods of object detection.",
+        "question": "Metne göre, YOLO modelinin geleneksel nesne algılama yöntemlerine kıyasla temel farklılığı ve avantajı nedir?",
+        "choices": [
+            "A) Sadece belirli bir nesne sınıfını algılamak üzere eğitilir.",
+            "B) Tespit performansını dolaylı olarak optimize eder.",
+            "C) Tüm görüntüler üzerinde eğitim yapar ve algılama performansını doğrudan optimize eden birleşik (uniﬁed) bir modeldir.",
+            "D) Geleneksel yöntemlerden daha fazla işlem gücü gerektirir."
+        ],
+        "answer": "C",
+        "explanation": "Metin, 'YOLO trains on full images and directly optimizes detection performance. This uniﬁed model has several beneﬁts over traditional methods of object detection.' ifadesiyle, YOLO'nun tüm görüntüler üzerinde eğitildiğini ve algılama performansını doğrudan optimize eden birleşik bir model olduğunu vurgulamaktadır. Bu durum, geleneksel yöntemlere göre temel farkı ve avantajını oluşturur."
+    },
+    {
+        "id": "28052026268",
+        "target_elo": 1100,
+        "original_text": "Fast YOLO is the fastest general-purpose object detec- tor in the literature and YOLO pushes the state-of-the-art in real-time object detection. YOLO also generalizes well to new domains making it ideal for applications that rely on fast, robust object detection.",
+        "question": "Metne göre, YOLO'nun başlıca avantajları arasında aşağıdakilerden hangisi yer almaktadır?",
+        "choices": [
+            "A) Yüksek maliyetli olması ve sınırlı uygulama alanlarına sahip olması.",
+            "B) Diğer dedektörlere göre daha yavaş çalışması ve gerçek zamanlı algılama yeteneğinin olmaması.",
+            "C) Yeni alanlara iyi genellenebilmesi ve gerçek zamanlı nesne algılamada en iyi performansı sunması.",
+            "D) Sadece belirli türdeki nesneleri algılamak için optimize edilmiş olması."
+        ],
+        "answer": "C",
+        "explanation": "Metin, 'Fast YOLO is the fastest general-purpose object detector' ve 'YOLO pushes the state-of-the-art in real-time object detection. YOLO also generalizes well to new domains' ifadeleriyle YOLO'nun yeni alanlara genellenebilirlik yeteneğini ve gerçek zamanlı nesne algılamada üstün (state-of-the-art) performansını temel avantajları olarak belirtmektedir."
+    },
+    {
+        "id": "280520262610",
+        "target_elo": 1150,
+        "original_text": "The space complexity of this algorithm is O(V + E), since we have to keep a couple\nof lists whose sizes are equal to the number of nodes, as well as keep all the\nedges of a graph inside of the data structure itself.",
+        "question": "Metinde bahsedilen bir algoritmanın uzay karmaşıklığının O(V + E) olmasının temel nedenleri nelerdir?",
+        "choices": [
+            "A) Sadece algoritmanın çalışma süresi dikkate alındığı için.",
+            "B) Düğümlerin sayısı kadar listelerin tutulması ve bir grafiğin tüm kenarlarının veri yapısı içinde saklanması gerektiği için.",
+            "C) İşlemci hızının ve bellek bant genişliğinin sınırlamaları nedeniyle.",
+            "D) Yalnızca grafikteki kenarların sayısı nedeniyle."
+        ],
+        "answer": "B",
+        "explanation": "Metinde açıkça belirtildiği üzere, algoritmanın uzay karmaşıklığı O(V + E)'dir çünkü düğüm sayısına eşit boyutlarda listeler ve bir grafiğin tüm 'edges' (kenarları) veri yapısının içinde tutulmak zorundadır. V 'vertices' (düğümler) ve E 'edges' (kenarlar) anlamına gelir ve graf algoritmalarında yaygın olarak kullanılan bir gösterimdir."
+    },
+    {
+        "id": "280520262611",
+        "target_elo": 1300,
+        "original_text": "Instead of the inception modules used by GoogLeNet, we simply use 1 × 1 reduction layers followed by 3 × 3 convo- lutional layers, similar to Lin et al [ 22]. The full network is shown in Figure 3.",
+        "question": "GoogLeNet tarafından kullanılan 'inception' modülleri yerine, bahsedilen ağ mimarisinde hangi katman kombinasyonu kullanılmıştır?",
+        "choices": [
+            "A) Sadece 1 × 1 evrişim katmanları.",
+            "B) Tam bağlantılı katmanlar ve ardından max pooling katmanları.",
+            "C) 1 × 1 indirgeme katmanları ve ardından 3 × 3 evrişim katmanları.",
+            "D) Yalnızca 3 × 3 evrişim katmanları."
+        ],
+        "answer": "C",
+        "explanation": "Metin, GoogLeNet'in 'inception modules' yerine, 1 × 1 'reduction layers' (indirgeme katmanları) ve ardından 3 × 3 'convolutional layers' (evrişim katmanları) kullanıldığını açıkça belirtmektedir. Bu, derin öğrenme mimarilerinde katman tasarımıyla ilgili spesifik bir tercihtir."
+    },
+    {
+        "id": "280520262612",
+        "target_elo": 950,
+        "original_text": "Each sub-application can be run in isolation, so it is easier to test and develop them.",
+        "question": "Her bir alt-uygulamanın (sub-application) izole bir şekilde çalıştırılabilmesinin sağladığı temel fayda nedir?",
+        "choices": [
+            "A) Daha hızlı veri işleme kapasitesi.",
+            "B) Daha kolay test ve geliştirme süreçleri.",
+            "C) Daha yüksek güvenlik standartları.",
+            "D) Daha az bellek tüketimi."
+        ],
+        "answer": "B",
+        "explanation": "Metinde açıkça belirtildiği gibi, her bir 'sub-application'ın izole bir şekilde çalıştırılması, onların 'test' edilmesi ve 'develop' edilmesi sürecini daha kolay hale getirir. Bu, modern yazılım mimarilerinde modülerliğin ve bağımsız bileşenlerin önemli bir avantajıdır."
+    },
+    {
+        "id": "280520262613",
+        "target_elo": 1100,
+        "original_text": "Unfortunately, this combination doesn’t beneﬁt from the speed of YOLO since we run each model seperately and then combine the results. However, since YOLO is so fast it doesn’t add any signiﬁcant computational time compared to Fast R-CNN.",
+        "question": "Belirtilen kombinasyonun YOLO'nun hızından tam olarak faydalanamamasının nedeni ve buna rağmen Fast R-CNN ile kıyaslandığında önemli bir hesaplama süresi eklememesinin gerekçesi nedir?",
+        "choices": [
+            "A) Her modelin ayrı ayrı çalıştırılıp sonuçların birleştirilmesi nedeniyle YOLO'nun hızından tam faydalanılamaz; ancak YOLO'nun kendisi çok hızlı olduğu için Fast R-CNN'e kıyasla önemli bir ek süre oluşturmaz.",
+            "B) YOLO, Fast R-CNN'den çok daha yavaş olduğu için her modelin ayrı çalıştırılması performansı düşürür.",
+            "C) Kombinasyon, YOLO'nun hızını artırır ve bu sayede Fast R-CNN'den daha yavaş olsa bile kabul edilebilir bir performans sunar.",
+            "D) Modellerin birlikte çalıştırılması, YOLO'nun hızını artırarak Fast R-CNN'den daha iyi bir performans sağlar."
+        ],
+        "answer": "A",
+        "explanation": "Metinde iki ana nokta vurgulanmıştır: Birincisi, her modelin ayrı ayrı çalıştırılıp sonuçların birleştirilmesi nedeniyle bu kombinasyon 'YOLO'nun hızından tam olarak faydalanamaz'. İkincisi, buna rağmen YOLO'nun kendisi 'çok hızlı' olduğu için, bu durum Fast R-CNN'e kıyasla 'önemli bir hesaplama süresi eklemez'."
+    },
+    {
+        "id": "280520262614",
+        "target_elo": 1200,
+        "original_text": "Fast YOLO is the fastest object detection method on PASCAL ; as far as we know, it is the fastest extant object detector. With 52.7% mAP , it is more than twice as accurate as prior work on real-time detection. YOLO pushes mAP to 63.4% while still maintaining real-time performance.",
+        "question": "Metne göre Fast YOLO ve YOLO'nun PASCAL veri kümesindeki performansı hakkında hangi ifade doğrudur?",
+        "choices": [
+            "A) Fast YOLO, PASCAL'daki en hızlı 'object detection' yöntemidir ve %52.7 mAP ile önceki gerçek zamanlı çalışmalardan iki kat daha doğrudur. YOLO ise mAP'i %63.4'e çıkarırken gerçek zamanlı performansını korur.",
+            "B) Fast YOLO yavaştır ve düşük bir mAP değerine sahiptir, ancak YOLO daha hızlıdır ve %63.4 mAP sunar.",
+            "C) Her iki yöntem de gerçek zamanlı performans sağlayamaz ve doğruluk oranları düşüktür.",
+            "D) YOLO, Fast YOLO'dan daha yavaştır ve daha düşük bir mAP değerine sahiptir."
+        ],
+        "answer": "A",
+        "explanation": "Metin, 'Fast YOLO'nun PASCAL üzerinde bilinen en hızlı 'object detector' olduğunu ve %52.7 'mAP' ile önceki gerçek zamanlı çalışmalardan iki kat daha doğru olduğunu belirtir. Ayrıca, 'YOLO'nun mAP'i %63.4'e yükselttiğini ve 'real-time performance'ı sürdürdüğünü ifade eder."
+    },
+    {
+        "id": "280520262615",
+        "target_elo": 1100,
+        "original_text": "Fast R-CNN speeds up the classiﬁcation stage of R-CNN but it still relies on selective search which can take around 2 seconds per image to generate bounding box proposals.",
+        "question": "Metne göre Fast R-CNN'in temel kısıtı veya darboğazı nedir?",
+        "choices": [
+            "A) Sınıflandırma aşamasının yavaş olması.",
+            "B) Her görüntü için yaklaşık 2 saniye süren seçici arama (selective search) yöntemine bağımlı olması.",
+            "C) Sınırlayıcı kutu (bounding box) önerilerinin kalitesiz olması.",
+            "D) Genel olarak R-CNN'den daha yavaş çalışması."
+        ],
+        "answer": "B",
+        "explanation": "Fast R-CNN, R-CNN'in 'classification stage'ini hızlandırsa da, 'bounding box proposals' üretmek için 'selective search' yöntemine ihtiyaç duymakta ve bu işlem her görüntü için yaklaşık 2 saniye sürerek bir darboğaz oluşturmaktadır."
+    },
+    {
+        "id": "280520262618",
+        "target_elo": 1050,
+        "original_text": "YOLO is refreshingly simple: see Figure 1. A sin- gle convolutional network simultaneously predicts multi- ple bounding boxes and class probabilities for those boxes.",
+        "question": "Metne göre YOLO'nun temel çalışma prensibi nedir?",
+        "choices": [
+            "A) Ayrı ayrı sınıflayıcılar ve regresyon modelleri kullanır.",
+            "B) Birleştirilmiş bir evrişimli ağ (single convolutional network) kullanarak eş zamanlı olarak birden fazla sınırlayıcı kutu ve bu kutuların sınıf olasılıklarını tahmin eder.",
+            "C) Sadece sınıf olasılıklarını tahmin eder, sınırlayıcı kutular için ayrı bir ağ kullanır.",
+            "D) Sınırlayıcı kutuları önceden belirlenmiş şablonlarla eşleştirir."
+        ],
+        "answer": "B",
+        "explanation": "Metin, YOLO'nun 'single convolutional network' kullanarak aynı anda hem 'multiple bounding boxes'ı hem de bu kutulara ait 'class probabilities'i tahmin ettiğini açıkça belirtmektedir."
+    },
+    {
+        "id": "280520262619",
+        "target_elo": 1150,
+        "original_text": "OverFeat. Sermanet et al. train a convolutional neural network to perform localization and adapt that localizer to perform detection [ 31]. OverFeat efﬁciently performs slid- ing window detection but it is still a disjoint system. Over- Feat optimizes for localization, not detection performance.",
+        "question": "Metne göre OverFeat sisteminin belirgin bir özelliği veya tasarım tercihi nedir?",
+        "choices": [
+            "A) Tespit (detection) performansını optimize etmek üzere tasarlanmıştır.",
+            "B) Kayar pencere (sliding window) tespitini verimsiz bir şekilde gerçekleştirir.",
+            "C) Lokalizasyon için eğitilmiş bir evrişimli sinir ağını (convolutional neural network) tespit için uyarlayarak çalışır.",
+            "D) Bağlantısız bir sistem olmaması sayesinde yüksek birleşik performans sunar."
+        ],
+        "answer": "C",
+        "explanation": "Metin, OverFeat'in 'convolutional neural network'ü 'localization' yapmak üzere eğittiğini ve daha sonra bu 'localizer'ı 'detection' yapmak üzere uyarladığını belirtmektedir. Bu, sistemin temel tasarım ve çalışma prensibini açıklar. Ayrıca, sistemin 'disjoint' olması ve 'localization' için optimize edildiği, 'detection performance' için optimize edilmediği de önemli bir detaydır."
+    },
+    {
+        "id": "280520262620",
+        "target_elo": 1050,
+        "original_text": "We train the network for about 135 epochs on the train- ing and validation data sets from P ASCAL VOC 2007 and 2012. When testing on 2012 we also include the VOC 2007 test data for training. Throughout training we use a batch size of 64, a momentum of 0.9 and a decay of 0.0005.",
+        "question": "Metinde bahsedilen ağın eğitimi sırasında kullanılan temel hiperparametreler ve veri kümeleri hakkında hangi bilgi verilmiştir?",
+        "choices": [
+            "A) Eğitim 100 epoktan az sürmüş, PASCAL VOC 2012 veri kümesi sadece test için kullanılmıştır.",
+            "B) Eğitim yaklaşık 135 epok sürmüş, PASCAL VOC 2007 ve 2012 veri kümeleri kullanılmış, batch boyutu 64, momentum 0.9 ve ağırlık azaltma 0.0005 olarak belirlenmiştir.",
+            "C) Eğitimde sadece PASCAL VOC 2007 veri kümesi kullanılmış, momentum değeri belirtilmemiştir.",
+            "D) Batch boyutu 128 olarak ayarlanmış ve sadece 50 epokluk bir eğitim gerçekleştirilmiştir."
+        ],
+        "answer": "B",
+        "explanation": "Paragrafta ağın yaklaşık 135 epok boyunca PASCAL VOC 2007 ve 2012 eğitim ve doğrulama veri kümelerinde eğitildiği, 'batch size'ın (küme boyutu) 64, 'momentum'un 0.9 ve 'decay' (ağırlık azaltma) değerinin 0.0005 olduğu açıkça belirtilmiştir."
+    },
+    {
+        "id": "280520262621",
+        "target_elo": 1100,
+        "original_text": "mAP increases by 3.2% to 75.0%. We also tried combining the top Fast R-CNN model with several other versions of Fast R-CNN. Those ensembles produced small increases in mAP between .3 and .6%, see Table 2 for details.",
+        "question": "Metinde bahsedilen Fast R-CNN modellerinin birleştirilmesi (ensemble) yöntemi, mAP performansını nasıl etkilemiştir?",
+        "choices": [
+            "A) mAP değerini %75.0'dan %3.2'ye düşürmüştür.",
+            "B) mAP değerini %3.2 oranında artırarak %75.0'a çıkarmış, ardından ek birleştirmelerle %0.3 ila %0.6 arasında küçük artışlar sağlamıştır.",
+            "C) Sadece tek bir Fast R-CNN modelinin kullanılmasıyla mAP %75.0'a ulaşmıştır.",
+            "D) mAP değerinde herhangi bir değişiklik olmamış, ancak eğitim süresi kısalmıştır."
+        ],
+        "answer": "B",
+        "explanation": "Metinde ilk olarak mAP'nin (ortalama hassasiyet) %3.2 artarak %75.0'a ulaştığı, ardından en iyi Fast R-CNN modelinin diğer versiyonlarla birleştirilmesiyle ('ensembles') mAP'de %0.3 ile %0.6 arasında küçük artışlar elde edildiği belirtilmiştir."
+    },
+    {
+        "id": "280520262622",
+        "target_elo": 1150,
+        "original_text": "Fast R-CNN, a top detection method [ 14], mistakes back- ground patches in an image for objects because it can’t see the larger context. YOLO makes less than half the number of background errors compared to Fast R-CNN.",
+        "question": "Metne göre, Fast R-CNN'in temel zayıflığı nedir ve YOLO bu konuda nasıl bir avantaj sunar?",
+        "choices": [
+            "A) Fast R-CNN, nesneleri doğru sınıflandırmakta zorlanır; YOLO ise daha yüksek sınıflandırma doğruluğuna sahiptir.",
+            "B) Fast R-CNN, daha büyük bağlamı göremediği için görüntüdeki arka plan yamalarını nesne olarak yanlışlıkla algılar; YOLO, Fast R-CNN'e göre yarıdan daha az arka plan hatası yapar.",
+            "C) Fast R-CNN, YOLO'dan daha hızlı çalışır ancak daha fazla bellek tüketir.",
+            "D) Fast R-CNN, küçük nesneleri algılamada YOLO'dan daha iyidir, ancak büyük nesnelerde zayıftır."
+        ],
+        "answer": "B",
+        "explanation": "Paragraf, Fast R-CNN'in 'larger context' (daha büyük bağlamı) göremediği için arka plan yamalarını nesne olarak yanlış algıladığını ('background errors') ve YOLO'nun Fast R-CNN'e kıyasla yarıdan daha az sayıda arka plan hatası yaptığını açıkça belirtmektedir."
+    },
+    {
+        "id": "280520262623",
+        "target_elo": 1100,
+        "original_text": "Many research efforts focus on speeding up the DPM pipeline [ 30] [ 37] [ 5]. They speed up HOG computation, use cascades, and push computation to GPUs. However, only 30Hz DPM [ 30] actually runs in real-time.",
+        "question": "DPM (Deformable Part Model) işlem hattını hızlandırmak için hangi yöntemlerden bahsedilmektedir ve belirtilen DPM versiyonlarından hangisi gerçek zamanlı çalışır?",
+        "choices": [
+            "A) DPM hızlandırması için HOG hesaplaması yavaşlatılmış, kaskatlar kaldırılmış ve sadece CPU kullanılmıştır. Hiçbir DPM gerçek zamanlı çalışmamaktadır.",
+            "B) HOG hesaplamasını hızlandırma, kaskatlar kullanma ve GPU'lara işlem yükünü aktarma yöntemleri kullanılmıştır. Yalnızca 30Hz DPM gerçek zamanlı çalışmaktadır.",
+            "C) Sadece HOG hesaplaması optimize edilmiş, kaskatlar hiç kullanılmamıştır. Tüm DPM versiyonları gerçek zamanlı çalışabilir.",
+            "D) DPM'i hızlandırmak için daha büyük modeller kullanılmış, ancak hiçbiri 60Hz'in üzerinde bir hızda gerçek zamanlı çalışmamaktadır."
+        ],
+        "answer": "B",
+        "explanation": "Metin, DPM işlem hattını hızlandırmak için 'HOG computation' (HOG hesaplaması) hızlandırma, 'cascades' (kaskatlar) kullanma ve hesaplamayı 'GPUs' (GPU'lar) üzerine aktarma çabalarından bahsetmektedir. Ayrıca, sadece '30Hz DPM'in gerçek zamanlı çalıştığını belirtmektedir."
+    },
+    {
+        "id": "280520262624",
+        "target_elo": 1250,
+        "original_text": "Note that the loss function only penalizes classiﬁcation error if an object is present in that grid cell (hence the con- ditional class probability discussed earlier). It also only pe- nalizes bounding box coordinate error if that predictor is “responsible” for the ground truth box (i.e. has the highest IOU of any predictor in that grid cell).",
+        "question": "Metinde açıklanan kayıp fonksiyonu (loss function), sınıflandırma hatasını ve sınırlayıcı kutu koordinat hatasını hangi koşullar altında cezalandırır?",
+        "choices": [
+            "A) Sınıflandırma hatasını her zaman cezalandırır; sınırlayıcı kutu hatasını ise her tahmin edici için eşit şekilde cezalandırır.",
+            "B) Sınıflandırma hatasını, o 'grid cell'de bir nesne mevcutsa cezalandırır; sınırlayıcı kutu koordinat hatasını ise, tahmin edici 'ground truth' kutudan sorumluysa (en yüksek IOU'ya sahipse) cezalandırır.",
+            "C) Sadece sınırlayıcı kutu hatasını cezalandırır; sınıflandırma hatası dikkate alınmaz.",
+            "D) Her iki hatayı da sadece tüm tahmin ediciler aynı IOU değerine sahip olduğunda cezalandırır."
+        ],
+        "answer": "B",
+        "explanation": "Paragrafta açıkça belirtilmiştir ki, kayıp fonksiyonu 'classiﬁcation error'ı (sınıflandırma hatası) 'if an object is present in that grid cell' (o grid hücresinde bir nesne mevcutsa) cezalandırır. 'Bounding box coordinate error'ı (sınırlayıcı kutu koordinat hatası) ise, 'that predictor is “responsible” for the ground truth box' (o tahmin edici 'ground truth' kutudan sorumluysa - yani o 'grid cell'deki herhangi bir tahmin edici arasında en yüksek IOU'ya sahipse) cezalandırır."
+    },
+    {
+        "id": "280520262625",
+        "target_elo": 1050,
+        "original_text": "We use the methodology and tools of Hoiem et al. [ 19] For each category at test time we look at the top N predic- tions for that category. Each prediction is either correct or it is classiﬁed based on the type of error:",
+        "question": "Metne göre, bir kategori için test zamanındaki tahminlerin değerlendirme metodolojisinde aşağıdakilerden hangisi doğrudur?",
+        "choices": [
+            "A) Her tahmin yalnızca yanlış veya doğru olarak etiketlenir.",
+            "B) En iyi N tahmin incelenir ve her tahminin doğru olup olmadığı veya ne tür bir hata içerdiği belirlenir.",
+            "C) Sadece hatalı tahminler kategorize edilir, doğrular göz ardı edilir.",
+            "D) Hoiem ve diğerlerinin araçları yalnızca doğru tahminleri belirlemek için kullanılır."
+        ],
+        "answer": "B",
+        "explanation": "Metin, Hoiem ve diğerlerinin metodolojisi ve araçları kullanılarak her kategori için test zamanında en iyi N tahminin incelendiğini belirtir. Her tahmin ya doğru olarak sınıflandırılır ya da hata tipine göre sınıflandırılır (classiﬁed based on the type of error)."
+    },
+    {
+        "id": "280520262626",
+        "target_elo": 1150,
+        "original_text": "While the other efforts don’t reach the real-time milestone we also compare their relative mAP and speed to examine the accuracy-performance tradeoffs available in object de- tection systems.",
+        "question": "Nesne algılama sistemlerinde doğruluk-performans dengesini incelemek için metinde belirtilen temel karşılaştırma ölçütleri nelerdir?",
+        "choices": [
+            "A) Sadece gerçek zamanlı performans ve bellek kullanımı.",
+            "B) Ortam ortalama hassasiyeti (mAP) ve hız.",
+            "C) Eğitim süresi ve model boyutu.",
+            "D) Kullanılan veri setinin boyutu ve algoritmanın karmaşıklığı."
+        ],
+        "answer": "B",
+        "explanation": "Metin, nesne algılama sistemlerindeki doğruluk-performans (accuracy-performance) dengesini incelemek için göreceli mAP (mean Average Precision) ve hızın (speed) karşılaştırıldığını açıkça belirtmektedir."
+    },
+    {
+        "id": "280520262627",
+        "target_elo": 1300,
+        "original_text": "Third, YOLO learns generalizable representations of ob- jects. When trained on natural images and tested on art- work, YOLO outperforms top detection methods like DPM and R-CNN by a wide margin. Since YOLO is highly gen- eralizable it is less likely to break down when applied to new domains or unexpected inputs.",
+        "question": "Metne göre, YOLO'nun DPM ve R-CNN gibi diğer algılama yöntemlerine göre belirgin bir avantajı nedir?",
+        "choices": [
+            "A) Daha az eğitim verisi gerektirmesi.",
+            "B) Görüntü sınıflandırma görevlerinde daha yüksek doğruluk sağlaması.",
+            "C) Nesnelerin genellenebilir gösterimlerini öğrenmesi ve bu sayede farklı alanlara veya beklenmedik girdilere uygulandığında daha sağlam olması.",
+            "D) Yalnızca doğal görüntüler üzerinde mükemmel performans göstermesi."
+        ],
+        "answer": "C",
+        "explanation": "Metin, YOLO'nun nesnelerin genellenebilir (generalizable) gösterimlerini öğrendiğini ve doğal görüntülerle eğitilip sanat eserleri üzerinde test edildiğinde DPM ve R-CNN gibi üst düzey algılama yöntemlerini geride bıraktığını belirtir. Bu sayede yeni alanlara veya beklenmedik girdilere uygulandığında daha az arızalanma olasılığı vardır, yani daha sağlamdır."
+    },
+    {
+        "id": "280520262628",
+        "target_elo": 1100,
+        "original_text": "Determines the minimum spanning tree (MST) of a graph using the Borůvka's algorithm.\nBorůvka's algorithm is a greedy algorithm for finding a minimum spanning tree in a\nconnected graph, or a minimum spanning forest if a graph that is not connected.",
+        "question": "Borůvka algoritmasının temel amacı ve algoritma tipi aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) Bir grafın en kısa yolunu bulmak için kullanılan bir dinamik programlama algoritmasıdır.",
+            "B) Bağlantılı bir grafikte Minimum Spanning Tree (MST) veya bağlantısız bir grafikte Minimum Spanning Forest bulmak için kullanılan açgözlü (greedy) bir algoritmadır.",
+            "C) Bir grafın tüm düğümleri arasındaki mesafeyi hesaplamak için kullanılan bir arama algoritmasıdır.",
+            "D) Bir grafın döngülerini tespit etmek için kullanılan bir böl ve yönet (divide and conquer) algoritmasıdır."
+        ],
+        "answer": "B",
+        "explanation": "Metinde açıkça belirtildiği gibi, Borůvka algoritması 'connected graph'ta Minimum Spanning Tree (MST) veya bağlantısız ('not connected') bir grafikte Minimum Spanning Forest bulmak için kullanılan açgözlü (greedy) bir algoritmadır."
+    },
+    {
+        "id": "280520262630",
+        "target_elo": 1150,
+        "original_text": "The resulting system is interactive and engaging. While YOLO processes images individually, when attached to a webcam it functions like a tracking system, detecting ob- jects as they move around and change in appearance. A demo of the system and the source code can be found on our project website:",
+        "question": "Metne göre, YOLO sistemi bir web kamerasına bağlandığında temel işlevi ne olur?",
+        "choices": [
+            "A) Görüntüleri bireysel olarak işlemeye devam eder, takip yeteneği kazanmaz.",
+            "B) Nesnelerin hareketini ve görünüş değişikliklerini algılayarak bir takip sistemi gibi çalışır.",
+            "C) Sadece statik görüntülerde nesne tespiti yapar.",
+            "D) Video akışını sadece tek bir kare olarak ele alır."
+        ],
+        "answer": "B",
+        "explanation": "Metinde belirtildiği gibi, \"While YOLO processes images individually, when attached to a webcam it functions like a tracking system, detecting ob- jects as they move around and change in appearance.\" yani bireysel görüntü işlese de, web kamerasıyla bir takip sistemi gibi çalıştığı açıkça ifade edilmektedir."
+    },
+    {
+        "id": "280520262631",
+        "target_elo": 1250,
+        "original_text": "Each grid cell also predicts C conditional class proba- bilities, Pr(Classi|Object). These probabilities are condi- tioned on the grid cell containing an object. We only predict one set of class probabilities per grid cell, regardless of the number of boxes B.",
+        "question": "Metne göre, bir ızgara hücresi (grid cell) başına sınıf olasılıkları (class probabilities) nasıl tahmin edilir?",
+        "choices": [
+            "A) Her bir bounding box için ayrı bir sınıf olasılıkları kümesi tahmin edilir.",
+            "B) Nesne içerip içermediğine bakılmaksızın tüm ızgara hücreleri için tek bir sınıf olasılığı kümesi tahmin edilir.",
+            "C) Izgara hücresi bir nesne içeriyorsa, kaç tane bounding box olursa olsun sadece bir sınıf olasılıkları kümesi tahmin edilir.",
+            "D) Sadece nesne içermeyen ızgara hücreleri için sınıf olasılıkları hesaplanır."
+        ],
+        "answer": "C",
+        "explanation": "Metinde açıkça belirtildiği gibi, \"These probabilities are condi- tioned on the grid cell containing an object. We only predict one set of class probabilities per grid cell, regardless of the number of boxes B.\" Yani sınıf olasılıkları hücrede nesne bulunmasına bağlıdır ve bounding box sayısı ne olursa olsun her hücre için tek bir küme tahmin edilir."
+    },
+    {
+        "id": "280520262632",
+        "target_elo": 1050,
+        "original_text": "This algorithm searches from both the source and target nodes simultaneously, meeting somewhere in the middle. This approach can significantly reduce the search space compared to a traditional one-directional search.",
+        "question": "Metinde açıklanan, hem kaynak hem de hedef düğümlerden aynı anda arama yapan algoritmanın temel avantajı nedir?",
+        "choices": [
+            "A) Yalnızca kaynak düğümden arama yapan geleneksel yöntemlere göre daha yavaş çalışması.",
+            "B) Arama alanını (search space) geleneksel tek yönlü aramalara kıyasla önemli ölçüde azaltabilmesi.",
+            "C) Sadece hedef düğümden arama yapabilmesi.",
+            "D) Her zaman en kısa yolu bulamaması."
+        ],
+        "answer": "B",
+        "explanation": "Metinde, \"This approach can significantly reduce the search space compared to a traditional one-directional search.\" ifadesiyle bu algoritmanın temel avantajının arama alanını küçültmesi olduğu belirtilmiştir."
+    },
+    {
+        "id": "280520262634",
+        "target_elo": 1150,
+        "original_text": "R-CNN. R-CNN and its variants use region proposals in- stead of sliding windows to ﬁnd objects in images. Selective 782",
+        "question": "R-CNN ve türevleri, metne göre nesneleri görüntülerde bulmak için temel olarak hangi yöntemi kullanır?",
+        "choices": [
+            "A) Kayar pencereler (sliding windows) kullanır.",
+            "B) Tüm görüntü üzerinde tek bir tahminde bulunur.",
+            "C) Bölge önerileri (region proposals) kullanır.",
+            "D) Sadece belirli piksel gruplarını analiz eder."
+        ],
+        "answer": "C",
+        "explanation": "Metinde net bir şekilde ifade edildiği gibi, \"R-CNN and its variants use region proposals in- stead of sliding windows to ﬁnd objects in images.\" yani R-CNN ve türevleri, kayar pencereler yerine bölge önerilerini kullanır."
+    },
+    {
+        "id": "280520262635",
+        "target_elo": 1100,
+        "original_text": "We also train YOLO using VGG-16. This model is more accurate but also signiﬁcantly slower than YOLO. It is use- ful for comparison to other detection systems that rely on VGG-16 but since it is slower than real-time the rest of the paper focuses on our faster models.",
+        "question": "YOLO'nun VGG-16 ile eğitilmiş versiyonu hakkında aşağıdakilerden hangisi doğrudur?",
+        "choices": [
+            "A) Standart YOLO'dan daha hızlı çalışır ancak daha az doğrudur.",
+            "B) Gerçek zamanlı uygulamalar için ideal olup, diğer sistemlerle karşılaştırma imkanı sunar.",
+            "C) Standart YOLO'ya göre daha doğrudur ancak gerçek zamanlı performansı düşüktür.",
+            "D) Karmaşık bir pipeline yapısına sahip olduğu için daha yavaştır."
+        ],
+        "answer": "C",
+        "explanation": "Paragraf, VGG-16 ile eğitilen YOLO modelinin 'more accurate' (daha doğru) olduğunu ancak 'significantly slower' (önemli ölçüde daha yavaş) olduğunu belirtmektedir. Bu durum, modelin gerçek zamanlı uygulamalar için uygun olmadığını gösterir ve bu yüzden makalenin daha hızlı modellere odaklandığı ifade edilir."
+    },
+    {
+        "id": "280520262637",
+        "target_elo": 1050,
+        "original_text": "First, YOLO is extremely fast. Since we frame detection as a regression problem we don’t need a complex pipeline.",
+        "question": "YOLO'nun aşırı hızlı olmasının temel nedenlerinden biri nedir?",
+        "choices": [
+            "A) Gelişmiş bir karmaşık pipeline kullanması.",
+            "B) Nesne tespitini bir sınıflandırma problemi olarak ele alması.",
+            "C) Tespit işlemini bir regresyon problemi olarak çerçevelemesi ve bu sayede karmaşık bir pipeline'a ihtiyaç duymaması.",
+            "D) VGG-16 gibi hızlı temelli ağlar kullanması."
+        ],
+        "answer": "C",
+        "explanation": "Metin, YOLO'nun 'detection as a regression problem' (tespit işlemini bir regresyon problemi olarak) ele alması nedeniyle 'complex pipeline'a (karmaşık bir pipeline'a) ihtiyaç duymadığını ve bu sayede çok hızlı olduğunu açıkça belirtmektedir."
+    },
+    {
+        "id": "280520262638",
+        "target_elo": 1150,
+        "original_text": "Instead of trying to optimize individual components of a large detection pipeline, YOLO throws out the pipeline entirely and is fast by design.",
+        "question": "Geleneksel nesne tespit sistemlerinin büyük tespit pipeline'ının bireysel bileşenlerini optimize etmeye çalışmasına kıyasla, YOLO hızını temel olarak nasıl sağlamaktadır?",
+        "choices": [
+            "A) Pipeline'ın her bir adımını daha hızlı algoritmalarla değiştirerek.",
+            "B) Tespit pipeline'ını tamamen ortadan kaldırarak ve tasarımı gereği hızlı olarak.",
+            "C) Sadece daha küçük resim boyutlarıyla çalışarak.",
+            "D) Birden fazla işlemci kullanarak paralelleştirme yaparak."
+        ],
+        "answer": "B",
+        "explanation": "Paragraf, YOLO'nun hızını, geleneksel 'large detection pipeline' (büyük tespit pipeline'ı) yerine, bu 'pipeline'ı tamamen 'throws out' (ortadan kaldırarak) ve 'fast by design' (tasarımı gereği hızlı) bir yapı sunarak sağladığını ifade etmektedir."
+    },
+    {
+        "id": "28052026262",
+        "target_elo": 1100,
+        "original_text": "International Journal of Computer Vision , 4:34–47, 2001. 4 [36] P . Viola and M. J. Jones. Robust real-time face detection.",
+        "question": "Verilen metinde atıf yapılan P. Viola ve M. J. Jones tarafından yazılan makalenin ana konusu nedir?",
+        "choices": [
+            "A) Uluslararası Bilgisayar Vizyonu Dergisi'nin 2001 yılındaki sayısının analizi",
+            "B) Sağlam gerçek zamanlı yüz tanıma",
+            "C) 3D modelleme teknikleri",
+            "D) Genetik algoritmaların görüntü işlemedeki uygulamaları"
+        ],
+        "answer": "B",
+        "explanation": "Metinde 'P. Viola and M. J. Jones. Robust real-time face detection.' ifadesi, makalenin ana konusunun sağlam gerçek zamanlı yüz tanıma (Robust real-time face detection) olduğunu açıkça belirtmektedir. Viola-Jones algoritması, bilgisayar vizyonunda yüz tanıma alanındaki önemli çalışmalardan biridir."
+    },
+    {
+        "id": "28052026269",
+        "target_elo": 1050,
+        "original_text": "The (main) application itself does the command line parsing and starts the sub-applications defined below in sequence",
+        "question": "Tanımlanan ana uygulamanın temel sorumlulukları arasında aşağıdakilerden hangisi bulunur?",
+        "choices": [
+            "A) Sadece alt uygulamaları tanımlamak",
+            "B) Komut satırı ayrıştırma ve alt uygulamaları sırasıyla başlatma",
+            "C) Ağ bağlantılarını yönetmek",
+            "D) Veritabanı sorgulamalarını optimize etmek"
+        ],
+        "answer": "B",
+        "explanation": "Metin, '(main) application itself does the command line parsing and starts the sub-applications defined below in sequence' diyerek, ana uygulamanın komut satırı ayrıştırmayı (command line parsing) yaptığını ve tanımlanmış alt uygulamaları (sub-applications) sırasıyla başlattığını açıkça belirtmektedir. Bu, bir ana uygulamanın temel bir kontrol ve başlatma mekanizması olarak görev yaptığını gösterir."
+    },
+    {
+        "id": "280520262616",
+        "target_elo": 1200,
+        "original_text": "Figure 6: Qualitative Results. YOLO running on sample artwork and natural images from the internet. It is mostly accurate although it does think one person is an airplane.",
+        "question": "YOLO modelinin performansı hakkında metinde verilen bilgilerden hangisi doğrudur?",
+        "choices": [
+            "A) YOLO sadece doğal görüntülerde doğru sonuçlar vermektedir.",
+            "B) YOLO, örnek sanat eserlerinde ve doğal görüntülerde çoğunlukla doğrudur, ancak bir kişiyi uçak sanma gibi hatalar yapabilir.",
+            "C) YOLO'nun performansı her durumda kusursuzdur ve hata yapmaz.",
+            "D) YOLO, internetten alınan görüntülerde asla bir kişiyi uçakla karıştırmaz."
+        ],
+        "answer": "B",
+        "explanation": "Metin, 'YOLO running on sample artwork and natural images from the internet. It is mostly accurate although it does think one person is an airplane.' ifadeleriyle, YOLO'nun hem sanat eserleri hem de doğal görüntüler üzerinde çalıştığını, çoğunlukla doğru (mostly accurate) olduğunu, ancak bir kişiyi uçak olarak algılama (think one person is an airplane) gibi niteliksel bir hata yapabildiğini belirtmektedir. Bu, modelin genel olarak başarılı olsa da spesifik hataları olabileceğini gösterir."
+    },
+    {
+        "id": "280520262617",
+        "target_elo": 1150,
+        "original_text": "Args:\n graph: A dictionary where keys are nodes and values are lists of adjacent nodes\n start: The starting node\n goal: The target node",
+        "question": "Verilen 'Args' tanımına göre, bu argümanlar genellikle hangi tür algoritmalarda kullanılır?",
+        "choices": [
+            "A) Veritabanı indeksleme algoritmaları",
+            "B) Grafik arama ve yol bulma algoritmaları",
+            "C) Kriptografi algoritmaları",
+            "D) Görüntü sıkıştırma algoritmaları"
+        ],
+        "answer": "B",
+        "explanation": "Verilen 'Args' tanımında bir 'graph' (anahtarları düğümler, değerleri ise bitişik düğümlerin listeleri olan bir sözlük), bir 'start' (başlangıç düğümü) ve bir 'goal' (hedef düğüm) bulunmaktadır. Bu yapı, doğrudan bir grafikte düğümler arası yolları bulmayı veya grafiği taramayı amaçlayan grafik arama algoritmaları (örneğin BFS, DFS, Dijkstra, A*) için tipiktir."
+    },
+    {
+        "id": "280520262629",
+        "target_elo": 1100,
+        "original_text": "Williams, J. Winn, and A. Zisserman. The pascal visual ob- ject classes challenge: A retrospective. International Journal of Computer Vision, 111(1):98–136, Jan. 2015.",
+        "question": "Verilen alıntıda hangi bilgisayar vizyonu zorluğundan bahsedilmektedir?",
+        "choices": [
+            "A) ImageNet Büyük Ölçekli Görsel Tanıma Yarışması",
+            "B) PASCAL Görsel Nesne Sınıfları Yarışması",
+            "C) COCO Nesne Algılama Yarışması",
+            "D) MNIST El Yazısı Rakam Tanıma Yarışması"
+        ],
+        "answer": "B",
+        "explanation": "Metinde 'The pascal visual object classes challenge: A retrospective' ifadesi geçmektedir. Bu, bilgisayar vizyonu alanında önemli bir kıyaslama ve yarışma olan PASCAL Visual Object Classes (PASCAL VOC) meydan okumasına atıfta bulunmaktadır. PASCAL VOC, nesne algılama ve sınıflandırma için yaygın olarak kullanılan bir veri kümesidir."
+    },
+    {
+        "id": "280520262633",
+        "target_elo": 1050,
+        "original_text": "G = {\n \"A\": [\"B\", \"C\"],\n \"B\": [\"A\", \"D\", \"E\"],\n \"C\": [\"A\", \"F\"],\n \"D\": [\"B\"],\n \"E\": [\"B\", \"F\"],\n \"F\": [\"C\", \"E\"],\n}",
+        "question": "Yukarıda verilen komşuluk listesi (adjacency list) formatındaki G grafı kaç adet benzersiz düğüm (vertex) içermektedir?",
+        "choices": [
+            "A) 4",
+            "B) 5",
+            "C) 6",
+            "D) 7"
+        ],
+        "answer": "C",
+        "explanation": "Verilen 'G' grafının komşuluk listesi incelendiğinde, 'A', 'B', 'C', 'D', 'E' ve 'F' olmak üzere 6 farklı ve benzersiz düğüm (vertex) olduğu görülmektedir. Her anahtar (key) bir düğümü temsil eder."
+    },
+    {
+        "id": "280520262636",
+        "target_elo": 850,
+        "original_text": "cities = {\n 0: [0, 0],\n 1: [0, 5],\n 2: [3, 8],\n 3: [8, 10],\n 4: [12, 8],\n 5: [12, 4],\n 6: [8, 0],\n 7: [6, 2],\n}",
+        "question": "Yukarıda verilen 'cities' sözlüğü (dictionary), kaç farklı şehre ait koordinat bilgisi içermektedir?",
+        "choices": [
+            "A) 6",
+            "B) 7",
+            "C) 8",
+            "D) 9"
+        ],
+        "answer": "C",
+        "explanation": "Verilen 'cities' sözlüğünün anahtarları (keys) şehir kimliklerini temsil etmektedir. Bu anahtarlar 0'dan 7'ye kadar sıralandığından, toplamda 8 farklı şehre ait koordinat bilgisi bulunmaktadır."
+    },
+    {
+        "id": "280520262639",
+        "target_elo": 1250,
+        "original_text": "If the current minimum weight edge of component v doesn't\n exist (is -1), or if it's greater than the edge we're\n observing right now, we will assign the value of the edge\n we're observing to it\"\"\"",
+        "question": "Verilen metinde açıklanan koşullu mantık, genellikle hangi algoritma türünde bir bileşen veya düğüm için minimum ağırlıklı kenar değerini güncellemek amacıyla kullanılır?",
+        "choices": [
+            "A) Sıralama (Sorting) algoritmaları",
+            "B) En kısa yol (Shortest path) veya Minimum Spanning Tree (MST) algoritmaları",
+            "C) Kriptografik şifreleme algoritmaları",
+            "D) Ağaç travers (Tree traversal) algoritmaları"
+        ],
+        "answer": "B",
+        "explanation": "Metinde, bir bileşenin veya düğümün (v) mevcut minimum ağırlıklı kenarının olmaması veya gözlemlenen kenardan daha büyük olması durumunda, gözlemlenen kenarın değerinin atanması anlatılmaktadır. Bu mantık, genellikle Prim algoritması gibi Minimum Spanning Tree (MST) algoritmalarında veya Dijkstra gibi En Kısa Yol algoritmalarında, bir düğüme ulaşan en düşük maliyetli kenarı dinamik olarak güncellemek için kullanılır."
+    },
+    {
+        "id": "280520262640",
+        "target_elo": 1150,
+        "original_text": "YOLO still lags behind state-of-the-art detection systems in accuracy. While it can quickly identify objects in im- ages it struggles to precisely localize some objects, espe- cially small ones. We examine these tradeoffs further in our experiments.",
+        "question": "Verilen metne göre, YOLO obje tespit sisteminin temel zayıflıklarından biri aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) Objeleri çok yavaş tespit etmesi",
+            "B) Büyük objeleri lokalize etmede zorlanması",
+            "C) Küçük objeleri hassas bir şekilde lokalize edememesi",
+            "D) Genel doğrulukta diğer sistemlerin çok ilerisinde olması"
+        ],
+        "answer": "C",
+        "explanation": "Metinde açıkça belirtildiği üzere, YOLO'nun ana zayıflıklarından biri, 'özellikle küçük objeleri hassas bir şekilde lokalize etmekte zorlanmasıdır' (struggles to precisely localize some objects, especially small ones). Ayrıca genel doğrulukta 'state-of-the-art' (son teknoloji) sistemlerin gerisinde kaldığı da ifade edilmektedir, ancak C seçeneği bu durumun daha spesifik bir detayıdır."
+    },
+    {
+        "id": "280520262641",
+        "target_elo": 1000,
+        "original_text": "Figure 5 shows comparative performance between YOLO and other detection methods. For reference, we give VOC 2007 detection AP on person where all models are trained only on VOC 2007 data. On Picasso models are trained on VOC 2012 while on People-Art they are trained on VOC 2010.",
+        "question": "Verilen metne göre, 'Picasso' üzerindeki performans değerlendirmesi için modeller hangi veri seti üzerinde eğitilmiştir?",
+        "choices": [
+            "A) VOC 2007",
+            "B) VOC 2010",
+            "C) VOC 2012",
+            "D) People-Art"
+        ],
+        "answer": "C",
+        "explanation": "Metinde açıkça belirtilmiştir: 'On Picasso models are trained on VOC 2012'. Bu ifade, 'Picasso' veri seti üzerinde değerlendirme yapılırken modellerin 'VOC 2012' veri seti kullanılarak eğitildiğini gösterir."
+    },
+    {
+        "id": "280520262642",
+        "target_elo": 1200,
+        "original_text": "Like DPM, YOLO models the size and shape of objects, as well as relationships between objects and where objects commonly appear. Artwork and natural images are very different on a pixel level but they are similar in terms of the size and shape of objects, thus YOLO can still predict good bounding boxes and detections.",
+        "question": "Metne göre, YOLO modelinin hem sanatsal hem de doğal görüntülerde iyi tahminler yapabilmesinin temel nedeni aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) YOLO'nun, nesnelerin piksel seviyesindeki farklılıklarını özel bir filtreleme algoritması ile ortadan kaldırması.",
+            "B) YOLO'nun, nesnelerin boyutu, şekli ve aralarındaki ilişkiler gibi özellikleri modelleyebilmesi ve bu özelliklerin farklı görüntü türlerinde benzer kalması.",
+            "C) YOLO'nun, sanatsal görüntüler için ayrı bir eğitim seti ve doğal görüntüler için ayrı bir eğitim seti kullanması.",
+            "D) YOLO'nun, yalnızca doğal görüntüler üzerinde eğitilmiş olmasına rağmen, genel nesne tanıma yeteneğinin çok yüksek olması."
+        ],
+        "answer": "B",
+        "explanation": "Metin açıkça belirtmektedir ki, sanatsal ve doğal görüntüler piksel seviyesinde çok farklı olsalar da, nesnelerin boyutu ve şekli açısından benzerlik gösterirler. YOLO'nun nesnelerin boyutunu, şeklini ve aralarındaki ilişkileri modelleyebilmesi sayesinde, bu temel özelliklerdeki benzerlikler sayesinde farklı görüntü türlerinde bile iyi sınırlayıcı kutular (bounding boxes) ve tespitler (detections) yapabilmektedir. Diğer şıklar metindeki bilgiyi doğru yansıtmamaktadır."
+    },
+    {
+        "id": "280520262647",
+        "target_elo": 1250,
+        "original_text": "Since our model learns to predict bounding boxes from data, it struggles to generalize to objects in new or unusual aspect ratios or conﬁgurations. Our model also uses rela- tively coarse features for predicting bounding boxes since our architecture has multiple downsampling layers from the input image.",
+        "question": "Metinde açıklanan modelin sınırlılıkları nelerdir?",
+        "choices": [
+            "A) Yalnızca standart en boy oranlarına sahip nesneleri tanıyabilir ve ince özellikler kullanır.",
+            "B) Veriden öğrenme kapasitesi düşüktür ve downsampling katmanları yoktur.",
+            "C) Alışılmadık en boy oranlarına veya konfigürasyonlara sahip nesnelerde genelleme yapmakta zorlanır ve kaba özellikler kullanır.",
+            "D) Sadece metin tabanlı verilerle çalışır ve gerçek zamanlı performans sağlayamaz."
+        ],
+        "answer": "C",
+        "explanation": "Metin, modelin alışılmadık en boy oranlarına ve konfigürasyonlara sahip nesnelerde genelleme yapmakta zorlandığını ('struggles to generalize to objects in new or unusual aspect ratios or configurations') ve mimarideki downsampling katmanları nedeniyle bounding box tahminleri için 'coarse features' (kaba özellikler) kullandığını belirtmektedir."
+    },
+    {
+        "id": "280520262648",
+        "target_elo": 1050,
+        "original_text": "Borůvka's algorithm gives us pretty much the same result as other MST Algorithms -\nthey all find the minimum spanning tree, and the time complexity is approximately\nthe same.",
+        "question": "Borůvka algoritması hakkında metinde belirtilen temel özellik aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) Diğer MST algoritmalarından daha yüksek zaman karmaşıklığına sahiptir.",
+            "B) Yalnızca belirli grafik türleri için Minimum Spanning Tree (MST) bulabilir.",
+            "C) Diğer MST algoritmalarıyla yaklaşık olarak aynı sonucu verir ve benzer zaman karmaşıklığına sahiptir.",
+            "D) Minimum Spanning Tree (MST) bulmak yerine maksimum kapsayan ağaç oluşturur."
+        ],
+        "answer": "C",
+        "explanation": "Metin açıkça Borůvka algoritmasının diğer MST algoritmalarıyla 'pretty much the same result' (neredeyse aynı sonucu) verdiğini ve 'the time complexity is approximately the same' (zaman karmaşıklığının yaklaşık olarak aynı olduğunu) belirtmektedir."
+    },
+    {
+        "id": "280520262649",
+        "target_elo": 1150,
+        "original_text": "if u_component != v_component:\n \"\"\"If the current minimum weight edge of component u doesn't\n exist (is -1), or if it's greater than the edge we're\n observing right now, we will assign the value of the edge\n we're observing to it.",
+        "question": "Verilen metin parçacığına göre, 'u' bileşeninin mevcut minimum ağırlıklı kenarı ne zaman gözlemlenen yeni kenar ile güncellenir?",
+        "choices": [
+            "A) 'u' bileşeninin mevcut minimum ağırlıklı kenarı zaten mevcutsa ve gözlemlenen kenardan büyükse.",
+            "B) 'u' bileşeninin mevcut minimum ağırlıklı kenarı yoksa (yani -1 ise) veya gözlemlenen kenardan daha büyükse.",
+            "C) Sadece 'u' bileşeni ile 'v' bileşeni aynı ise.",
+            "D) 'u' bileşeninin mevcut minimum ağırlıklı kenarı her zaman gözlemlenen kenara atanır."
+        ],
+        "answer": "B",
+        "explanation": "Metin, 'u' bileşeninin mevcut minimum ağırlıklı kenarının güncellenmesi için iki koşul belirtir: 'If the current minimum weight edge of component u doesn't exist (is -1)' (eğer mevcut değilse veya -1 ise) VEYA 'if it's greater than the edge we're observing right now' (eğer gözlemlediğimiz kenardan daha büyükse). Bu iki durumdan biri gerçekleştiğinde güncelleme yapılır."
+    },
+    {
+        "id": "280520262650",
+        "target_elo": 1200,
+        "original_text": "Other Fast Detectors Fast and Faster R-CNN focus on speeding up the R-CNN framework by sharing computa- tion and using neural networks to propose regions instead of Selective Search [ 14] [ 27]. While they offer speed and accuracy improvements over R-CNN, both still fall short of real-time performance.",
+        "question": "Fast ve Faster R-CNN'in R-CNN çerçevesini nasıl geliştirdiği ve ana sınırlılıkları nelerdir?",
+        "choices": [
+            "A) Hesaplamayı paylaşarak ve Selective Search yerine sinir ağları kullanarak hızı ve doğruluğu artırır, ancak yine de real-time performansın gerisinde kalırlar.",
+            "B) Daha fazla manuel özellik mühendisliği gerektirirler ancak real-time performansa ulaşabilirler.",
+            "C) Yalnızca Selective Search yöntemini kullanarak hız sağlarlar ve doğruluktan ödün verirler.",
+            "D) Bölge önerisi için sinir ağlarını kullanmazlar ve R-CNN'den daha yavaşlardır."
+        ],
+        "answer": "A",
+        "explanation": "Metin, Fast ve Faster R-CNN'in 'speeding up the R-CNN framework by sharing computation and using neural networks to propose regions instead of Selective Search' (hesaplamayı paylaşarak ve Selective Search yerine bölge önerisi için sinir ağlarını kullanarak R-CNN çerçevesini hızlandırdığını) belirtir. Ayrıca, 'both still fall short of real-time performance' (her ikisinin de hala real-time performansın gerisinde kaldığını) vurgular."
+    },
+    {
+        "id": "280520262651",
+        "target_elo": 950,
+        "original_text": "- pymavlink for the flight controller communication\n- tkinter for the graphical user interface\n- GNU gettext files to translate the software to other languages",
+        "question": "Verilen listedeki yazılım bileşenleri ve ilgili fonksiyonları doğru eşleştiren seçenek aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) pymavlink: Grafik kullanıcı arayüzü; tkinter: Uçuş kontrolcü iletişimi; GNU gettext: Yazılım çevirisi.",
+            "B) pymavlink: Uçuş kontrolcü iletişimi; tkinter: Yazılım çevirisi; GNU gettext: Grafik kullanıcı arayüzü.",
+            "C) pymavlink: Uçuş kontrolcü iletişimi; tkinter: Grafik kullanıcı arayüzü; GNU gettext: Yazılım çevirisi.",
+            "D) pymavlink: Yazılım çevirisi; tkinter: Uçuş kontrolcü iletişimi; GNU gettext: Grafik kullanıcı arayüzü."
+        ],
+        "answer": "C",
+        "explanation": "Metinde açıkça belirtildiği gibi: 'pymavlink for the flight controller communication' (uçuş kontrolcü iletişimi için pymavlink), 'tkinter for the graphical user interface' (grafik kullanıcı arayüzü için tkinter) ve 'GNU gettext files to translate the software to other languages' (yazılımı diğer dillere çevirmek için GNU gettext dosyaları). Seçenek C bu eşleştirmeleri doğru bir şekilde sunar."
+    },
+    {
+        "id": "280520262652",
+        "target_elo": 1050,
+        "original_text": "For data augmentation we introduce random scaling and translations of up to 20% of the original image size. We also randomly adjust the exposure and saturation of the im- age by up to a factor of 1.5 in the HSV color space.",
+        "question": "Metne göre, veri artırma (data augmentation) için hangi yöntemler uygulanmaktadır?",
+        "choices": [
+            "A) Sadece görüntülerin döndürülmesi ve kırpılması.",
+            "B) Rastgele ölçekleme, öteleme (translations), pozlama (exposure) ve doygunluk (saturation) ayarlamaları.",
+            "C) Yalnızca HSV renk uzayında kontrast ayarlamaları.",
+            "D) Görüntülerin renk uzayını RGB'den HSV'ye dönüştürme."
+        ],
+        "answer": "B",
+        "explanation": "Metin, veri artırma için rastgele 'scaling' (ölçekleme) ve 'translations' (öteleme) ile birlikte, HSV renk uzayında görüntülerin 'exposure' (pozlama) ve 'saturation' (doygunluk) değerlerinin ayarlandığını belirtmektedir."
+    },
+    {
+        "id": "280520262653",
+        "target_elo": 1150,
+        "original_text": "R-CNN, it still falls short of real-time and takes a signiﬁcant accuracy hit from not having good proposals.",
+        "question": "R-CNN modelinin metinde belirtilen temel iki sınırlaması nedir?",
+        "choices": [
+            "A) Yüksek hesaplama maliyeti ve aşırı öğrenme (overfitting) eğilimi.",
+            "B) Gerçek zamanlı (real-time) performansın altında kalması ve iyi 'proposal'lar olmamasından kaynaklanan önemli doğruluk (accuracy) kaybı.",
+            "C) Sadece belirli nesne türlerini algılaması ve karmaşık mimarisi.",
+            "D) Düşük model eğitim hızı ve belleği verimsiz kullanması."
+        ],
+        "answer": "B",
+        "explanation": "Metin, R-CNN'in 'real-time' performansın gerisinde kaldığını ve iyi 'proposals' (aday bölge önerileri) eksikliğinden dolayı önemli bir 'accuracy hit' (doğruluk kaybı) yaşadığını ifade etmektedir."
+    },
+    {
+        "id": "280520262654",
+        "target_elo": 1200,
+        "original_text": "Fastest DPM effectively speeds up DPM without sacri- ﬁcing much mAP but it still misses real-time performance by a factor of 2 [ 37]. It also is limited by DPM’s relatively low accuracy on detection compared to neural network ap- proaches.",
+        "question": "Metne göre Fastest DPM'in temel sınırlamaları nelerdir?",
+        "choices": [
+            "A) mAP'yi ciddi şekilde düşürmesi ve sadece belirli nesneleri algılayabilmesi.",
+            "B) Gerçek zamanlı (real-time) performansın iki kat gerisinde kalması ve sinir ağı (neural network) yaklaşımlarına kıyasla algılamada nispeten düşük doğruluğa (accuracy) sahip olması.",
+            "C) Eğitim süresinin çok uzun olması ve büyük veri setleriyle çalışamaması.",
+            "D) Yüksek bellek tüketimi ve ölçeklenebilirlik sorunları yaşaması."
+        ],
+        "answer": "B",
+        "explanation": "Metin, Fastest DPM'in 'real-time performance' hedefini 2 kat farkla kaçırdığını ve 'neural network approaches' ile karşılaştırıldığında algılamada nispeten düşük 'accuracy'ye sahip olduğunu açıkça belirtmektedir."
+    },
+    {
+        "id": "280520262655",
+        "target_elo": 1050,
+        "original_text": "Our combined Fast R-CNN + YOLO model is one of the highest performing detection methods. Fast R-CNN gets a 2.3% improvement from the combination with YOLO, boosting it 5 spots up on the public leaderboard.",
+        "question": "Birleşik Fast R-CNN + YOLO modelinin performansı hakkında metinde ne belirtilmektedir?",
+        "choices": [
+            "A) Yalnızca YOLO modelinden daha düşük performans göstermektedir.",
+            "B) En yüksek performans gösteren algılama yöntemlerinden biri olup, Fast R-CNN'e %2.3'lük bir iyileşme sağlayarak kamu liderlik tablosunda 5 sıra yükseltmiştir.",
+            "C) Fast R-CNN'in performansını olumsuz etkilemektedir.",
+            "D) Kamu liderlik tablosunda herhangi bir önemli değişiklik yaratmamıştır."
+        ],
+        "answer": "B",
+        "explanation": "Metin, birleşik Fast R-CNN + YOLO modelinin en yüksek performans gösteren 'detection methods' (algılama yöntemleri) arasında olduğunu ve bu birleşimin Fast R-CNN'e %2.3'lük bir iyileşme ile 'public leaderboard'da (kamu liderlik tablosu) 5 sıra yükselme sağladığını belirtir."
+    },
+    {
+        "id": "280520262656",
+        "target_elo": 950,
+        "original_text": "Each sub-application has detailed architecture documentation covering requirements, implementation status, data flow, components, testing, and recommendations:",
+        "question": "Bir alt uygulamanın detaylı mimari dokümantasyonu hangi bilgileri kapsamaktadır?",
+        "choices": [
+            "A) Sadece maliyet analizi ve proje takvimi.",
+            "B) Gereksinimler (requirements), uygulama durumu (implementation status), veri akışı (data flow), bileşenler (components), test (testing) ve tavsiyeler (recommendations).",
+            "C) Yalnızca kullanıcı arayüzü tasarımı ve pazarlama stratejileri.",
+            "D) Sadece hata raporları ve performans metrikleri."
+        ],
+        "answer": "B",
+        "explanation": "Metin, detaylı mimari dokümantasyonun 'requirements', 'implementation status', 'data flow', 'components', 'testing' ve 'recommendations' gibi bilgileri kapsadığını açıkça listelemektedir."
+    },
+    {
+        "id": "280520262657",
+        "target_elo": 1150,
+        "original_text": "If we start at a high learning rate our model often diverges due to unstable gradients. We continue training with 10−2 for 75 epochs, then 10−3 for 30 epochs, and ﬁnally 10−4 for 30 epochs.",
+        "question": "Verilen metne göre, yüksek bir öğrenme hızıyla (learning rate) eğitime başlamanın olası sonucu nedir ve metinde hangi öğrenme hızı planı önerilmiştir?",
+        "choices": [
+            "A) Modelin daha hızlı yakınsaması, ardından 10^-2, 10^-3 ve 10^-4 öğrenme oranlarıyla eğitim.",
+            "B) Modelin kararsız gradyanlar nedeniyle ıraksaması (divergence), ardından 10^-2 (75 çağ), 10^-3 (30 çağ) ve 10^-4 (30 çağ) öğrenme oranlarıyla eğitim.",
+            "C) Modelin kararlı bir şekilde eğitilmesi, ardından öğrenme oranının sürekli artırılması.",
+            "D) Modelin aşırı uyum sağlaması (overfitting), ardından sadece 10^-2 öğrenme oranıyla devam edilmesi."
+        ],
+        "answer": "B",
+        "explanation": "Metinde açıkça belirtildiği üzere, yüksek bir 'learning rate' ile başlamak, 'unstable gradients' nedeniyle modelin genellikle 'diverge' etmesine (ıraksamasına) neden olur. Önerilen plan ise 75 'epochs' için 10^-2, ardından 30 'epochs' için 10^-3 ve son olarak 30 'epochs' için 10^-4 şeklindedir."
+    },
+    {
+        "id": "280520262658",
+        "target_elo": 1050,
+        "original_text": "G = {\n \"A\": [[\"B\", 2], [\"C\", 5]],\n \"B\": [[\"A\", 2], [\"D\", 3], [\"E\", 1], [\"F\", 1]],\n \"C\": [[\"A\", 5], [\"F\", 3]],\n \"D\": [[\"B\", 3]],\n \"E\": [[\"B\", 4], [\"F\", 3]],\n \"F\": [[\"C\", 3], [\"E\", 3]],\n}",
+        "question": "Verilen JSON yapısındaki veri, hangi temel bilgisayar bilimi veri yapısını temsil etmektedir ve 'A' düğümünün (node) doğrudan bağlı olduğu diğer düğümler ve bu bağlantıların ağırlıkları (weights) nelerdir?",
+        "choices": [
+            "A) Ağaç yapısı; 'A' düğümü 'B' ve 'D' düğümlerine bağlıdır (ağırlıklar: 2, 3).",
+            "B) Bağlantılı liste; 'A' düğümü 'B' ve 'E' düğümlerine bağlıdır (ağırlıklar: 2, 1).",
+            "C) Çizge (Graph); 'A' düğümü 'B' ve 'C' düğümlerine bağlıdır (ağırlıklar: 2, 5).",
+            "D) Hash tablosu; 'A' düğümü 'C' ve 'F' düğümlerine bağlıdır (ağırlıklar: 5, 3)."
+        ],
+        "answer": "C",
+        "explanation": "Verilen yapı, düğümler (örneğin A, B, C) ve aralarındaki ağırlıklı bağlantıları (örneğin ['B', 2] = B düğümüne 2 ağırlıkla bağlantı) tanımlayan bir 'Graph' (çizge) veri yapısıdır. 'A' düğümünün tanımına göre, 'B' düğümüne 2 ağırlıkla ve 'C' düğümüne 5 ağırlıkla bağlıdır."
+    },
+    {
+        "id": "280520262659",
+        "target_elo": 1250,
+        "original_text": "Each bounding box consists of 5 predictions: x, y, w, h, and conﬁdence. The (x, y) coordinates represent the center of the box relative to the bounds of the grid cell. The width and height are predicted relative to the whole image. Finally the conﬁdence prediction represents the IOU between the predicted box and any ground truth box.",
+        "question": "Nesne tespiti (object detection) bağlamında, bir 'bounding box' (sınır kutusu) tahminleri hangi temel bilgileri içerir ve 'güven (confidence)' tahmini neyi temsil eder?",
+        "choices": [
+            "A) Sadece x, y koordinatları ve genişlik, yükseklik; güven değeri kutunun büyüklüğünü belirtir.",
+            "B) x, y koordinatları, genişlik, yükseklik ve güven değeri; güven değeri tahmin edilen kutu ile herhangi bir 'ground truth box' (gerçek kutu) arasındaki IOU'yu (Intersection Over Union) temsil eder.",
+            "C) x, y koordinatları ve nesne sınıfı; güven değeri sınıflandırma olasılığını belirtir.",
+            "D) Sadece genişlik ve yükseklik; güven değeri kutunun görüntünün merkezine ne kadar yakın olduğunu gösterir."
+        ],
+        "answer": "B",
+        "explanation": "Metne göre, bir 'bounding box' tahmini 'x, y, w, h' (merkez koordinatları, genişlik ve yükseklik) ve 'confidence' (güven) olmak üzere 5 bileşenden oluşur. 'Confidence' tahmini ise tahmin edilen kutu ile herhangi bir 'ground truth box' arasındaki 'IOU'yu (Intersection Over Union) temsil eder."
+    },
+    {
+        "id": "280520262660",
+        "target_elo": 850,
+        "original_text": "This program is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n GNU General Public License for more details.",
+        "question": "Verilen metne göre, bir yazılımın dağıtımı ile ilgili aşağıdakilerden hangisi doğrudur?",
+        "choices": [
+            "A) Yazılımın her zaman kullanışlı olduğu garanti edilmektedir.",
+            "B) Ticari elverişlilik (MERCHANTABILITY) veya belirli bir amaca uygunluk (FITNESS FOR A PARTICULAR PURPOSE) konusunda açık bir garanti bulunmaktadır.",
+            "C) Yazılım hiçbir garanti olmadan, ticari elverişlilik veya belirli bir amaca uygunluk zımni garantileri dahi olmaksızın dağıtılır.",
+            "D) Daha fazla detay için sadece programın kaynak koduna bakılmalıdır."
+        ],
+        "answer": "C",
+        "explanation": "Metin, programın 'WITHOUT ANY WARRANTY' (hiçbir garanti olmaksızın) dağıtıldığını açıkça belirtmektedir. Ayrıca, 'MERCHANTABILITY' (ticari elverişlilik) veya 'FITNESS FOR A PARTICULAR PURPOSE' (belirli bir amaca uygunluk) gibi zımni garantilerin dahi olmadığını vurgular. Bu, genellikle 'GNU General Public License' (GPL) gibi açık kaynak lisanslarında yer alan standart bir yasal uyarıdır."
+    },
+    {
+        "id": "280520262661",
+        "target_elo": 1350,
+        "original_text": "To remedy this, we increase the loss from bounding box coordinate predictions and decrease the loss from conﬁ- dence predictions for boxes that don’t contain objects. We use two parameters, λcoord and λnoobj to accomplish this. We set λcoord = 5 and λnoobj = .5.",
+        "question": "Metinde bahsedilen problemle başa çıkmak için, nesne içermeyen kutuların (boxes that don’t contain objects) kaybı (loss) fonksiyonunda yapılan ayarlamaların amacı nedir ve bu ayarlamalar hangi parametrelerle kontrol edilmektedir?",
+        "choices": [
+            "A) Nesne içeren kutuların güven tahminlerini artırmak; λcoord ve λobj.",
+            "B) Sınır kutusu koordinat tahminlerinden kaynaklanan kaybı azaltmak; λbbox ve λconf.",
+            "C) Sınır kutusu koordinat tahminlerinden kaynaklanan kaybı artırmak ve nesne içermeyen kutuların güven tahminlerinden kaynaklanan kaybı azaltmak; λcoord ve λnoobj.",
+            "D) Modelin eğitim süresini kısaltmak; λspeed ve λaccuracy."
+        ],
+        "answer": "C",
+        "explanation": "Metin, 'bounding box coordinate predictions'dan gelen kaybı artırdıklarını ('increase the loss') ve 'nesne içermeyen kutular için güven tahminlerinden gelen kaybı' azalttıklarını ('decrease the loss') belirtmektedir. Bu ayarlamalar için 'λcoord' (koordinat kaybı için) ve 'λnoobj' (nesnesiz kutuların güven kaybı için) parametreleri kullanılmaktadır."
+    },
+    {
+        "id": "280520262662",
+        "target_elo": 1300,
+        "original_text": "R-CNN minus R replaces Selective Search with static bounding box proposals [ 20]. While it is much faster than 783",
+        "question": "R-CNN'in bir varyantı olan \"R-CNN minus R\" modelinin standart R-CNN'den temel farkı nedir?",
+        "choices": [
+            "A) Daha fazla katman kullanması",
+            "B) Daha düşük çözünürlüklü görüntüleri işlemesi",
+            "C) Selective Search metodunu statik sınırlayıcı kutu önerileriyle değiştirmesi",
+            "D) Sadece belirli nesne kategorilerini tespit etmesi"
+        ],
+        "answer": "C",
+        "explanation": "Metinde açıkça belirtildiği üzere, \"R-CNN minus R\", Selective Search algoritmasını statik sınırlayıcı kutu önerileriyle (static bounding box proposals) değiştirerek standart R-CNN'den ayrılır. Bu değişiklik, sistemin hızını artırma amacı taşır."
+    },
+    {
+        "id": "280520262664",
+        "target_elo": 1400,
+        "original_text": "Springer, 2014. 5, 6 [31] P . Sermanet, D. Eigen, X. Zhang, M. Mathieu, R. Fergus, and Y . LeCun. Overfeat: Integrated recognition, localiza- tion and detection using convolutional networks. CoRR, abs/1312.6229, 2013.",
+        "question": "P. Sermanet ve Y. LeCun'un yazarları arasında bulunduğu \"Overfeat\" adlı makalenin temel katkısı nedir?",
+        "choices": [
+            "A) Görüntü sınıflandırması için yeni bir veri seti oluşturmak",
+            "B) Tek bir konvolüsyonel ağ kullanarak tanıma (recognition), konumlandırma (localization) ve tespit (detection) işlemlerini entegre etmek",
+            "C) Görüntü işleme görevlerinde derin öğrenme kullanımını tamamen reddetmek",
+            "D) Sadece nesne tespiti üzerine odaklanmış yeni bir algoritma sunmak"
+        ],
+        "answer": "B",
+        "explanation": "Metinde belirtilen makale başlığı \"Overfeat: Integrated recognition, localization and detection using convolutional networks\" olup, bu başlık çalışmanın temel katkısını net bir şekilde ortaya koymaktadır: Konvolüsyonel ağlar kullanarak tanıma, konumlandırma ve tespiti entegre etmek."
+    },
+    {
+        "id": "280520262665",
+        "target_elo": 1400,
+        "original_text": "Finally, while we train on a loss function that approxi- mates detection performance, our loss function treats errors the same in small bounding boxes versus large bounding boxes. A small error in a large box is generally benign but a small error in a small box has a much greater effect on IOU.",
+        "question": "Verilen metne göre, tartışılan kayıp fonksiyonunun (loss function) nesne tespiti performansındaki sınırlayıcı yönü nedir?",
+        "choices": [
+            "A) Büyük sınırlayıcı kutulardaki hataları tamamen göz ardı etmesi",
+            "B) Küçük sınırlayıcı kutulardaki hataları büyük kutularla aynı derecede önemsemesi, bu durumun küçük kutulardaki IOU'yu daha fazla etkilemesine rağmen",
+            "C) Sadece nesnelerin sınıflandırılmasına odaklanması, konumlandırmaya değil",
+            "D) Eğitim sırasında aşırı uyum (overfitting) eğilimi göstermesi"
+        ],
+        "answer": "B",
+        "explanation": "Metinde açıkça ifade edildiği gibi, kayıp fonksiyonu hem küçük hem de büyük sınırlayıcı kutulardaki hataları aynı şekilde ele almaktadır. Ancak, küçük bir kutudaki küçük bir hatanın IOU (Intersection over Union) üzerinde çok daha büyük bir etkisi varken, büyük bir kutudaki küçük bir hata genellikle zararsızdır. Bu durum, özellikle küçük nesnelerin doğru tespiti için bir sınırlama oluşturur."
+    },
+    {
+        "id": "280520262666",
+        "target_elo": 1100,
+        "original_text": "VOC 2007 Picasso People-Art AP AP Best F1 AP YOLO 59.2 53.3 0.590 45 R-CNN 54.2 10.4 0.226 26 DPM 43.2 37.8 0.458 32 Poselets [2] 36.5 17.8 0.271 D&T [4] - 1.9 0.051 (b) Quantitative results on the VOC 2007, Picasso, and People-Art Datasets.",
+        "question": "VOC 2007 veri setindeki \"AP\" (Average Precision) değerlerine göre, verilen modeller arasında en yüksek performansı gösteren hangisidir?",
+        "choices": [
+            "A) R-CNN",
+            "B) DPM",
+            "C) YOLO",
+            "D) Poselets"
+        ],
+        "answer": "C",
+        "explanation": "Tabloya bakıldığında, \"VOC 2007\" sütunu ve \"AP\" satırında \"YOLO\" için 59.2 değeri görülmektedir. Diğer modellerin aynı metrikteki değerleri (R-CNN: 54.2, DPM: 43.2, Poselets: 36.5) YOLO'dan daha düşüktür. Dolayısıyla, YOLO en yüksek performansı göstermektedir."
+    },
+    {
+        "id": "280520262667",
+        "target_elo": 1000,
+        "original_text": "Detectors for single classes like faces or people can be highly optimized since they have to deal with much less variation [ 36]. YOLO is a general purpose detector that learns to detect a variety of objects simultaneously.",
+        "question": "Tek sınıflı dedektörlere kıyasla YOLO'nun temel bir özelliği aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) YOLO, daha az varyasyonla uğraştığı için daha kolay optimize edilebilir.",
+            "B) YOLO, yalnızca belirli bir nesne türünü (örneğin yüzler veya insanlar) tespit etmek üzere tasarlanmıştır.",
+            "C) YOLO, aynı anda çeşitli nesneleri algılamayı öğrenen genel amaçlı bir dedektördür.",
+            "D) YOLO'nun optimizasyonu, tek sınıflı dedektörlere göre daha zordur çünkü daha fazla varyasyon içerir."
+        ],
+        "answer": "C",
+        "explanation": "Paragraf, tek sınıflı dedektörlerin daha az varyasyonla uğraştıkları için optimize edilebileceğini belirtirken, YOLO'nun 'aynı anda çeşitli nesneleri algılamayı öğrenen genel amaçlı bir dedektör' olduğunu açıkça ifade eder."
+    },
+    {
+        "id": "280520262668",
+        "target_elo": 1100,
+        "original_text": "YOLO shares some similarities with R-CNN. Each grid cell proposes potential bounding boxes and scores those boxes using convolutional features. However, our system puts spatial constraints on the grid cell proposals which helps mitigate multiple detections of the same object. Our system also proposes far fewer bounding boxes, only 98 per image compared to about 2000 from Selective Search.",
+        "question": "Metne göre, YOLO'nun R-CNN ve Selective Search'e kıyasla sınırlayıcı kutu (bounding box) önerileri konusunda hangi avantajları bulunmaktadır?",
+        "choices": [
+            "A) YOLO, R-CNN'den çok daha fazla sınırlayıcı kutu önerir ve her hücre için ayrı bir evrişimsel ağ kullanır.",
+            "B) YOLO, uzamsal kısıtlamalar uygulayarak aynı nesnenin birden fazla kez algılanmasını engeller ve Selective Search'e göre çok daha az sınırlayıcı kutu önerir.",
+            "C) YOLO, R-CNN'in aksine evrişimsel özellikler kullanmaz ve sadece 98 farklı nesneyi tespit edebilir.",
+            "D) YOLO, Selective Search ile aynı sayıda sınırlayıcı kutu önerir ancak nesne algılama doğruluğu düşüktür."
+        ],
+        "answer": "B",
+        "explanation": "Paragraf, YOLO'nun 'grid hücresi önerilerine uzamsal kısıtlamalar getirdiğini ve bu durumun aynı nesnenin birden fazla algılanmasını azaltmaya yardımcı olduğunu' belirtir. Ayrıca, sistemin 'Selective Search'ten yaklaşık 2000'e kıyasla görüntü başına sadece 98' ile 'çok daha az sınırlayıcı kutu' önerdiğini ifade eder."
+    },
+    {
+        "id": "280520262669",
+        "target_elo": 1050,
+        "original_text": "Dog: 0.30 Person: 0.64 Horse: 0.28 Figure 1: The YOLO Detection System. Processing images with YOLO is simple and straightforward. Our system (1) resizes the input image to 448 × 448, (2) runs a single convolutional net- work on the image, and (3) thresholds the resulting detections by the model’s conﬁdence.",
+        "question": "YOLO algılama sisteminin görüntü işleme süreci, metne göre hangi adımları izler?",
+        "choices": [
+            "A) Girdi görüntüsünü 448 × 448 boyutuna küçültme, çok sayıda evrişimsel ağ çalıştırma ve sonuçları doğruluk eşiğiyle karşılaştırma.",
+            "B) Girdi görüntüsünü 448 × 448 boyutuna yeniden boyutlandırma, görüntü üzerinde tek bir evrişimsel ağ çalıştırma ve elde edilen algılamaları modelin güven eşiğiyle filtreleme.",
+            "C) Nesne sınıflarına güven skoru atama, görüntüleri analiz etme ve daha sonra eşikleme yapma.",
+            "D) Görüntüyü 448 × 448 boyutuna getirme, birden fazla evrişimsel ağ çalıştırma ve ardından sonuçları güven eşiğine göre yeniden boyutlandırma."
+        ],
+        "answer": "B",
+        "explanation": "Metin, YOLO sisteminin basit adımlarını şöyle sıralar: '(1) girdi görüntüsünü 448 × 448 boyutuna yeniden boyutlandırır, (2) görüntü üzerinde tek bir evrişimsel ağ çalıştırır ve (3) elde edilen algılamaları modelin güven eşiğine göre eşikler.'"
+    },
+    {
+        "id": "280520262670",
+        "target_elo": 1100,
+        "original_text": "We also train a fast version of YOLO designed to push the boundaries of fast object detection. Fast YOLO uses a neural network with fewer convolutional layers (9 instead of 24) and fewer ﬁlters in those layers. Other than the size of the network, all training and testing parameters are the same between YOLO and Fast YOLO.",
+        "question": "Metne göre, Fast YOLO'nun daha hızlı nesne algılama sağlamasındaki temel mimari farkı nedir?",
+        "choices": [
+            "A) Fast YOLO, standart YOLO'dan daha fazla evrişimsel katmana ve daha fazla filtreye sahiptir.",
+            "B) Fast YOLO, daha büyük bir ağ yapısı kullanarak paralel işlemeyi artırır.",
+            "C) Fast YOLO, standart YOLO'ya kıyasla daha az evrişimsel katman (24 yerine 9) ve bu katmanlarda daha az filtre içeren bir sinir ağı kullanır.",
+            "D) Fast YOLO'nun eğitim ve test parametreleri standart YOLO'dan tamamen farklıdır, bu da hızını artırır."
+        ],
+        "answer": "C",
+        "explanation": "Paragraf açıkça belirtir: 'Fast YOLO, daha az evrişimsel katmana (24 yerine 9) ve bu katmanlarda daha az filtreye sahip bir sinir ağı kullanır.' Ayrıca, ağ boyutu dışında tüm eğitim ve test parametrelerinin aynı olduğunu da ekler."
+    },
+    {
+        "id": "280520262671",
+        "target_elo": 950,
+        "original_text": "YOLO has good performance on VOC 2007 and its AP degrades less than other methods when applied to artwork.",
+        "question": "Metne göre, YOLO'nun performans özellikleri hakkında hangi ifade doğrudur?",
+        "choices": [
+            "A) YOLO, VOC 2007 veri setinde düşük performans göstermektedir.",
+            "B) YOLO, sanatsal çalışmalara uygulandığında diğer yöntemlere göre daha yüksek AP (Ortalama Hassasiyet) düşüşü yaşar.",
+            "C) YOLO, VOC 2007 üzerinde iyi bir performansa sahiptir ve sanatsal çalışmalara uygulandığında AP'si diğer yöntemlere göre daha az düşer.",
+            "D) YOLO, sadece sanatsal çalışmalar için özel olarak geliştirilmiş bir nesne algılama sistemidir."
+        ],
+        "answer": "C",
+        "explanation": "Metin doğrudan şunu ifade eder: 'YOLO, VOC 2007 üzerinde iyi bir performansa sahiptir ve sanatsal çalışmalara uygulandığında AP'si diğer yöntemlere göre daha az düşer.'"
+    },
+    {
+        "id": "280520262672",
+        "target_elo": 1150,
+        "original_text": "making predictions. Unlike sliding window and region proposal-based techniques, YOLO sees the entire image during training and test time so it implicitly encodes contex- tual information about classes as well as their appearance.",
+        "question": "YOLO, nesne tespiti sırasında görüntüyü işleme konusunda kayan pencere ve bölge önerisi tabanlı tekniklerden nasıl farklılaşır ve bu farklılık ne gibi bilgiler kodlamasını sağlar?",
+        "choices": [
+            "A) Yalnızca nesnelerin sınır kutularını işler ve sınıf bilgilerini dışarıda bırakır.",
+            "B) Görüntüyü birden çok kez tarar ve yalnızca önemli bölgelere odaklanır.",
+            "C) Eğitim ve test aşamasında görüntünün tamamını görerek, sınıflar hakkında bağlamsal bilgileri ve görünüşlerini zımnen kodlar.",
+            "D) Yalnızca bilinen nesnelerin bulunduğu bölgeleri analiz eder ve diğer alanları göz ardı eder."
+        ],
+        "answer": "C",
+        "explanation": "Metin, YOLO'nun 'sliding window' ve 'region proposal-based techniques'in aksine, eğitim ve test zamanında görüntünün tamamını (entire image) gördüğünü ve bu sayede sınıflar hakkında 'contextual information' (bağlamsal bilgi) ve görünüşlerini (appearance) zımnen (implicitly encodes) kodladığını belirtmektedir. Bu, YOLO'nun temel bir ayırt edici özelliğidir."
+    },
+    {
+        "id": "280520262673",
+        "target_elo": 1050,
+        "original_text": "If the center of an object falls into a grid cell, that grid cell is responsible for detecting that object.",
+        "question": "YOLO mimarisinde bir nesnenin tespitinden hangi ızgara hücresi (grid cell) sorumludur?",
+        "choices": [
+            "A) Nesnenin en büyük kısmını içeren ızgara hücresi.",
+            "B) Nesnenin merkezinin düştüğü ızgara hücresi.",
+            "C) Nesnenin en yakın komşuluğundaki tüm ızgara hücreleri.",
+            "D) Nesnenin en belirgin özelliğini içeren ızgara hücresi."
+        ],
+        "answer": "B",
+        "explanation": "Metin açıkça 'If the center of an object falls into a grid cell, that grid cell is responsible for detecting that object' ifadesiyle, bir nesnenin merkezinin (center) düştüğü ızgara hücresinin (grid cell) o nesneyi tespit etmekle (detecting) sorumlu olduğunu belirtmektedir. Bu, YOLO'nun nesne atama prensibidir."
+    },
+    {
+        "id": "280520262675",
+        "target_elo": 1100,
+        "original_text": "We use a linear activation function for the ﬁnal layer and all other layers use the following leaky rectiﬁed linear acti- vation:",
+        "question": "Bahsedilen modelde, sinir ağının farklı katmanları için hangi aktivasyon fonksiyonları kullanılmaktadır?",
+        "choices": [
+            "A) Tüm katmanlarda sigmoid aktivasyon fonksiyonu.",
+            "B) Tüm katmanlarda doğrusal (linear) aktivasyon fonksiyonu.",
+            "C) Son katman için doğrusal (linear), diğer tüm katmanlar için sızdıran düzeltilmiş doğrusal (leaky rectified linear) aktivasyon.",
+            "D) Son katman için sızdıran düzeltilmiş doğrusal (leaky rectified linear), diğer tüm katmanlar için doğrusal (linear) aktivasyon."
+        ],
+        "answer": "C",
+        "explanation": "Metin, 'We use a linear activation function for the ﬁnal layer' ifadesiyle son katman için doğrusal aktivasyon fonksiyonunun (linear activation function) kullanıldığını ve 'all other layers use the following leaky rectiﬁed linear activation' ifadesiyle de diğer tüm katmanlar için sızdıran düzeltilmiş doğrusal aktivasyonun (leaky rectified linear activation) kullanıldığını açıkça belirtmektedir."
+    },
+    {
+        "id": "280520262676",
+        "target_elo": 1250,
+        "original_text": "Sum-squared error also equally weights errors in large boxes and small boxes. Our error metric should reﬂect that small deviations in large boxes matter less than in small boxes. To partially address this we predict the square root of the bounding box width and height instead of the width and height directly.",
+        "question": "Kareler toplamı hatası (sum-squared error) sınır kutusu (bounding box) tahmininde hangi soruna neden olur ve bu sorun metinde nasıl kısmen ele alınmıştır?",
+        "choices": [
+            "A) Büyük kutulardaki küçük sapmaları daha önemli kılar; bu yüzden doğrudan genişlik ve yükseklik tahmin edilir.",
+            "B) Küçük kutulardaki hataları göz ardı eder; bu yüzden hata metrikleri tamamen değiştirilir.",
+            "C) Büyük ve küçük kutulardaki hatalara eşit ağırlık verir; bu da küçük kutulardaki sapmaların önemini azaltır, bu nedenle sınır kutusu genişliği ve yüksekliğinin karekökü tahmin edilir.",
+            "D) Sadece küçük kutulardaki hataları ölçer; bu nedenle büyük kutular için ayrı bir hata fonksiyonu kullanılır."
+        ],
+        "answer": "C",
+        "explanation": "Metin, 'Sum-squared error also equally weights errors in large boxes and small boxes' diyerek kareler toplamı hatasının (sum-squared error) büyük ve küçük kutulardaki hatalara eşit ağırlık verdiğini belirtir. Bu durum, 'small deviations in large boxes matter less than in small boxes' prensibiyle çelişir (yani küçük kutulardaki hatalar daha önemlidir). Bu sorunu kısmen ele almak için 'we predict the square root of the bounding box width and height instead of the width and height directly' ifadesiyle sınır kutusu genişliği ve yüksekliğinin karekökünün (square root) tahmin edildiği belirtilmiştir."
+    },
+    {
+        "id": "280520262677",
+        "target_elo": 950,
+        "original_text": "Uniﬁed, Real-Time Object Detection Joseph Redmon∗, Santosh Divvala∗†, Ross Girshick ¶, Ali Farhadi ∗† University of Washington∗, Allen Institute for AI †, Facebook AI Research ¶ http://pjreddie.com/yolo/ Abstract We present YOLO, a new approach to object detection.",
+        "question": "Yukarıdaki metne göre YOLO nedir?",
+        "choices": [
+            "A) Nesne tanıma için eski bir yaklaşım.",
+            "B) Nesne tanıma için yeni bir yaklaşım.",
+            "C) Sadece video akışlarını analiz eden bir sistem.",
+            "D) Görüntü sınıflandırma algoritması."
+        ],
+        "answer": "B",
+        "explanation": "Metinde açıkça 'We present YOLO, a new approach to object detection.' ifadesiyle YOLO'nun nesne tanıma için yeni bir yaklaşım olduğu belirtilmektedir. Bu nedenle doğru cevap B şıkkıdır."
+    },
+    {
+        "id": "280520262678",
+        "target_elo": 1100,
+        "original_text": "R-CNN has high AP on VOC 2007. However, R-CNN drops off considerably when applied to artwork. R-CNN uses Selective Search for bounding box proposals which is tuned for natural images. The classiﬁer step in R-CNN only sees small regions and needs good proposals.",
+        "question": "Metne göre R-CNN'in sanatsal eserlere uygulandığında performansında düşüş yaşamasının ana nedeni nedir?",
+        "choices": [
+            "A) Sanatsal eserlerin çözünürlüğünün düşük olması.",
+            "B) R-CNN'in doğal görüntüler için ayarlanmış Selective Search kullanması.",
+            "C) Sınıflandırıcının çok büyük bölgeleri görmesi.",
+            "D) VOC 2007 veri setinin sanatsal eserleri içermemesi."
+        ],
+        "answer": "B",
+        "explanation": "Metinde 'R-CNN drops off considerably when applied to artwork. R-CNN uses Selective Search for bounding box proposals which is tuned for natural images.' ifadesiyle, R-CNN'in sanatsal eserlerdeki düşüşünün nedeninin, doğal görüntüler için ayarlanmış 'Selective Search' yöntemini kullanması olduğu belirtilmiştir. Bu durum, bu yöntemle üretilen 'bounding box proposals'ın sanatsal eserler için uygun olmamasından kaynaklanır."
+    },
+    {
+        "id": "280520262679",
+        "target_elo": 1350,
+        "original_text": "Also, in every image many grid cells do not contain any object. This pushes the “conﬁdence” scores of those cells towards zero, often overpowering the gradient from cells that do contain objects. This can lead to model instability, causing training to diverge early on.",
+        "question": "Bir görüntüdeki birçok grid hücresinin (grid cells) nesne içermemesi, model eğitimi sırasında ne gibi bir soruna yol açabilir?",
+        "choices": [
+            "A) Nesne içeren hücrelerden gelen gradyanın güçlenmesine.",
+            "B) Modelin daha hızlı bir şekilde optimize olmasına.",
+            "C) Güven puanlarının (confidence scores) sıfıra doğru itilmesiyle, modelin kararsız hale gelmesine ve eğitimin erken sapmasına (diverge etmesine).",
+            "D) Algılama doğruluğunun artmasına."
+        ],
+        "answer": "C",
+        "explanation": "Metinde 'This pushes the “conﬁdence” scores of those cells towards zero, often overpowering the gradient from cells that do contain objects. This can lead to model instability, causing training to diverge early on.' ifadesiyle, birçok boş grid hücresinin güven puanlarını sıfıra iterek nesneli hücrelerden gelen gradyanı baskıladığı, bunun da model kararsızlığına ve eğitimin erken sapmasına (diverge) neden olduğu açıkça belirtilmiştir."
+    },
+    {
+        "id": "280520262680",
+        "target_elo": 1150,
+        "original_text": "YOLO struggles to localize objects correctly. Localiza- tion errors account for more of YOLO’s errors than all other sources combined. Fast R-CNN makes much fewer local- ization errors but far more background errors. 13.6% of it’s top detections are false positives that don’t contain any objects. Fast R-CNN is almost 3x more likely to predict background detections than YOLO.",
+        "question": "Yukarıdaki metne göre, YOLO ve Fast R-CNN'in temel hata türleri nelerdir?",
+        "choices": [
+            "A) YOLO daha çok sınıflandırma hatası yaparken, Fast R-CNN daha çok boyutlandırma hatası yapar.",
+            "B) YOLO nesneleri doğru konumlandırmakta (localize) zorlanırken, Fast R-CNN daha çok arka plan hatası (false positives) yapar.",
+            "C) Her iki model de eşit oranda konumlandırma hatası yapar.",
+            "D) YOLO sadece arka plan hataları yaparken, Fast R-CNN sadece konumlandırma hataları yapar."
+        ],
+        "answer": "B",
+        "explanation": "Metinde 'YOLO struggles to localize objects correctly. Localization errors account for more of YOLO’s errors...' ve 'Fast R-CNN makes much fewer localization errors but far more background errors.' ifadeleriyle YOLO'nun konumlandırma hatalarına, Fast R-CNN'in ise arka plan hatalarına (false positives) daha yatkın olduğu açıkça belirtilmiştir."
+    },
+    {
+        "id": "280520262681",
+        "target_elo": 1050,
+        "original_text": "One advantage that Borůvka's algorithm has compared to the alternatives is that it doesn't need to presort the edges or maintain a priority queue in order to find the minimum spanning tree.\nEven though that doesn't help its complexity, since it still passes the edges logE times, it is a bit simpler to code.",
+        "question": "Metne göre Borůvka algoritmasının diğer alternatiflere kıyasla bir avantajı nedir?",
+        "choices": [
+            "A) Kenarları önceden sıralamaya veya bir öncelik kuyruğu tutmaya ihtiyaç duymaması.",
+            "B) Daha düşük zaman karmaşıklığına sahip olması.",
+            "C) Sadece çok büyük grafikler için uygulanabilir olması.",
+            "D) Tüm kenarları tek geçişte işlemesi."
+        ],
+        "answer": "A",
+        "explanation": "Metinde 'One advantage that Borůvka's algorithm has compared to the alternatives is that it doesn't need to presort the edges or maintain a priority queue in order to find the minimum spanning tree.' ifadesiyle, Borůvka algoritmasının kenarları önceden sıralama veya öncelik kuyruğu tutma ihtiyacı olmaması avantajı belirtilmiştir. Karmaşıklığına yardımcı olmasa da kodlamayı basitleştirdiği eklenmiştir."
+    },
+    {
+        "id": "280520262682",
+        "target_elo": 1100,
+        "original_text": "Our network architecture is inspired by the GoogLeNet model for image classiﬁcation [ 33]. Our network has 24 convolutional layers followed by 2 fully connected layers.",
+        "question": "Verilen metne göre, ağ mimarisinin temel özellikleri nelerdir?",
+        "choices": [
+            "A) GoogLeNet modelinden esinlenmiştir ve 24 tam bağlantılı katmana sahiptir.",
+            "B) Yalnızca 24 evrişimli katmana sahiptir.",
+            "C) GoogLeNet modelinden esinlenmiştir ve 24 evrişimli katman ile 2 tam bağlantılı katmana sahiptir.",
+            "D) 24 tam bağlantılı katman ve 2 evrişimli katmana sahiptir."
+        ],
+        "answer": "C",
+        "explanation": "Metinde ağ mimarisinin GoogLeNet modelinden esinlendiği, 24 evrişimli (convolutional) katman ve ardından 2 tam bağlantılı (fully connected) katmana sahip olduğu belirtilmektedir."
+    },
+    {
+        "id": "280520262683",
+        "target_elo": 950,
+        "original_text": "Check if start and goal are in the graph\n if start not in graph or goal not in graph:\n return None",
+        "question": "Verilen kod parçacığı neyi kontrol etmektedir?",
+        "choices": [
+            "A) Başlangıç ve hedef noktaların grafikteki en kısa yolu oluşturup oluşturmadığını.",
+            "B) Başlangıç ve hedef noktaların grafikte mevcut olup olmadığını.",
+            "C) Grafiğin boş olup olmadığını.",
+            "D) Başlangıç noktasının hedefe ulaşılabilir olup olmadığını."
+        ],
+        "answer": "B",
+        "explanation": "Kod parçacığı, 'start' (başlangıç) ve 'goal' (hedef) noktalarının 'graph' (grafik) içinde mevcut olup olmadığını kontrol eder. Eğer bu noktalardan herhangi biri grafikte değilse, 'None' döndürülür, bu da işlemin devam edemeyeceğini gösterir."
+    },
+    {
+        "id": "280520262684",
+        "target_elo": 1200,
+        "original_text": "Following their example, we add four convolutional lay- ers and two fully connected layers with randomly initialized weights. Detection often requires ﬁne-grained visual infor- mation so we increase the input resolution of the network from 224 × 224 to 448 × 448.",
+        "question": "Metne göre ağda hangi değişiklikler yapılmıştır ve giriş çözünürlüğü neden artırılmıştır?",
+        "choices": [
+            "A) Dört tam bağlantılı katman eklenmiş, giriş çözünürlüğü artırılmamıştır.",
+            "B) Dört evrişimli ve iki tam bağlantılı katman eklenmiş, algılama için daha detaylı görsel bilgi gerektiğinden giriş çözünürlüğü 224x224'ten 448x448'e yükseltilmiştir.",
+            "C) Sadece giriş çözünürlüğü 224x224'ten 448x448'e düşürülmüştür.",
+            "D) İki evrişimli ve dört tam bağlantılı katman eklenmiş, ağın hızını artırmak için giriş çözünürlüğü düşürülmüştür."
+        ],
+        "answer": "B",
+        "explanation": "Metin, ağa dört evrişimli (convolutional) ve iki tam bağlantılı (fully connected) katman eklendiğini belirtir. Ayrıca, algılama (detection) için 'ince taneli görsel bilgi' (fine-grained visual information) gerektiğinden ağın giriş çözünürlüğünün 224x224'ten 448x448'e artırıldığı ifade edilmektedir."
+    },
+    {
+        "id": "280520262685",
+        "target_elo": 1100,
+        "original_text": "Thus it has high mAP but at 0.5 fps it is still far from real- time.",
+        "question": "Metinde bahsedilen sistemin performans özellikleri hakkında ne söylenebilir?",
+        "choices": [
+            "A) Düşük mAP değerine sahiptir ancak gerçek zamanlı çalışmaktadır.",
+            "B) Yüksek mAP değerine sahiptir ancak gerçek zamanlı çalışmaktan uzaktır.",
+            "C) Hem yüksek mAP değerine hem de gerçek zamanlı performansa sahiptir.",
+            "D) Düşük mAP ve düşük fps değerleriyle gerçek zamanlı çalışmaktadır."
+        ],
+        "answer": "B",
+        "explanation": "Metin, sistemin 'yüksek mAP' (mean Average Precision) değerine sahip olduğunu ancak '0.5 fps' (saniyedeki kare sayısı) ile 'gerçek zamanlıdan hala uzak' (far from real-time) olduğunu açıkça belirtmektedir."
+    },
+    {
+        "id": "280520262686",
+        "target_elo": 1000,
+        "original_text": "The ﬁnal output of our network is the 7 × 7 × 30 tensor of predictions.",
+        "question": "Ağın nihai çıktısı hangi formattadır?",
+        "choices": [
+            "A) 7x7 boyutunda bir matris.",
+            "B) 7x7x30 boyutunda bir tahmin tensörü.",
+            "C) 30 adet 7x7 boyutunda bir dizi.",
+            "D) 7x30 boyutunda bir vektör."
+        ],
+        "answer": "B",
+        "explanation": "Metin, ağın nihai çıktısının '7 × 7 × 30 tahmin tensörü' (7 × 7 × 30 tensor of predictions) olduğunu açıkça belirtmektedir. Bu, bir tensörün boyutlarını ifade eder."
+    },
+    {
+        "id": "280520262687",
+        "target_elo": 1150,
+        "original_text": "To avoid overﬁtting we use dropout and extensive data augmentation. A dropout layer with rate = .5 after the ﬁrst connected layer prevents co-adaptation between layers [ 18].",
+        "question": "Aşırı öğrenmeyi (overfitting) önlemek için metinde bahsedilen yöntemler nelerdir ve bir dropout katmanının temel amacı nedir?",
+        "choices": [
+            "A) Yalnızca veri artırımı (data augmentation) kullanılır; katmanlar arası bağlantıyı güçlendirir.",
+            "B) Dropout ve veri artırımı kullanılır; katmanlar arası eş adaptasyonu (co-adaptation) engeller.",
+            "C) Dropout ve model karmaşıklığı azaltma kullanılır; modelin genelleştirme yeteneğini artırır.",
+            "D) Yalnızca dropout kullanılır; veri setindeki gürültüyü azaltır."
+        ],
+        "answer": "B",
+        "explanation": "Metinde aşırı öğrenmeyi önlemek için 'dropout' ve 'extensive data augmentation' kullanıldığı belirtilmektedir. Ayrıca, bir dropout katmanının amacının 'co-adaptation between layers'ı engellemek olduğu açıkça ifade edilmiştir."
+    },
+    {
+        "id": "280520262688",
+        "target_elo": 1100,
+        "original_text": "We then convert the model to perform detection. Ren et al. show that adding both convolutional and connected lay- ers to pretrained networks can improve performance [ 28].",
+        "question": "Metne göre, önceden eğitilmiş ağlarda (pretrained networks) performansı artırmak için hangi katman türlerinin eklenmesi önerilmektedir?",
+        "choices": [
+            "A) Yalnızca bağlantılı (connected) katmanlar.",
+            "B) Yalnızca evrişimsel (convolutional) katmanlar.",
+            "C) Hem evrişimsel hem de bağlantılı (convolutional and connected) katmanlar.",
+            "D) Yalnızca giriş (input) ve çıkış (output) katmanları."
+        ],
+        "answer": "C",
+        "explanation": "Metinde, Ren et al.'ın 'adding both convolutional and connected layers to pretrained networks can improve performance' gösterdiği açıkça belirtilmiştir."
+    },
+    {
+        "id": "280520262689",
+        "target_elo": 1050,
+        "original_text": "Args:\n grid (np.ndarray): A 2D numpy array representing the grid.\n 1 represents a walkable node and 0 represents an obstacle.\n source (Tuple[int, int]): A tuple representing the start node.\n destination (Tuple[int, int]): A tuple representing the\n destination node.\n allow_diagonal (bool): A boolean determining whether\n diagonal movements are allowed.",
+        "question": "Verilen 'Args' tanımına göre, bir ızgara (grid) üzerindeki bir yol bulma algoritması için hangi parametreler ve tanımları doğru verilmiştir?",
+        "choices": [
+            "A) `grid`: 1D numpy dizisi, engelleri 0, geçilebilir düğümleri 1 ile gösterir.",
+            "B) `source`: Hedef düğümü temsil eden bir tuple; `destination`: Başlangıç düğümünü temsil eden bir tuple.",
+            "C) `allow_diagonal`: Çapraz hareketlere izin verilip verilmediğini belirten bir boolean değeri.",
+            "D) `grid`: Yalnızca geçilebilir düğümleri içeren bir liste."
+        ],
+        "answer": "C",
+        "explanation": "Metinde `allow_diagonal`'ın 'A boolean determining whether diagonal movements are allowed' olduğu açıkça belirtilmiştir. Diğer şıklarda `grid`in boyutu veya `source` ve `destination`ın tanımı yanlış verilmiştir."
+    },
+    {
+        "id": "280520262690",
+        "target_elo": 1100,
+        "original_text": "Time Complexity: O(b^(d/2)) where b is the branching factor and d is the depth\nSpace Complexity: O(b^(d/2))",
+        "question": "Yukarıda belirtilen zaman ve uzay karmaşıklığı (Time and Space Complexity) ifadelerinde 'b' ve 'd' neyi temsil etmektedir?",
+        "choices": [
+            "A) 'b' belleği (memory), 'd' disk alanını (disk space).",
+            "B) 'b' dallanma faktörünü (branching factor), 'd' derinliği (depth).",
+            "C) 'b' bayt sayısını (number of bytes), 'd' veri boyutunu (data size).",
+            "D) 'b' işlemci hızını (processor speed), 'd' veri yoğunluğunu (data density)."
+        ],
+        "answer": "B",
+        "explanation": "Metinde açıkça 'where b is the branching factor and d is the depth' ifadesi yer almaktadır."
+    },
+    {
+        "id": "280520262691",
+        "target_elo": 1250,
+        "original_text": "We reframe object detection as a single regression prob- lem, straight from image pixels to bounding box coordi- nates and class probabilities. Using our system, you only look once (YOLO) at an image to predict what objects are present and where they are.",
+        "question": "Metinde açıklanan nesne tespiti (object detection) yaklaşımı, problemi nasıl yeniden çerçevelendirmekte ve bahsedilen 'YOLO' sisteminin temel özelliği nedir?",
+        "choices": [
+            "A) Nesne tespitini birden fazla sınıflandırma problemi olarak ele alır ve YOLO, nesneleri tekrar tekrar tarar.",
+            "B) Nesne tespitini tek bir regresyon problemi olarak yeniden çerçeveler; YOLO, bir görüntüyü tek seferde inceleyerek nesneleri ve konumlarını tahmin eder.",
+            "C) Nesne tespitini segmentasyon problemi olarak ele alır ve YOLO, piksel düzeyinde tahminler yapar.",
+            "D) Nesne tespitini özellik çıkarımı (feature extraction) problemi olarak ele alır ve YOLO, manuel özellik mühendisliği kullanır."
+        ],
+        "answer": "B",
+        "explanation": "Metin, nesne tespitini 'a single regression problem' olarak yeniden çerçevelendirdiğini belirtiyor. Ayrıca, 'you only look once (YOLO) at an image to predict what objects are present and where they are' ifadesi YOLO'nun temel özelliğini net bir şekilde açıklıyor."
+    },
+    {
+        "id": "280520262692",
+        "target_elo": 1100,
+        "original_text": "Smeulders. Selective search for object recognition. Interna- tional journal of computer vision , 104(2):154–171, 2013. 4, 5 [35] P . Viola and M. Jones. Robust real-time object detection.",
+        "question": "Metinde P. Viola ve M. Jones'un katkıda bulunduğu bilgisayar görüşü alanı aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) Görüntü Segmentasyonu",
+            "B) Sağlam Gerçek Zamanlı Nesne Tespiti",
+            "C) Yüz Tanıma",
+            "D) 3D Modelleme"
+        ],
+        "answer": "B",
+        "explanation": "Metinde P. Viola ve M. Jones'un 'Robust real-time object detection' (Sağlam gerçek zamanlı nesne tespiti) alanındaki çalışmasından bahsedilmektedir."
+    },
+    {
+        "id": "280520262693",
+        "target_elo": 900,
+        "original_text": "Returns:\n A list representing the path from start to goal, or None if no path exists",
+        "question": "Yukarıdaki metinde açıklanan bir fonksiyonun geri dönüş değeri (Returns) göz önüne alındığında, bu fonksiyonun temel amacı aşağıdakilerden hangisi olabilir?",
+        "choices": [
+            "A) Kullanıcı girişi almak",
+            "B) Başlangıçtan hedefe giden bir yol listesini döndürmek",
+            "C) Bir veritabanını güncellemek",
+            "D) Rastgele sayı üretmek"
+        ],
+        "answer": "B",
+        "explanation": "Metin, 'Returns: A list representing the path from start to goal, or None if no path exists' ifadesiyle, fonksiyonun başlangıçtan hedefe giden bir yolun listesini döndürmeyi amaçladığını açıkça belirtmektedir."
+    },
+    {
+        "id": "280520262694",
+        "target_elo": 1000,
+        "original_text": "All of our training and testing code is open source. A variety of pretrained models are also available to download.",
+        "question": "Metinde bahsedilen projede geliştiricilere sunulan olanaklar arasında aşağıdakilerden hangileri yer almaktadır?",
+        "choices": [
+            "A) Sadece eğitim verileri",
+            "B) Sadece test raporları",
+            "C) Açık kaynak eğitim ve test kodları ile önceden eğitilmiş modeller",
+            "D) Donanım gereksinimleri listesi"
+        ],
+        "answer": "C",
+        "explanation": "Metin, 'All of our training and testing code is open source. A variety of pretrained models are also available to download.' diyerek açık kaynak eğitim ve test kodları ile çeşitli önceden eğitilmiş modellerin mevcut olduğunu belirtmektedir."
+    },
+    {
+        "id": "280520262695",
+        "target_elo": 1200,
+        "original_text": "Like DPM, the localizer only sees local information when making a prediction. OverFeat cannot reason about global context and thus requires signiﬁcant post-processing to pro- duce coherent detections.",
+        "question": "Metne göre, OverFeat modelinin nesne tespiti yaparken karşılaştığı temel sınırlılıklardan biri aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) Sadece küresel bağlamı işleyebilmesi",
+            "B) Tahmin yaparken yalnızca yerel bilgiyi kullanması ve küresel bağlam hakkında çıkarım yapamaması",
+            "C) Yüksek oranda ön işleme gerektirmesi",
+            "D) Gerçek zamanlı çalışmaya uygun olmaması"
+        ],
+        "answer": "B",
+        "explanation": "Metinde, 'OverFeat cannot reason about global context and thus requires significant post-processing to produce coherent detections' ifadesiyle OverFeat'in küresel bağlam (global context) hakkında çıkarım yapamadığı ve bu yüzden yerel bilgilere odaklandığı açıkça belirtilmiştir."
+    },
+    {
+        "id": "280520262696",
+        "target_elo": 1150,
+        "original_text": "sixth international conference on , pages 555–562. IEEE, 1998. 4 [26] J. Redmon and A. Angelova. Real-time grasp detection using convolutional neural networks. CoRR, abs/1412.3128, 2014.",
+        "question": "J. Redmon ve A. Angelova'nın makalesinde, 'Real-time grasp detection' (Gerçek zamanlı kavrama tespiti) için hangi makine öğrenimi tekniği kullanıldığı belirtilmiştir?",
+        "choices": [
+            "A) Destek Vektör Makineleri",
+            "B) Karar Ağaçları",
+            "C) Evrişimsel Sinir Ağları",
+            "D) Lineer Regresyon"
+        ],
+        "answer": "C",
+        "explanation": "Metinde, J. Redmon ve A. Angelova'nın 'Real-time grasp detection using convolutional neural networks' başlığıyla, Evrişimsel Sinir Ağları (Convolutional Neural Networks) tekniğini kullandığı açıkça belirtilmiştir."
+    }
+]

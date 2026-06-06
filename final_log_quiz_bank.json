@@ -1,0 +1,408 @@
+[
+    {
+        "id": "280520262615",
+        "target_elo": 1150,
+        "original_error": "[BUG] manga-colorization-v2上色功能出错: TypeError: manga_translator.colorization.dispatch() got multiple values for keyword argument 'config'",
+        "question": "Yukarıdaki hata kaydında belirtilen `TypeError: manga_translator.colorization.dispatch() got multiple values for keyword argument 'config'` hatasının temel kök nedeni aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) `manga_translator.colorization.dispatch` fonksiyonunun imzasının (signature) değiştirilmesi sonucu, çağrı yapılan yerde `config` parametresinin hem konumsal (positional) hem de anahtar kelime (keyword) argüman olarak geçirilmesi.",
+            "B) `config` adında global bir değişkenin tanımlanması ve fonksiyon çağrısı sırasında bu değişkenin istenmeyen bir şekilde yerel `config` parametresiyle çakışması.",
+            "C) `manga-colorization-v2` modelinin `config` dosyasının bozuk veya eksik olması, bu nedenle fonksiyonun beklediği parametreleri alamaması.",
+            "D) Python yorumlayıcısının, `config` anahtar kelime argümanını iki farklı kaynaktan (örneğin, `**kwargs` ve doğrudan bir keyword) alması nedeniyle bir argüman çözümleme çakışması yaşaması."
+        ],
+        "answer": "A",
+        "explanation": "Python'da `TypeError: got multiple values for keyword argument '...'` hatası, bir fonksiyona aynı anahtar kelime argümanının birden fazla kez geçirilmeye çalışılması durumunda ortaya çıkar. Bu durum genellikle iki şekilde oluşur: 1) Argüman hem konumsal (pozisyonel) olarak hem de anahtar kelime (keyword) olarak geçirilmiştir (örneğin, `func(value, key=value)` şeklinde bir çağrıda `value` hem konumsal hem de `key` anahtar kelimesi ile aynı parametreye karşılık geliyorsa). 2) Argüman birden fazla anahtar kelime olarak geçirilmiştir (örneğin, `func(key=value1, key=value2)` veya `func(key=value, **{'key': other_value})`). Seçenek A, bu hatanın en yaygın ve doğrudan nedenini doğru bir şekilde açıklar. Özellikle `**kwargs` kullanımı gibi durumlarda, argümanların nasıl birleştirildiğine dikkat edilmelidir. Diğer seçenekler, hatanın doğrudan teknik açıklamasıyla örtüşmemektedir."
+    },
+    {
+        "id": "280520262617",
+        "target_elo": 1350,
+        "original_error": "bug(eval): eval_rubric scripts crash with UnicodeEncodeError on Windows when stdout is redirected: UnicodeEncodeError: 'charmap' codec can't encode characters in position 17-18: character maps to <undefined>",
+        "question": "Windows ortamında `scripts/eval_rubric.py` betiği, çıktıyı bir dosyaya yönlendirdiğinde (örneğin `> logs\\eval.log 2>&1`), içinde '—' (em dash) gibi standart dışı Unicode karakterler barındıran metinleri `print()` etmeye çalıştığında `UnicodeEncodeError: 'charmap' codec can't encode characters` hatası fırlatmaktadır. Bu hatanın temel kök nedeni nedir?",
+        "choices": [
+            "A) `print()` fonksiyonunun, `stdout` bir dosyaya yönlendirildiğinde, Windows'un varsayılan konsol kodlaması olan `cp1252`'yi kullanmaya çalışması; bu kodlamanın ise tüm Unicode karakterleri desteklememesi.",
+            "B) Python 3.14 sürümünde, `sys.stdout` nesnesinin dosya yönlendirme durumunda otomatik olarak `UTF-8` kodlamasına geçiş yapmaması, bu durumun manuel olarak `PYTHONIOENCODING` ortam değişkeni ile ayarlanması gerektiğini göstermesi.",
+            "C) Veritabanından çekilen job title verilerinin yanlış bir kodlama ile (`Latin-1` gibi) depolanması, bu nedenle Python'ın bunları `UTF-8` olarak okuyup `cp1252`'ye dönüştürmede başarısız olması.",
+            "D) `scripts/eval_rubric.py` dosyasının başında `encoding='utf-8'` yönergesinin eksik olması, bu da betiğin kaynak kodunun yanlış yorumlanmasına yol açması."
+        ],
+        "answer": "A",
+        "explanation": "Python'da, özellikle Windows sistemlerinde, `stdout` bir dosyaya yönlendirildiğinde varsayılan kodlama genellikle sistemin varsayılan ANSI kodlaması olan `cp1252` (Code Page 1252) olur. Bu kodlama, '—' (em dash) gibi belirli Unicode karakterleri içermez. `print()` fonksiyonu, bu tür karakterleri içeren bir dizgeyi `cp1252` ile dosyaya yazmaya çalıştığında `UnicodeEncodeError` fırlatır çünkü `charmap` (cp1252) kod çözücüsü bu karakterleri karşılık gelen bir bayt dizisine dönüştüremez. Bu hatanın çözümü genellikle `PYTHONIOENCODING=utf-8` ortam değişkenini ayarlamak veya `open()` fonksiyonunu `encoding='utf-8'` ile kullanmaktır. B şıkkı bir belirti veya çözüm yolu olabilirken, A şıkkı hatanın doğrudan kök nedenini (varsayılan kodlamanın yetersizliği) açıklamaktadır. C şıkkı `UnicodeDecodeError` ile ilgili olurdu, D şıkkı ise kaynak kod dosyasının kendi kodlamasıyla ilgilidir, çıktı kodlamasıyla değil."
+    },
+    {
+        "id": "280520262618",
+        "target_elo": 1450,
+        "original_error": "RuntimeError: generator didn't stop after throw() in laminar.py error handling: RuntimeError: generator didn't stop after throw()",
+        "question": "Python'da `laminar.py` içindeki bir gözlemlenebilirlik sarmalayıcısında (`sync_wrapper`), `contextlib.contextmanager` ile tanımlanmış jeneratör tabanlı bir bağlam yöneticisi kullanılırken, konuşma sırasında bir `ConversationRunError` istisnası yükseltildiğinde `RuntimeError: generator didn't stop after throw()` hatası alınmaktadır. Bu ikincil hatanın kök nedeni aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) Bağlam yöneticisi tarafından jeneratöre `throw()` metoduyla istisna gönderildiğinde, jeneratörün bu istisnayı uygun şekilde yakalayıp işlememesi veya yeniden fırlatmaması ve bu nedenle `yield` ifadesinden sonra yürütülmeye devam etmeye çalışması.",
+            "B) `sync_wrapper` fonksiyonunun `async def` yerine `def` olarak tanımlanması ve dolayısıyla eşzamansız (asynchronous) bir hatanın eşzamanlı (synchronous) bağlamda yanlış işlenmesi.",
+            "C) `laminar.py` içinde tanımlanan `ConversationRunError` istisnasının, standart Python istisna hiyerarşisine uygun olmaması ve bu nedenle `contextlib`'in onu tanıyamaması.",
+            "D) `concurrent.futures.thread.py` içindeki iş parçacığı havuzunun, `ConversationRunError`'ı ana iş parçacığına düzgün bir şekilde yaymak yerine onu yutması ve bu durumun `laminar.py`'deki bağlam yöneticisini belirsiz bir durumda bırakması."
+        ],
+        "answer": "A",
+        "explanation": "`RuntimeError: generator didn't stop after throw()` hatası, bir jeneratöre `throw()` metodu aracılığıyla bir istisna gönderildiğinde (ki `contextlib.contextmanager` tarafından yönetilen bir `with` bloğunda bir istisna oluştuğunda bu otomatik olarak yapılır), jeneratörün istisnayı uygun şekilde ele alamadığı durumlarda ortaya çıkar. Jeneratör, istisnayı yakalayıp sonlandırmalı (örneğin `return` ile) ya da yeniden fırlatmalıdır. Eğer jeneratör istisnayı yakalamasına rağmen bir `yield` ifadesi aracılığıyla yürütmeye devam etmeye çalışırsa, bu `RuntimeError` fırlatılır. Temel olarak, jeneratörün istisna sonrası durum yönetimi hatalıdır. Seçenek A, bu hatanın doğrudan ve teknik açıklamasını sunar. Diğer seçenekler, mevcut hata izlemesiyle daha az ilişkili veya farklı sorunlara işaret etmektedir."
+    },
+    {
+        "id": "280520262619",
+        "target_elo": 1300,
+        "original_error": "--launch cron option for ./run_we2e_tests.py is broken: FATAL ERROR: Experiment generation failed.",
+        "question": "Yukarıdaki hata raporunda belirtildiği üzere, `./run_we2e_tests.py` betiği `--launch cron` seçeneğiyle çalıştırıldığında 'FATAL ERROR: Experiment generation failed' mesajı ve kısmi bir traceback ile başarısız olmaktadır. Rocoto workflow XML dosyası başarıyla oluşturulup şema doğrulaması geçtiği halde oluşan bu ölümcül hatanın muhtemel kök nedeni aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) Betiğin `--launch cron` modunda Rocoto iş akışını `crontab` üzerinden başlatmak için harici bir komut dosyası (`ush/launch_vx_wflow.sh` gibi) çağırdığında, bu komutun ya mevcut ortamda bulunamaması ya da belirli bağımlılıklar veya izin eksiklikleri nedeniyle başarısız olması.",
+            "B) Oluşturulan Rocoto XML dosyasının içeriğinin, şema doğrulamadan geçmesine rağmen, `cron` ortamının gerektirdiği ek güvenlik veya yol kısıtlamalarına uymaması.",
+            "C) `run_we2e_tests.py` betiğinin `cron` modu için özel olarak tasarlanmış bir hata işleme mekanizmasının bulunmaması, bu nedenle basit bir I/O hatasının bile ölümcül olarak raporlanması.",
+            "D) Test konfigürasyon dosyasında (`config.MET_verification_only_vx.yaml`) belirtilen bir parametrenin `cron` ortam değişkenleriyle çakışması veya `cron` tarafından düzgün bir şekilde çözümlenememesi."
+        ],
+        "answer": "A",
+        "explanation": "Hata kaydı, Rocoto XML dosyasının başarıyla oluşturulduğunu ve şema doğrulamasından geçtiğini açıkça belirtiyor. Bu, sorunun XML dosyasının kendisinde veya temel yapısında olmadığını gösterir. 'Experiment generation failed' ve `--launch cron` seçeneğinin 'broken' olduğu bilgisi, sorunun iş akışının başlatılma mekanizmasında olduğunu düşündürüyor. `cron` modu, genellikle harici kabuk betikleri veya komutlar aracılığıyla işleri zamanlamayı/başlatmayı içerir. Bu tür bir `FATAL ERROR` ve Python traceback'i, betiğin çağırdığı bir dış komutun başarısız olduğu ve bu hatanın Python tarafında işlenirken bir istisna fırlattığı durumlarda ortaya çıkabilir. Harici bir betiğin bulunamaması (PATH sorunu), gerekli izinlere sahip olmaması veya `cron` ortamının kısıtlamaları nedeniyle doğru şekilde yürütülememesi en olası kök nedendir. Diğer şıklar, bu spesifik hata mesajı ve kontekst ile daha az doğrudan ilişkilidir."
+    },
+    {
+        "id": "28052026260",
+        "target_elo": 1400,
+        "original_error": "`_use_fused_optimizer` doctest fails on CUDA GPU machines: `AttributeError: 'RFDETRModelModule' object has no attribute '_use_fused_optimizer'`. Hata izi `__getattr__` metoduna işaret ediyor ve açıklama, doctest'in modülü `__new__` ile başlatıp `__init__`'i atlamasından kaynaklandığını belirtiyor.",
+        "question": "Verilen hata raporunda, `RFDETRModelModule` nesnesinin `_use_fused_optimizer` özniteliğine sahip olmadığına dair bir `AttributeError` ile karşılaşılıyor. Rapor, hatanın 'doctest'in modülü `__new__` metodu ile (Lightning'in `__init__` metodunu atlayarak) oluşturmasından ve sadece `module._trainer`'ı ayarlamasından kaynaklandığını belirtiyor. `_use_fused_optimizer` aslında `torch.cuda.is_available()` gibi koşulları içeren bir Python `property`'sidir. Bu `AttributeError`'ın temel kök nedeni nedir?",
+        "choices": [
+            "A) `torch.cuda.is_available()` çağrısı CPU ortamında `False` döndürdüğü için `_use_fused_optimizer` özelliği hiç başlatılamamaktadır.",
+            "B) Doctest ortamında, `RFDETRModelModule` nesnesi `__new__` ile eksik oluşturulduğu ve `__init__` metodu çağrılmadığı için `_use_fused_optimizer` 'property'si Python nesne modelinde düzgün bir şekilde bağlanamamış veya tanınmamıştır.",
+            "C) `_use_fused_optimizer` 'property'si, `RFDETRModelModule` sınıfında `property` dekoratörü yerine doğrudan bir metot olarak tanımlanmıştır, bu da öznitelik erişimi hatasına yol açmaktadır.",
+            "D) GPU ortamında, `RFDETRModelModule`'ün `model_config` özniteliği `None` olduğu için `fused_optimizer` değeri erişilememekte ve bu da `AttributeError`'a neden olmaktadır."
+        ],
+        "answer": "B",
+        "explanation": "`AttributeError: 'RFDETRModelModule' object has no attribute '_use_fused_optimizer'` hatası, Python'ın `RFDETRModelModule` nesnesinde bu isme sahip bir öznitelik veya `property` bulamadığını gösterir. Hata raporunda belirtildiği üzere, `doctest` modülü `__new__` ile oluşturup `__init__`'i atladığında, nesnenin tam olarak başlatılmaması ve `property`'lerin (veya diğer özniteliklerin) nesneye doğru şekilde bağlanamaması en olası kök nedendir. `__new__` sadece nesneyi tahsis ederken, `__init__` nesnenin iç durumunu kurar. `property`'ler, nesne oluşturulduktan ve `__init__` tarafından uygun şekilde ayarlandıktan sonra erişilebilir hale gelir. Dolayısıyla, `__init__` atlandığında, Python nesneyi bu özniteliğe sahip olarak tanımadığı için `AttributeError` yükseltir, 'property'nin iç mantığına bile ulaşamaz."
+    },
+    {
+        "id": "28052026262",
+        "target_elo": 1350,
+        "original_error": "[Bug] agentos-->team-->continue run --> `AttributeError: 'RunContinuedEvent' object has no attribute 'encode'`. Hata, uvicorn'un `run_asgi` çağrısı sırasında Starlette middleware katmanında meydana geliyor.",
+        "question": "Bir web uygulamasında (FastAPI/Uvicorn), `/teams/{team_id}/runs/{run_id}/continue` uç noktasına `stream=True` ve `background=true` parametreleriyle yapılan bir istek sırasında `AttributeError: 'RunContinuedEvent' object has no attribute 'encode'` hatası alınmaktadır. Hata izi, bu durumun ASGI protokolü ve middleware katmanları aracılığıyla veri akışı veya işlenmesi sırasında gerçekleştiğini göstermektedir. Bu hatanın temel kök nedeni nedir?",
+        "choices": [
+            "A) `RunContinuedEvent` nesnesi, ağ üzerinden gönderilmek veya bir akışa yazılmak üzere beklenirken, byte formatına dönüştürmek için gerekli olan `encode()` metodunu uygulamamıştır.",
+            "B) `background=true` parametresi, olay nesnesinin seri hale getirilmesi yerine, nesnenin doğrudan bellek adresinin gönderilmeye çalışılmasına neden olmaktadır.",
+            "C) FastAPI, `RunContinuedEvent` nesnesini hatalı bir şekilde JSON'a dönüştürmeye çalışmış ve bu nesnede bir `to_json()` veya benzeri bir metot bulunmadığı için `encode` hatası almıştır.",
+            "D) `stream=True` parametresi, `RunContinuedEvent`'in doğru biçimde bir liste içinde paketlenmemesine yol açmış, bu da tekil bir nesne üzerinde `encode` çağrılmasına neden olmuştur."
+        ],
+        "answer": "A",
+        "explanation": "`AttributeError: 'RunContinuedEvent' object has no attribute 'encode'` hatası, `RunContinuedEvent` tipindeki bir nesnenin, `encode()` adında bir metot beklenen bir bağlamda kullanıldığını açıkça göstermektedir. Özellikle `stream=True` gibi parametreler ve web sunucusu (Uvicorn) ile ASGI/middleware yığını düşünüldüğünde, verilerin ağ üzerinden iletilmeden önce genellikle metin formatından (string) byte formatına dönüştürülmesi gerekir. Eğer `RunContinuedEvent` nesnesi kendini bu formata dönüştürme yeteneğine (yani bir `encode()` metoduna) sahip değilse veya bu işlem için başka bir serileştirme mekanizması (örn. Pydantic modelinin JSON'a çevrilmesi ve ardından string'in encode edilmesi) kullanılmıyorsa, bu hata ortaya çıkar. Bu durum, `RunContinuedEvent` nesnesinin, onu işleyen sistemin beklediği arayüze uymadığını gösterir."
+    },
+    {
+        "id": "28052026263",
+        "target_elo": 1150,
+        "original_error": "[BUG] `KeyError: 'show'` keep appearing after 'trakts start --restart'. Log, `scrobbler`'ın bir bölüm (Invincible S4E5) için scrobble işlemini yaparken `KeyError: 'show'` ile başarısız olduğunu gösteriyor. `media_info`'da `'type': 'episode'`, `'title': 'Invincible'`, `'season': 4`, `'episode': 5` mevcut.",
+        "question": "Bir `trakt-scrobbler` uygulamasında, bir TV dizisi bölümü (örn. 'Invincible' S4E5) için 'scrobble' işlemi yapıldıktan sonra `KeyError: 'show'` hatası alınmaktadır. Hata izi, `scrobbler.py` dosyasındaki `handle_successful_scrobble` metodu içinde bu anahtarın eksik olduğunu göstermektedir. Debug loglarında `media_info` olarak `{'type': 'episode', 'title': 'Invincible', 'season': 4, 'episode': 5}` gibi bilgiler yer almaktadır. Bu `KeyError`'ın temel kök nedeni nedir?",
+        "choices": [
+            "A) `media_info` sözlüğünde, işlenen öğe bir bölüm olmasına rağmen, ilgili dizinin ('show') adı beklenildiği gibi 'show' anahtarı altında bulunamamıştır.",
+            "B) `trakt-scrobbler` servisi, bir bölüm için scrobble yapılırken otomatik olarak 'show' anahtarını kaldırmaktadır.",
+            "C) VLC oynatıcısı, media bilgilerini `trakt-scrobbler`'a eksik veya hatalı biçimde ilettiği için 'show' anahtarı hiçbir zaman oluşturulmamıştır.",
+            "D) `scrobble` metodu, 'show' anahtarının varlığını kontrol etmeden doğrudan erişmeye çalıştığı için hata oluşmaktadır, oysa bu anahtar sadece filmler için geçerlidir."
+        ],
+        "answer": "A",
+        "explanation": "`KeyError: 'show'` hatası, kodun bir sözlükten 'show' adında bir anahtara erişmeye çalıştığını ancak bu anahtarın sözlükte bulunmadığını açıkça belirtir. Verilen `media_info` örneğinde (`'type': 'episode', 'title': 'Invincible'`, vb.) bir bölümün bilgileri mevcut olsa da, bölümün ait olduğu dizinin ('show') adının doğrudan 'show' anahtarı altında beklendiği halde eksik olduğu anlaşılmaktadır. 'Invincible' 'title' olarak belirtilmiş ancak scrobbler'ın TV dizileri için 'show' anahtarını ayrı olarak beklemesi muhtemeldir. Bu durum, ya veri kaynağının 'show' bilgisini sağlamamasından (örn. sadece bölüm başlığını döndürmesinden) ya da scrobbler'ın bu bilgiyi ayrıştırma veya atama mantığındaki bir eksiklikten kaynaklanabilir, bu da 'show' anahtarının sözlüğe eklenmemesine yol açar."
+    },
+    {
+        "id": "28052026264",
+        "target_elo": 1050,
+        "original_error": "[BUG] Running process shows `No address associated with hostname`. Hata izi `httpx/_transports/default.py` içinde `lanhu_get_ai_analyze_design_result` aracı çağrısı sırasında meydana geliyor.",
+        "question": "Uygulama çalışırken `Error calling tool 'lanhu_get_ai_analyze_design_result'` mesajıyla birlikte `No address associated with hostname` hatası alınmaktadır. Hata izi, `httpx` kütüphanesi aracılığıyla bir HTTP çağrısı sırasında meydana geldiğini göstermektedir. Bu hatanın temel kök nedeni nedir?",
+        "choices": [
+            "A) Uygulamanın bağlı olduğu ağda bir DNS çözümleme problemi mevcuttur veya `lanhu_get_ai_analyze_design_result` aracının hedeflediği sunucu adı yanlış yazılmıştır ya da mevcut değildir.",
+            "B) `lanhu_get_ai_analyze_design_result` aracı, ağ bağlantısı olmadan çevrimdışı modda çalıştırılmaya çalışılmaktadır.",
+            "C) HTTP isteği yapılırken kullanılan port numarası hatalı olduğu için bağlantı kurulamaz.",
+            "D) `httpx` kütüphanesi, belirtilen URL'yi desteklemeyen bir proxy sunucusu üzerinden istek yapmaya zorlanmaktadır."
+        ],
+        "answer": "A",
+        "explanation": "`No address associated with hostname` hatası, bir sistemin belirli bir ana bilgisayar adını (hostname) bir IP adresine çeviremediği zaman ortaya çıkan standart bir ağ hatasıdır. Bu durum genellikle iki ana nedenden kaynaklanır: ya belirtilen ana bilgisayar adı yanlış yazılmıştır, artık var olmayan bir sunucuyu işaret etmektedir, ya da uygulamanın çalıştığı ortamda DNS (Domain Name System) sunucularında bir sorun vardır ve bu sunucular ana bilgisayar adını doğru bir şekilde çözümleyememektedir. Hata bir 'tool' çağrısı sırasında meydana geldiği için, bu araç muhtemelen harici bir hizmete bir ana bilgisayar adı kullanarak bağlanmaya çalışmaktadır."
+    },
+    {
+        "id": "28052026266",
+        "target_elo": 1150,
+        "original_error": "Ansible Python Test Failures\nTraceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/unittest/case.py\", line 403, in __ini",
+        "question": "Verilen hata raporunda, Ansible Python testlerinin çalıştırılması sırasında `unittest/case.py` içinde `__init__` metodunda kesik bir `Traceback` gözlemlenmektedir. Bu durumun en olası kök nedeni aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) Test çalıştırıcısının (test runner) Python testlerini başlatmak için yanlış bir komut veya yapılandırma kullanması.",
+            "B) Özel bir `TestCase` sınıfının, `unittest.TestCase`'den doğru şekilde miras alınmaması veya `super().__init__(*args, **kwargs)` çağrısının eksik veya yanlış yapılması.",
+            "C) `GRAPHIANT` kimlik bilgilerinin yanlış yapılandırılması nedeniyle Python testlerinin başlatılmasının engellenmesi.",
+            "D) `unittest` modülünün yüklü Python sürümünde bir bozukluk veya kurulum hatası olması."
+        ],
+        "answer": "B",
+        "explanation": "`Traceback` mesajı `unittest/case.py` içinde `__init__` metodunda kesildiği için, sorun doğrudan `unittest.TestCase` sınıfının veya ondan türetilmiş özel bir test sınıfının başlatılmasıyla ilgilidir. Python'da, bir üst sınıftan miras alan bir sınıfın `__init__` metodunu override ederken, üst sınıfın `__init__` metodunu `super().__init__(*args, **kwargs)` ile çağırmak yaygın ve genellikle zorunlu bir uygulamadır. Bu çağrının eksik olması veya yanlış yapılması, üst sınıfın gerekli başlatma işlemlerini tamamlayamamasına ve dolayısıyla test nesnesinin doğru oluşturulamamasına neden olarak bu tür bir `TypeError` veya benzeri başlatma hatalarına yol açabilir. Diğer seçenekler, logdaki doğrudan işaretle uyuşmamaktadır; örneğin, kimlik bilgilerinin algılandığı belirtilmiştir."
+    },
+    {
+        "id": "28052026267",
+        "target_elo": 1350,
+        "original_error": "[错误报告]: ChatGPT Plus认证通过后测试调用返回 “ NoneType object is not iterable”\nTypeError: 'NoneType' object is not iterable\n    for output in response.output:",
+        "question": "Verilen hata raporunda, ChatGPT Plus entegrasyonu için yapılan bir test çağrısı sırasında `TypeError: 'NoneType' object is not iterable` hatası alınmıştır. Hata `for output in response.output:` satırında meydana geldiğine göre, bu hatanın kök nedeni aşağıdakilerden hangisi olabilir?",
+        "choices": [
+            "A) ChatGPT API çağrısının başarılı olmasına rağmen, `response` nesnesinin `output` niteliğinin boş bir liste olarak dönmesi.",
+            "B) `langchain_openai` kütüphanesinin `response` nesnesini yanlış şekilde ayrıştırması ve `output` niteliğini her durumda `None` olarak ataması.",
+            "C) ChatGPT API çağrısının çeşitli nedenlerle (örneğin, yanlış parametreler, API hatası, sunucu tarafı sorunları, yetkilendirme sorunları) başarısız olması ve `langchain_openai` kütüphanesinin beklenen çıktı yerine `output` niteliğini `None` olarak ataması.",
+            "D) Python'un `NoneType` objeleri üzerinde döngü yapma yeteneğinin, kullanılan Python sürümünde temel bir hata nedeniyle devre dışı bırakılması."
+        ],
+        "answer": "C",
+        "explanation": "`TypeError: 'NoneType' object is not iterable` hatası, bir değişkenin `None` değeri taşıdığı ve kodun bu `None` değeri üzerinde bir döngü (iteration) yapmaya çalıştığı zaman ortaya çıkar. `for output in response.output:` satırında hata meydana geldiğine göre, `response.output` değişkeninin değeri `None`'dır. Bu durumun en olası nedeni, `langchain_openai` kütüphanesinin ChatGPT API'sine yaptığı çağrının başarılı bir yanıt alamamasıdır. API çağrısı, kimlik doğrulama sorunları, geçersiz istek parametreleri, API kullanım limitlerinin aşılması, geçici sunucu sorunları veya beklenmeyen bir API yanıt formatı gibi nedenlerle başarısız olabilir. Bu gibi durumlarda, kütüphane beklenen çıktı verisini `output` niteliğine doldurmak yerine, bir hata durumu olarak `output`'u `None` olarak ayarlamış olabilir."
+    },
+    {
+        "id": "28052026268",
+        "target_elo": 1250,
+        "original_error": "[Bug] llama.cpp build fails during the saving of the model to GGUF\nRuntimeError                              Traceback (most recent call last)\n    -> 1470     quantizer_location, converter_location = check_llama_cpp()",
+        "question": "Verilen hata raporunda, `unsloth` kütüphanesi ile bir yapay zeka modelini GGUF formatına kaydederken `llama.cpp` derlemesinin başarısız olduğu ve `check_llama_cpp()` fonksiyonu çağrısı sırasında bir `RuntimeError` alındığı belirtilmiştir. Bu derleme hatasının en olası kök nedeni aşağıdakilerden hangisidir?",
+        "choices": [
+            "A) `unsloth` kütüphanesinin veya kullanılan `llama.cpp` sürümünün güncel olmaması.",
+            "B) `llama.cpp`'nin derlenmesi için gerekli sistem bağımlılıklarının (örn. C/C++ derleyicisi, `make`, `cmake` veya belirli geliştirme kütüphaneleri) işletim sisteminde yüklü olmaması veya yanlış yapılandırılması.",
+            "C) Modelin GGUF formatına dönüştürülmesi sırasında yetersiz GPU belleği veya CUDA sürücüsü hatası.",
+            "D) `unsloth` kütüphanesinin, `llama.cpp` kaynak kodlarına veya derleme dizinine erişmek için yetersiz dosya sistemi izinlerine sahip olması."
+        ],
+        "answer": "B",
+        "explanation": "`RuntimeError`, `check_llama_cpp()` fonksiyonu çağrısı sırasında `llama.cpp`'nin derlenmesinin başarısız olduğunu belirtmektedir. `llama.cpp` gibi C/C++ tabanlı projelerin derlenebilmesi için sistemde gerekli derleme araçlarının (GCC/Clang gibi C/C++ derleyicileri, `make`, `cmake`) ve bazen özel geliştirme kütüphanelerinin (örneğin, BLAS kütüphaneleri veya CUDA araç takımı) yüklü ve doğru yapılandırılmış olması gerekir. Bu bağımlılıkların eksikliği veya yanlış sürümde olması, derleme işleminin başlamadan veya ilerlerken `RuntimeError` ile sonuçlanmasına neden olan en yaygın kök nedendir. GPU belleği veya izin sorunları da mümkün olsa da, doğrudan bir derleme hatasında genellikle sistem bağımlılıkları ilk kontrol edilmesi gereken unsurlardır."
+    },
+    {
+        "id": "28052026269",
+        "target_elo": 1100,
+        "original_error": "CLI token unable to refresh (TypeError: request() got an unexpected keyword argument 'verify_ssl'`)\nTypeError: request() got an unexpected keyword argument 'verify_ssl'",
+        "question": "Verilen hata raporunda, SAS Viya CLI ile token yenileme işlemi sırasında `TypeError: request() got an unexpected keyword argument 'verify_ssl'` hatası alınmıştır. Hata, `sharedfunctions.py` dosyasındaki `requests.request()` çağrısında `verify_ssl=False` argümanının kullanılmasıyla ilişkilidir. Bu hatanın kök nedeni nedir?",
+        "choices": [
+            "A) `sharedfunctions.py` dosyasının, sistemde yüklü olan `requests` kütüphanesinin sürümüyle uyumlu olmayan bir `requests.request()` çağrısı yapması (yani, `requests` kütüphanesinin eski bir sürümünün `verify_ssl` argümanını desteklememesi).",
+            "B) `requests` kütüphanesinin `verify_ssl` argümanını yalnızca `GET` istekleri için desteklemesi, ancak `POST` isteği yapıldığı için hata vermesi.",
+            "C) `verify_ssl` argümanının `False` boolean değeri yerine sayısal `0` değeri olarak geçirilmesi gerektiği bir sözdizimi hatası olması.",
+            "D) Ağ yapılandırması veya güvenlik duvarı nedeniyle SSL sertifika doğrulamasının kendisinin başarısız olması."
+        ],
+        "answer": "A",
+        "explanation": "`TypeError: request() got an unexpected keyword argument 'verify_ssl'` hatası, `requests` kütüphanesinin `request` metodunun çağrıldığı sürümde `verify_ssl` adlı bir anahtar kelime argümanını tanımadığı anlamına gelir. Hata raporunda, `sharedfunctions.py` dosyasının yakın zamanda güncellendiği ve bu güncellemeyle `verify_ssl` argümanının eklendiği belirtilmiştir. Bu durum, `sharedfunctions.py` dosyasının, `requests` kütüphanesinin daha yeni bir sürümünün API'sini varsayarak kodlandığını, ancak sistemde yüklü olan `requests` kütüphanesinin bu argümanı desteklemeyen daha eski bir sürümü olduğunu göstermektedir. Kök neden, uygulama kodu (`sharedfunctions.py`) ile bağımlılık kütüphanesi (`requests`) arasındaki API uyumsuzluğudur. Çözüm genellikle `requests` kütüphanesini en son sürüme güncellemektir (`pip install --upgrade requests`)."
+    },
+    {
+        "id": "280520262610",
+        "target_elo": 1050,
+        "original_error": "PanSTARRS HATS needs lsdb>=8.0\n\nOSError                                   Traceback (most recent call last)\nCell In[5], line 23\n---> 23 ps1 = lsdb.open_catalog(ps1_path, columns=[\"objName\",\"objID\",\"raMean\",\"decMean\"])\n\nFile ~/work/fornax-demo-notebooks/fornax-demo-notebooks/.tox/py313-buildhtml/lib/python3.13/site-packages/lsdb/loaders/hats/read_hats.py:137, in open_catalog(...)",
+        "question": "Yukarıdaki hata raporunda belirtilen `OSError`'ın temel nedeni nedir?",
+        "choices": [
+            "A) `s3://stpubdata/panstarrs/ps1/public/hats/otmo` yolundaki S3 bucket'ına erişim izinlerinin olmaması.",
+            "B) `lsdb` kütüphanesinin, güncel HATS dosyalarını işlemek için gereken sürümden (>=8.0) daha eski bir sürümünün (0.7.3) kullanılması.",
+            "C) `columns` parametresinde belirtilen `objName`, `objID` gibi sütunların Pan-STARRS kataloğunda bulunmaması.",
+            "D) `tox.ini` dosyasındaki `buildhtml` komutunun `lsdb` gereksinimlerini yanlışlıkla eski sürüme (0.6.5) düşürmesi."
+        ],
+        "answer": "B",
+        "explanation": "Hata raporu, `OSError`'ın `lsdb.open_catalog` çağrısında meydana geldiğini ve Pan-STARRS HATS dosyalarının `lsdb>=8.0` gerektirdiğini açıkça belirtiyor. Ancak, sistemin `lsdb==0.7.3` sürümünü kullandığı ifade edilmiştir. Bu, `lsdb` kütüphanesi ile veri dosyaları arasındaki bir sürüm uyumsuzluğundan kaynaklanan doğrudan bir hatadır. `tox.ini`'deki yanlış yapılandırma (D seçeneği) bu uyumsuzluğa yol açan bir etken olsa da, hatanın kök nedeni, çalışma zamanında kullanılan kütüphane sürümünün gereksinimleri karşılamamasıdır."
+    },
+    {
+        "id": "280520262611",
+        "target_elo": 1250,
+        "original_error": "[Bug]: failed with AssertionError when using mooncakeconnector\n\n(APIServer pid=52555) ERROR 05-27 13:26:09 [async_llm.py:704] AsyncLLM output_handler failed.\n(APIServer pid=52555) ERROR 05-27 13:26:09 [async_llm.py:704] Traceback (most recent call last):\n(APIServer pid=52555) ERROR 05-27 13:26:09 [async_llm.py:704]   File \"/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/async_llm.py\", line 697, in output_handler\n    logger_ref[0].record(\n    ~~~~~~~~~~~~~~~~~~~~^\n...\n   File \"/usr/local/lib/python3.12/dist-packages/vllm/distributed/kv_transfer/kv_connector/v1/metrics.py\", line 175, in observe\n(APIServer pid=52555) ERRO",
+        "question": "`vllm` sistemindeki bu `AssertionError` hatasının kök nedeni nedir?",
+        "choices": [
+            "A) `async_llm.py` dosyasındaki `output_handler` fonksiyonunun, dağıtılmış anahtar-değer (KV) transfer metriklerinin kaydı sırasında beklenen bir durumu karşılayamaması.",
+            "B) `mooncakeconnector` bileşeninin, `APIServer` ile iletişim kurarken hatalı bir protokol kullanması.",
+            "C) `vllm` motorunun, yetersiz bellek nedeniyle `logger_ref[0]` nesnesine erişememesi.",
+            "D) Python 3.12'nin `vllm` kütüphanesiyle uyumsuzluk sorunları nedeniyle `async_llm` modülünün doğru çalışmaması."
+        ],
+        "answer": "A",
+        "explanation": "Hata izi, `async_llm.py` içindeki `output_handler`'dan başlayıp, metrik kayıt (logger'lar) ve sonunda dağıtılmış anahtar-değer (KV) transferi mekanizmasının metrikler (`kv_connector/v1/metrics.py`) modülünde bir `AssertionError`'a kadar uzanıyor. `AssertionError`'lar genellikle programın dahili varsayımlarının veya koşullarının ihlal edildiğini, yani beklenmeyen bir durumun meydana geldiğini gösterir. Bu durumda, hata dağıtılmış KV transfer metriklerini izleme veya kaydetme sırasında beklenen bir durumun gerçekleşmediğini işaret etmektedir."
+    },
+    {
+        "id": "280520262612",
+        "target_elo": 1150,
+        "original_error": "[Bug]: Nightly / CI failed - tests/e2e/online_serving/test_zimage_expansion.py::test_zimage[layerwise_hsdp]\n\nOSError: [Errno 22] Invalid argument\n...\n | (APIServer pid=13809) ERROR ... [multiproc_executor.py:236] Diffusion worker(s) died unexpectedly: ['DiffusionWorker-1(exitcode=None)']",
+        "question": "`Nightly / CI` testindeki `OSError: [Errno 22] Invalid argument` hatasının ve ardından \"Diffusion worker(s) died unexpectedly\" mesajlarının kök nedeni nedir?",
+        "choices": [
+            "A) `APIServer`'ın `Orchestrator` ile iletişim kurarken zaman aşımına uğraması, bu da diffusion işçilerinin kapanmasına neden olur.",
+            "B) Diffusion işçilerinden birinin, bir sistem çağrısına veya düşük seviyeli bir kütüphane fonksiyonuna geçersiz bir parametre sağlaması ve bu nedenle beklenmedik bir şekilde çökmesi.",
+            "C) `zimage_expansion` testinin, dağıtılmış diffusion motorunun başlatılması için yetersiz kaynak (CPU/bellek) ayırması.",
+            "D) `inline_stage_diffusion_client.py` dosyasındaki bir mantık hatası nedeniyle diffusion işlem hattının yanlışlıkla kendi kendini sonlandırması."
+        ],
+        "answer": "B",
+        "explanation": "`OSError: [Errno 22] Invalid argument` hatası genellikle bir sistem çağrısına veya düşük seviyeli bir kütüphane fonksiyonuna yanlış veya geçersiz bir parametre geçirilmesi durumunda ortaya çıkar. Loglarda bu hatanın hemen ardından \"Diffusion worker(s) died unexpectedly\" ifadesinin gelmesi, bir işçi sürecinin dahili bir işlem sırasında bu geçersiz argüman hatasını alarak beklenmedik bir şekilde sonlandığını güçlü bir şekilde işaret etmektedir. Diğer seçenekler, hatanın dolaylı sonuçları veya farklı nedenleri olabilir ancak doğrudan `OSError`'ın açıklaması değildir."
+    },
+    {
+        "id": "280520262613",
+        "target_elo": 1050,
+        "original_error": "[Bug]: Detection pipeline fails with ModuleNotFoundError for libs.schemas\n\nTraceback (most recent call last):\n  File \"C:\\Users\\prarthana\\Eagle\\services\\detection\\detection.py\", line 22, in <module>\n    from libs.schemas.detection import DetectionFrameSchema as DetectionFrame, DetectionSchema as Detection, BoundingBox\nModuleNotFoundError: No module named 'libs.schemas'",
+        "question": "Python 'Detection pipeline'ının `ModuleNotFoundError: No module named 'libs.schemas'` hatasıyla karşılaşmasının kök nedeni nedir?",
+        "choices": [
+            "A) `libs` klasörünün içindeki `schemas` alt klasöründe `__init__.py` dosyasının eksik olması.",
+            "B) `services/detection/detection.py` betiğinin çalıştırıldığı ortamda, Python'ın modül arama yolu (`sys.path`) içinde `Eagle` proje kök dizininin bulunmaması.",
+            "C) Kullanıcının `detection.py` betiğini, `Eagle/services/detection` dizininden değil de `Eagle/` dizininden başlatması.",
+            "D) `data/sample_videos/sample.mp4` video dosyasının bulunamaması veya erişim izinlerinin olmaması."
+        ],
+        "answer": "B",
+        "explanation": "`ModuleNotFoundError: No module named 'libs.schemas'` hatası, Python yorumlayıcısının belirtilen `libs.schemas` modülünü import etmek için gerekli olan paket yolunu (`sys.path`) bulamadığını gösterir. Proje yapısı `Eagle/libs/schemas/...` şeklindeyken, `detection.py` betiği `libs.schemas.detection`'ı import etmeye çalışmaktadır. Bu durumda, Python'ın `libs`'i bir üst düzey paket olarak tanıması için `Eagle` proje kök dizininin `sys.path` içinde olması gerekir. `python services/detection/detection.py` gibi bir komut çalıştırıldığında, genellikle betiğin bulunduğu dizin ve çalışma dizini `sys.path`'e eklenir, ancak `Eagle` dizini doğrudan bir paket kökü olarak algılanmayabilir. `__init__.py` dosyalarının eksikliği de benzer bir hataya yol açabilir (A seçeneği), ancak burada genel ve daha olası kök neden Python'ın `libs` paketi hiyerarşisinin kökünü bulamamasıdır."
+    },
+    {
+        "id": "280520262620",
+        "target_elo": 1250,
+        "original_error": "Music Assistant - View not usuable\n`Logger: homeassistant.util.loop - Detected blocking call to open with args (PosixPath('/config/custom_components/wake_alarm/manifest.json'),) inside the event loop by custom integration 'wake_alarm'`",
+        "question": "Home Assistant ortamında bir özel entegrasyon kullanılırken yukarıdaki hata günlüğü (`error_log`) ile karşılaşılmıştır. `Music Assistant` görünümünün kullanılamaz hale gelmesiyle sonuçlanan bu durumun kök nedeni nedir?",
+        "choices": [
+            "A) `/config/custom_components/wake_alarm/manifest.json` dosyasının erişim izinleri yetersizdir, bu nedenle dosya okunamamaktadır.",
+            "B) `wake_alarm` özel entegrasyonu, Home Assistant'ın asenkron olay döngüsü (event loop) içinde senkron (blocking) bir I/O işlemi gerçekleştirmektedir.",
+            "C) Home Assistant çekirdek sürümü (`2026.5.4`), `wake_alarm` entegrasyonunun gerektirdiği API değişikliklerini henüz desteklememektedir.",
+            "D) `manifest.json` dosyası hatalı bir JSON formatına sahiptir veya içerisinde `wake_alarm` entegrasyonunun beklediği kritik bilgiler eksiktir."
+        ],
+        "answer": "B",
+        "explanation": "Hata günlüğündeki \"Detected blocking call to open ... inside the event loop\" ifadesi, kök nedeni açıkça belirtmektedir. `wake_alarm` özel entegrasyonu, asenkron bir programlama ortamı olan Home Assistant'ın ana olay döngüsü içinde `open()` gibi senkron (engelleme yapan) bir dosya okuma işlemi yapmaktadır. Bu durum, olay döngüsünü tamamen bloke ederek diğer asenkron görevlerin (örneğin UI güncellemeleri veya diğer entegrasyonların işlenmesi) durmasına veya gecikmesine neden olur, bu da uygulamanın takılmasına veya \"kullanılamaz\" hale gelmesine yol açar. Asenkron ortamlarda engelleme yapan I/O işlemlerinin ayrı bir iş parçacığı havuzunda (executor) yürütülmesi gerekir (örn. `loop.run_in_executor()` kullanarak)."
+    },
+    {
+        "id": "280520262622",
+        "target_elo": 1350,
+        "original_error": "AssertionError: genotype array is None\n`pixy` 2.0.0 stable sürümü, aynı VCF veri setiyle `AssertionError: genotype array is None` hatası veriyor; oysa 2.0.0beta14 sürümü sorunsuz çalışıyordu.",
+        "question": "`pixy` biyoinformatik aracı (`2.0.0` kararlı sürüm) yukarıdaki hata mesajını vermektedir. Kullanıcı aynı veri setiyle (`all_sites_filtered.vcf.gz`) daha önceki `2.0.0beta14` sürümünde bu hatayı almadığını belirtmektedir. Bu `AssertionError`'ın en olası kök nedeni nedir?",
+        "choices": [
+            "A) Girdi VCF dosyasının (`all_sites_filtered.vcf.gz`) formatı, `pixy` 2.0.0 sürümünün beklentileriyle uyumlu değildir ve genotip bilgilerini doğru şekilde içermemektedir.",
+            "B) `pixy` 2.0.0 sürümüne eklenen yeni `--fst_components` bayrağı, genotip veri ayrıştırma veya yükleme mekanizmasında bir regresyona (hata) neden olmaktadır.",
+            "C) `pops2.txt` popülasyon dosyasındaki veri tanımları, `pixy`'nin genotip dizisini doğru şekilde eşleştirmesine engel olmaktadır.",
+            "D) HPC ortamında `16` çekirdek (`--n_cores 16`) kullanılması, `pixy`'nin bellek yönetimiyle ilgili bir race condition veya kaynak yetersizliğine yol açmaktadır."
+        ],
+        "answer": "B",
+        "explanation": "Bir `AssertionError`, genellikle programcının asla gerçekleşmemesi gerektiğini düşündüğü bir koşulun ihlal edildiğini gösterir. \"genotype array is None\" hatası, genotip verilerini tutması beklenen dizinin başlatılmadığını veya boş kaldığını belirtir. Aynı veri setinin daha önceki bir beta sürümünde sorunsuz çalışması, `2.0.0` kararlı sürümünde yeni bir hatanın (regresyon) ortaya çıktığını kuvvetle düşündürmektedir. Özellikle `--fst_components` gibi yeni eklenen bir özelliğin, temel veri yükleme mekanizmalarını etkileyen yan etkileri olması muhtemeldir. Bu tür regresyonlar, yeni özelliklerin eklenmesi veya mevcut kodda yapılan değişiklikler sırasında meydana gelebilir ve kritik veri yapılarının yanlış işlenmesine yol açabilir. A şıkkı mümkün olsa da, beta sürümünde çalışması bu ihtimali zayıflatır. C ve D şıkları ise hatanın doğrudan genotip verisiyle ilgili olmamasından dolayı daha az olasıdır."
+    },
+    {
+        "id": "280520262623",
+        "target_elo": 1250,
+        "original_error": "KeyError: '_language'\n`scratchattach` kütüphanesi (`2.1.19`) ile `sa.login_by_id()` çağrısında `KeyError: '_language'` hatası alınıyor.",
+        "question": "`scratchattach` kütüphanesi kullanılarak `sa.login_by_id()` metodu çağrılırken `KeyError: '_language'` hatası alınmıştır. Bu hata, kütüphanenin `Cloud Requests` özelliğini kullanma denemelerinde tekrar tekrar ortaya çıkmaktadır. Bu `KeyError`'ın en olası kök nedeni nedir?",
+        "choices": [
+            "A) Kullanıcının Scratch hesabında kayıtlı dil ayarı bulunmadığı veya bu ayarın kütüphane tarafından erişilemez olduğu.",
+            "B) `scratchattach` kütüphanesinin `2.1.19` sürümü ile Scratch API'sinin sunucudan döndürdüğü güncel yanıt yapısı arasında bir uyumsuzluk olması.",
+            "C) `sa.login_by_id()` fonksiyonuna sağlanan `session_id` veya `username` bilgilerinin hatalı veya geçersiz olması.",
+            "D) `scratchattach` kütüphanesinin çalıştığı Python ortamında `locale` veya dil ile ilgili eksik bir bağımlılığın bulunması."
+        ],
+        "answer": "B",
+        "explanation": "`KeyError`, genellikle bir sözlükten (dictionary) var olmayan bir anahtarı (key) almaya çalışıldığında ortaya çıkar. `sa.login_by_id()` fonksiyonu, büyük ihtimalle Scratch API'sine bir istek gönderir ve API'den dönen yanıtı (genellikle JSON formatında) ayrıştırır. `_language` anahtarının bulunamaması, kütüphanenin beklediği yanıt yapısının Scratch API tarafından artık sağlanmadığını veya farklı bir formatta geldiğini düşündürmektedir. Kütüphanenin eski bir sürümü (`2.1.19`) ile API'nin değişen yapısı arasındaki uyumsuzluk, bu tür bir hatanın en yaygın nedenidir. A şıkkı, bir dil ayarı eksikliğinin doğrudan bir `KeyError` olarak manifest olması yerine, genellikle varsayılan bir değerle işlenmesi veya farklı bir hata türüne yol açması daha olasıdır. C şıkkı, genellikle kimlik doğrulama başarısızlığına işaret ederken, D şıkkı ise daha çok yerel sistemle ilgili bir sorundur ve doğrudan API yanıtındaki bir anahtarın eksikliğiyle bağlantılı değildir."
+    },
+    {
+        "id": "280520262624",
+        "target_elo": 1000,
+        "original_error": "[BUG]: issue with seasonal event functionality in cava_data\n\nUserWarning: Incomplete warming level for LOCA2_EC-Earth3_r4i1p1f1 at 0.8C. Skipping this warming level.\n\nWhat happened?: when running cava_data using the likely seasonal event for GWL<=0.8 the missing LOCA and WRF simulations at the low warming levels causes an empty data array issue leading to an error.",
+        "question": "climakitae kütüphanesini kullanarak belirli bir coğrafi konum için iklim verisi analizi yapmaya çalışırken, `cava_data` fonksiyonu aşağıdaki uyarıyı verdi ve açıklama kısmına göre bir hataya neden oldu: \"Incomplete warming level for LOCA2... Skipping this warming level.\" ve açıklama \"eksik LOCA ve WRF simülasyonları düşük ısınma seviyelerinde boş bir veri dizisi sorununa yol açarak bir hataya neden oluyor.\" Bu hatanın kök nedeni nedir?",
+        "choices": [
+            "A) `cava_data` fonksiyonunun parametreleri (örn. `percentile` veya `metric_calc`) yanlış yapılandırılmıştır.",
+            "B) LOCA2 veya WRF simülasyon verileri, belirtilen 0.8°C ısınma seviyesi için sistemde mevcut değildir.",
+            "C) `pandas.DataFrame` objesinin `lat` ve `lon` değerleri geçersiz formatta sağlanmıştır.",
+            "D) `climakitae` kütüphanesinin `v1.5.3` sürümünde genel bir bellek sızıntısı bulunmaktadır."
+        ],
+        "answer": "B",
+        "explanation": "Hata raporunda açıkça belirtildiği üzere, `LOCA` ve `WRF` simülasyonları belirli bir ısınma seviyesi (0.8°C) için eksik olduğundan, `cava_data` fonksiyonu boş bir veri dizisi döndürmüş ve bu da daha sonra bir hataya yol açmıştır. Kök neden, analiz için gerekli olan verinin eksikliğidir."
+    },
+    {
+        "id": "280520262625",
+        "target_elo": 1200,
+        "original_error": "[BUG] .meile-gui/bin gets used by zombie process\n\nPermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\freqn\\.meile-gui\\bin'\n\nDescription: Sometimes, if Meile was inappropriately shutdown while connected it will lock the !~/.meile-gui/bin folder which causes the following error on startup in Windows.",
+        "question": "Meile uygulamasını başlatırken `PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\freqn\\.meile-gui\\bin'` hatası alınıyor. Açıklamaya göre, uygulamanın uygunsuz bir şekilde kapatılması durumunda bu hatanın meydana geldiği belirtiliyor. Bu hatanın kök nedeni nedir?",
+        "choices": [
+            "A) `meile_config.py` dosyasında bir `TypeError` mevcut olup, bu dosyanın `update_bin` fonksiyonunda `NoneType` bir objenin uzunluğu sorgulanmaktadır.",
+            "B) Uygulamanın önceki bir çalışmasından kalan \"zombi\" bir işlem, '.meile-gui/bin' klasörünü kilitlemiş durumdadır.",
+            "C) `shutil` kütüphanesinin `rmtree` fonksiyonunda bir hata bulunmaktadır ve bu durum dizinleri doğru şekilde silememektedir.",
+            "D) Windows işletim sistemi, '.meile-gui/bin' klasörüne erişim izinlerini yanlış yapılandırmıştır."
+        ],
+        "answer": "B",
+        "explanation": "Hata raporunda açıkça belirtildiği gibi, \"Meile uygunsuz bir şekilde kapatıldığında, !~/.meile-gui/bin klasörünü kilitler\". Bu durum, uygulamanın yeni bir örneğinin başlatılması sırasında bu klasöre erişmeye veya silmeye çalıştığında `PermissionError` almasına neden olur. Kök neden, önceki sürecin klasör üzerindeki kilidi serbest bırakmamasıdır."
+    },
+    {
+        "id": "280520262627",
+        "target_elo": 1100,
+        "original_error": "404 pages lead to error\n\nException while resolving variable 'name' in template 'unknown'.\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n  ...\ndjango.urls.exceptions.Resolver404: {'tried': [[<URLResolver <module 'core.urls' from '/code/core/urls.py'> (None:None) ''>, <URLPattern 'health' [name='health']>], ...",
+        "question": "Django tabanlı bir uygulamada var olmayan bir URL'e erişildiğinde (yani bir 404 durumu oluştuğunda), sistem aşağıdaki hata mesajını döndürmektedir: \"Exception while resolving variable 'name' in template 'unknown'.\" Bu hatanın kök nedeni nedir?",
+        "choices": [
+            "A) Django URL çözümleyicisi (`resolver.resolve`) yanlış yapılandırılmış URL desenleri nedeniyle `Resolver404` hatası fırlatmaktadır.",
+            "B) Projenin `core.urls` modülünde tanımlanan URL desenleri arasında bir çakışma bulunmaktadır.",
+            "C) Özel 404 hata sayfasını işlerken kullanılan şablonun (`template 'unknown'`) içerisinde tanımlanmamış veya geçersiz bir `name` değişkenine erişilmeye çalışılmaktadır.",
+            "D) `django.core.handlers.base.py` dosyasındaki iç hata işleme mekanizması, `Resolver404` istisnasını doğru şekilde yakalayamamaktadır."
+        ],
+        "answer": "C",
+        "explanation": "`Resolver404` hatası, istenen URL'in bulunamadığı zaman beklenen bir durumdur. Ancak, bu hatanın ardından `Exception while resolving variable 'name' in template 'unknown'` hatasının gelmesi, sistemin 404 durumunu ele almak için kullandığı özel hata sayfasının (veya şablonunun) içeriğinde bir sorun olduğunu gösterir. Yani, 404 sayfası doğru şekilde oluşturulamaz çünkü bir değişken (`name`) eksik veya hatalıdır."
+    },
+    {
+        "id": "280520262628",
+        "target_elo": 1400,
+        "original_error": "2026.5.0: SAMLProvider is not JSON serializable in Event.log_deprecation when SAML provider uses redirect binding\n\nTypeError: Object of type SAMLProvider is not JSON serializable\n\nDescription: When cause is a model instance (e.g. SAMLProvider), it is passed directly as a JSONB filter parameter: query &= Q(context__cause=cause). psycopg attempts to JSON-serialize the raw Django model object for the JSONB query, which fails.",
+        "question": "Authentik uygulamasında SAML sağlayıcısı (SAMLProvider) redirect binding ile yapılandırıldığında, `Event.log_deprecation` fonksiyonu sırasında `TypeError: Object of type SAMLProvider is not JSON serializable` hatası alınmaktadır. Hata açıklamasında, `log_deprecation()` fonksiyonunun `cause` parametresine doğrudan bir `SAMLProvider` model nesnesi geçirilmesinin ve bunun `psycopg` tarafından JSONB filtresi için serileştirilememesinin neden olduğu belirtiliyor. Bu hatanın kök nedeni nedir?",
+        "choices": [
+            "A) `SAMLProvider` modelinin veritabanı şemasında `JSONB` türünde bir alanın yanlış tanımlanması.",
+            "B) `Event.log_deprecation` fonksiyonunun, `SAMLProvider` gibi karmaşık bir Django model nesnesini doğrudan JSON serileştirmeye uygun olmayan bir şekilde veritabanı sorgusuna geçirmesi.",
+            "C) `authentik/events/models.py` dosyasında `sanitize_item()` fonksiyonunun yanlış bir şekilde çağrılması.",
+            "D) `SAMLProvider` nesnesinin, `redirect binding` yerine `post binding` kullanıldığında doğru şekilde serileştirilememesi."
+        ],
+        "answer": "B",
+        "explanation": "Hata raporunda açıkça belirtildiği üzere, sorun `Event.log_deprecation` fonksiyonunun bir `SAMLProvider` model nesnesini (`cause` parametresi olarak) doğrudan bir JSONB filtre parametresine aktarmasıdır. `psycopg` gibi bir veritabanı adaptörü, bu karmaşık Python nesnesini doğrudan JSON formatına dönüştüremeyeceği için bir `TypeError` fırlatır. Çözüm, nesneyi veritabanına göndermeden önce `sanitize_item()` gibi bir fonksiyonla serileştirilebilir bir formata dönüştürmektir."
+    },
+    {
+        "id": "280520262629",
+        "target_elo": 1350,
+        "original_error": "BUG: adjoint solve fails with Real space when using MUMPS\nAdjoint differentiation fails when the forward model contains a solve on a Real function space (FunctionSpace(mesh, \"R\"/\"Real\", 0)). During ReducedFunctional.derivative(), the adjoint solve attempts an LU/MUMPS factorization on a PETSc matrix of type python (matfree-style), which PETSc/MUMPS does not support, causing the adjoint to crash.",
+        "question": "Firedrake'te 'Real' fonksiyon uzayı kullanılırken ve `ReducedFunctional.derivative()` çağrısı sırasında, adjoint çözümün PETSc/MUMPS ile çökmesinin temel nedeni nedir?",
+        "choices": [
+            "A) 'Real' fonksiyon uzayının tanımı hatalıdır ve bu durum bir derleme hatasına yol açar.",
+            "B) PETSc'in LU/MUMPS çarpanlara ayırma yöntemi, 'MatType=python' (matris-serbest stil) matrisleri için tasarlanmamıştır, bu da uyumsuzluğa ve çöküşe neden olur.",
+            "C) 'adjoint' modülü 'ReducedFunctional.derivative()' çağrısı sırasında bellek sızıntısına neden olur.",
+            "D) 'DEFAULT_DIRECT_SOLVER' değişkeni yanlış ayarlanmıştır ve bu durum yanlış bir çözücü seçimine neden olur."
+        ],
+        "answer": "B",
+        "explanation": "PETSc/MUMPS gibi doğrudan çözücüler, seyrek matrislerin LU çarpanlara ayrılması için tasarlanmıştır ve matrisin açık formuna ihtiyaç duyarlar. Ancak hata raporunda belirtildiği gibi, adjoint çözüm sırasında 'MatType=python' (matris-serbest stil) tipinde bir matris üzerinde işlem denenmektedir. Bu matris tipi, matrisin açıkça oluşturulmadığı, bunun yerine matris-vektör çarpımlarının bir fonksiyon aracılığıyla uygulandığı durumları temsil eder. MUMPS gibi doğrudan çözücüler, matris-serbest bir yapı üzerinde doğrudan çalışamaz ve bu da uyumsuzluğa ve sistemin çökmesine yol açar."
+    },
+    {
+        "id": "280520262630",
+        "target_elo": 1100,
+        "original_error": "Cert model expiration property is broken, trips up expiration bit.\nTypeError: can't compare offset-naive and offset-aware datetimes at return datetime.now() > datetime.fromisoformat(self.valid_until)",
+        "question": "Python'da sertifika sona erme kontrolü sırasında ortaya çıkan `TypeError: can't compare offset-naive and offset-aware datetimes` hatasının temel nedeni nedir?",
+        "choices": [
+            "A) `self.valid_until` string'i geçerli bir ISO formatında değildir.",
+            "B) `datetime.now()` fonksiyonu çağrıldığında sistem saati yanlış ayarlanmıştır.",
+            "C) `datetime.now()` ile oluşturulan tarih/saat nesnesi zaman dilimi bilgisinden yoksundur (naive), ancak `datetime.fromisoformat(self.valid_until)` ile oluşturulan nesne zaman dilimi bilgisi içerir (aware), bu da doğrudan karşılaştırmayı engeller.",
+            "D) `octopoes` kütüphanesinin `datetime` modülü uyumsuz bir sürüm kullanmaktadır."
+        ],
+        "answer": "C",
+        "explanation": "Python'da `datetime` nesneleri, zaman dilimi bilgisi içeren (aware) veya içermeyen (naive) olarak ikiye ayrılır. `datetime.now()` genellikle zaman dilimi bilgisi olmayan (naive) bir nesne döndürürken, `datetime.fromisoformat()` eğer ISO string'i zaman dilimi bilgisi içeriyorsa (örn. '2023-01-01T10:00:00+03:00'), zaman dilimi bilgisi olan (aware) bir nesne oluşturur. Python, bu iki farklı tipteki `datetime` nesnesinin doğrudan karşılaştırılmasını `TypeError` ile engeller, çünkü bu tür karşılaştırmalar farklı zaman dilimlerinde belirsiz sonuçlar verebilir. Çözüm, her iki nesneyi de ya aware ya da naive yaparak tutarlı hale getirmektir."
+    },
+    {
+        "id": "280520262632",
+        "target_elo": 1200,
+        "original_error": "[SCRAPER] - URL import fails for allrecipes.com (recipe_scrapers dependency may be outdated?)\nINFO     2026-05-28T07:09:38 - HTTP Request: GET https://www.allrecipes.com/recipe/158968/spinach-and-feta-turkey-burgers/ \"HTTP/2 460 \"\nERROR    2026-05-28T07:09:38 - Erro",
+        "question": "`Mealie` uygulamasında `allrecipes.com`'dan tarif çekerken alınan `HTTP/2 460` hatasının kök nedeni nedir?",
+        "choices": [
+            "A) `recipe-scrapers` kütüphanesinin `allrecipes.com` için kullanılan ayrıştırma mantığı güncel değildir.",
+            "B) Hedef sunucu (`allrecipes.com`), `Mealie` uygulamasından gelen HTTP isteğine, içeriği sağlamayı reddettiğini belirten standart dışı bir `460` hata kodu ile yanıt vermektedir.",
+            "C) `Mealie` uygulamasının kullandığı `HTTP/2` protokolü, `allrecipes.com` tarafından desteklenmemektedir.",
+            "D) `Mealie` container'ı içinde DNS çözümleme sorunları yaşanmaktadır."
+        ],
+        "answer": "B",
+        "explanation": "Logda görülen `HTTP/2 460` yanıt kodu, `allrecipes.com` sunucusundan gelmektedir ve bu standart dışı bir HTTP hata kodudur. Genellikle `4xx` seviyesindeki hata kodları, istemci tarafındaki bir sorunu (örneğin, yanlış formatlı istek, yetkilendirme eksikliği, rate limiting veya engellenmiş kullanıcı aracısı) veya sunucunun belirli bir nedenden dolayı isteği işlemeyi reddetmesini gösterir. Rapor, `recipe-scrapers` kütüphanesinin tek başına çalışmasında sorun olmadığını belirttiği için, sorun `Mealie` uygulamasının `allrecipes.com`'a yaptığı isteğin özel parametreleri veya sunucunun bu isteğe özel bir şekilde yanıt vermesiyle ilgilidir. Kök neden, sunucunun içeriği sağlamayı reddetmesidir, bu da muhtemelen `Mealie`'nin isteklerinin belirli bir politika tarafından tetiklendiğini gösterir."
+    },
+    {
+        "id": "280520262633",
+        "target_elo": 1000,
+        "original_error": "Error catching in metadata operations\nirods.exception.CAT_NO_ACCESS_PERMISSION: None\nDuring handling of the above exception, another exception occurred:\nTraceback (most recent call last):\n  File \"/Users/staig001/git-repos/iBridges-Gui/ibridgesgui/browsertab/browser_controller.py\", line 330, in _metadata_edits\n    self.service.delete_metadata(irods_path, new_key, new_val, new_units)",
+        "question": "iRODS sisteminde meta veri silme işlemi sırasında `irods.exception.CAT_NO_ACCESS_PERMISSION` hatasının kök nedeni nedir?",
+        "choices": [
+            "A) iRODS sunucusu ile bağlantı kurulamadı.",
+            "B) Kullanıcının, belirtilen iRODS nesnesi üzerindeki meta veriyi silmek için gerekli erişim yetkileri bulunmamaktadır.",
+            "C) Meta veri anahtarı (`new_key`) veya değeri (`new_val`) geçersiz bir formattadır.",
+            "D) iRODS veritabanında meta veri girdisi bulunmamaktadır."
+        ],
+        "answer": "B",
+        "explanation": "`irods.exception.CAT_NO_ACCESS_PERMISSION` istisnası, adından da anlaşılacağı gibi, iRODS sisteminde belirli bir kaynağa (bu durumda meta veri) erişim veya üzerinde işlem yapma yetkisinin olmadığını belirtir. Kullanıcı açıklamasında da belirtildiği gibi, bir kullanıcının meta veri eklemesine izin verilirken silmesine izin verilmemesi, bu hatanın doğrudan yetkilendirme eksikliğinden kaynaklandığını doğrulamaktadır."
+    },
+    {
+        "id": "280520262634",
+        "target_elo": 1250,
+        "original_error": "Hata başlığı: [BUG] - Unable to login with local authentication (v3.19.1 only)\nKritik log kesiti: jwt.exceptions.InvalidKeyError: HMAC key must not be empty.",
+        "question": "Bir Python uygulaması olan Mealie, v3.19.0'dan v3.19.1 sürümüne güncellendikten sonra kullanıcı girişi sırasında \"Something went Wrong!\" hatası vermektedir. Loglarda aşağıdaki istisna görülmektedir:\n\n\nFile \"/opt/mealie/lib/python3.12/site-packages/jwt/algorithms.py\", line 329, in prepare_key\n    raise InvalidKeyError(\"HMAC key must not be empty.\")\njwt.exceptions.InvalidKeyError: HMAC key must not be empty.\n\n\nBu hatanın kök nedeni nedir?",
+        "choices": [
+            "A) Uygulamanın kullandığı JWT kütüphanesi ile Python yorumlayıcısı arasında bir uyumsuzluk bulunmaktadır.",
+            "B) Güncelleme sonrası JWT imzalamak için gerekli olan HMAC anahtarı (secret key) ya eksik bırakılmış ya da yanlış bir değerle yapılandırılmıştır.",
+            "C) Veritabanı şemasında yapılan bir değişiklik, kullanıcı kimlik doğrulama bilgilerinin doğru şekilde okunmasını engellemektedir.",
+            "D) Uygulamanın ağ yapılandırması, yeni sürümde kullanılan kimlik doğrulama sunucusuyla bağlantı kurmasını engellemektedir."
+        ],
+        "answer": "B",
+        "explanation": "jwt.exceptions.InvalidKeyError: HMAC key must not be empty. hatası, JSON Web Token (JWT) imzalaması veya doğrulaması için kullanılan gizli anahtarın (secret key) boş veya geçersiz olduğunu açıkça belirtir. Bu tür anahtarlar genellikle ortam değişkenleri veya yapılandırma dosyaları aracılığıyla sağlanır. Bir sürüm güncellemesi sonrası bu hatanın ortaya çıkması, yeni sürümün anahtar gereksinimlerini değiştirdiğini veya anahtarın güncel dağıtım ortamında doğru şekilde ayarlanmadığını gösterir. Diğer seçenekler, hatanın doğrudan belirttiği 'boş anahtar' sorununu açıklamamaktadır."
+    },
+    {
+        "id": "280520262635",
+        "target_elo": 1150,
+        "original_error": "Hata başlığı: Connection test can attempt to process the queue\nKritik log kesiti: DEBUG::[newswrapper:237] Thread -1@127.0.0.1: Article file=... missing (error=430)\nTraceback: File \"/home/runner/work/sabnzbd/sabnzbd/sabnzbd/api.py\", line 1492, in test_nntp_server_dict\n    nw.read(on_response=on_response)",
+        "question": "Bir NNTP istemcisinin bağlantı testini yaparken aşağıdaki hata logları ve traceback oluşmuştur:\n\n\nWARNING:root:Can't parse article information\nDEBUG::[newswrapper:237] Thread -1@127.0.0.1: Article file=/home/runner/work/sabnzbd/sabnzbd/tests/data/basic_rar5/testfile.rar|part=1|start=0|size=283 missing (error=430)\nTraceback: \n  File \"/home/runner/work/sabnzbd/sabnzbd/sabnzbd/api.py\", line 1492, in test_nntp_server_dict\n    nw.read(on_response=on_response)\n\n\nAyrıca, açıklama kısmında `thrdnum == -1` değerine sahip bir iş parçacığının (thread) böyle bir makaleyi işlemeye çalışmaması gerektiği belirtilmektedir. Bu hatanın kök nedeni nedir?",
+        "choices": [
+            "A) NNTP sunucusu, belirtilen 'testfile.rar' dosyasını gerçekten içermemektedir ve bu bir sunucu hatasıdır.",
+            "B) Uygulamanın 'test_nntp_server_dict' fonksiyonu, sadece bağlantıyı kontrol etmesi gerekirken, hatalı bir şekilde makale okuma (data processing) işlemlerini tetiklemektedir.",
+            "C) Ağ bağlantısı sırasında bir güvenlik duvarı veya proxy, makale verilerine erişimi engellemektedir.",
+            "D) 'sabnzbd' uygulamasının önbelleği bozulmuştur ve bu yüzden makale bilgilerini doğru bir şekilde işleyememektedir."
+        ],
+        "answer": "B",
+        "explanation": "Loglarda yer alan 'Thread -1@127.0.0.1: Article file=... missing (error=430)' mesajı, NNTP protokolünde 'Makale yok' anlamına gelir ve bu durum 'nw.read' çağrısı sırasında meydana gelmiştir. `thrdnum == -1` gibi geçersiz bir iş parçacığı numarasıyla makale işlemeye çalışılması, 'test_nntp_server_dict' fonksiyonunun amacından saparak, sadece bağlantıyı test etmek yerine gerçek veri işleme mantığını tetiklediğini göstermektedir. Bu, bir bağlantı test fonksiyonunda olması gereken mantıksal bir hatadır. Sunucu hatası veya ağ engeli, bağlantı testinin başarılı olmasını bile zorlaştırırken, burada bağlantı kurulmuş ancak sonrasında mantıksal bir işlemde hata alınmıştır."
+    }
+]
