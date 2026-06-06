@@ -1,95 +1,64 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeStreak | AI Training Hub</title>
-    <style>
-        :root {
-            --bg-color: #1e1e1e;
-            --surface-color: #2d2d2d;
-            --primary-color: #4CAF50;
-            --blue: #2196F3;
-            --orange: #FF9800;
-            --purple: #9C27B0;
-            --red: #E53935;
-            --text-main: #ffffff;
-            --text-muted: #aaaaaa;
-        }
-        body { font-family: Arial, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .container { width: 100%; max-width: 900px; }
-        .view { display: none; }
-        .active { display: block; }
-        
-        h1 { text-align: center; color: var(--primary-color); font-family: Consolas, monospace; margin-bottom: 5px; }
-        .by-tag { text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; }
-        
-        input[type="text"] { width: 100%; padding: 12px; font-size: 16px; background: var(--surface-color); border: 1px solid #555; color: white; border-radius: 6px; margin-bottom: 20px; box-sizing: border-box; }
-        button { width: 100%; padding: 15px; font-size: 16px; font-weight: bold; color: white; border: none; border-radius: 6px; cursor: pointer; margin-bottom: 15px; transition: opacity 0.2s; }
-        button:hover { opacity: 0.8; }
-        
-        .btn-green { background-color: var(--primary-color); }
-        .btn-blue { background-color: var(--blue); }
-        .btn-orange { background-color: var(--orange); }
-        .btn-purple { background-color: var(--purple); }
-        .btn-red { background-color: var(--red); }
-        .btn-gray { background-color: #757575; }
-        .btn-dark { background-color: #333333; }
-        
-        .top-bar { background-color: var(--surface-color); padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; border: 1px solid var(--primary-color); margin-bottom: 20px; }
-        .top-bar span { font-weight: bold; color: #FFD700; }
-        
-        .context-box { background-color: var(--surface-color); padding: 15px; border-radius: 6px; font-family: Consolas, monospace; white-space: pre-wrap; margin-bottom: 20px; max-height: 200px; overflow-y: auto; border: 1px solid #444; }
-        .option-label { display: block; background: var(--surface-color); padding: 15px; margin-bottom: 10px; border-radius: 6px; cursor: pointer; border: 1px solid #444; }
-        .action-row { display: flex; gap: 10px; margin-bottom: 20px; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <div id="login-view" class="view active">
-        <h1>CodeStreak</h1>
-        <p class="by-tag">by VertexWhile</p>
-        <div style="max-width: 400px; margin: 0 auto;">
-            <input type="text" id="username-input" placeholder="Ajan Kod Adı">
-            <button class="btn-blue" onclick="login()">🚀 Giriş Yap</button>
-            <button class="btn-gray" onclick="guestLogin()">👻 Misafir Olarak Devam Et</button>
-        </div>
-    </div>
-
-    <div id="menu-view" class="view">
-        <h1>CodeStreak</h1>
-        <p class="by-tag">by VertexWhile</p>
-        <div class="top-bar">
-            <span id="menu-agent-name">Ajan: </span>
-            <span id="menu-elo">⭐ ELO: 1000</span>
-        </div>
-        <button class="btn-blue" onclick="startQuiz('final_quiz_bank.json')">📚 Makale Modu</button>
-        <button class="btn-orange" onclick="startQuiz('final_log_quiz_bank.json')">🐛 Hata Modu</button>
-        <button class="btn-purple" onclick="startQuiz('final_algoritma_bank.json')">⚙️ Algoritma Modu</button>
-        <button class="btn-red" onclick="startFailQuiz()">⚠️ Yapamadıklarım</button>
-        <button class="btn-dark" onclick="logout()">🚪 Çıkış Yap</button>
-    </div>
-
-    <div id="quiz-view" class="view">
-        <div class="action-row">
-            <button class="btn-dark" onclick="showMenu()">🏠 Ana Menü</button>
-            <div id="quiz-stats-text" style="text-align: right; color: var(--text-muted); align-self: center; flex-grow: 1;"></div>
-        </div>
-        <div id="context-box" class="context-box"></div>
-        <h3 id="question-text"></h3>
-        <div id="options-container"></div>
-        <div class="action-row">
-            <button id="btn-submit" class="btn-green" onclick="checkAnswer()">Cevapla</button>
-            <button id="btn-next" class="btn-blue" onclick="loadNextQuestion()" disabled>Sonraki Soru ➔</button>
-        </div>
-        <div id="feedback"></div>
-    </div>
-</div>
-
 <script>
-    // Buraya yukarıda yazdığımız tüm mantıksal script'i aynen ekle.
-    // İsimler CodeStreak olacak şekilde tüm fonksiyonları çağırmaya devam et.
+    // --- STATE MANAGEMENT ---
+    let currentUser = "";
+    let isGuest = true;
+    let userElo = 1000;
+    let userStats = {};
+    
+    // --- SAYFA YÜKLENDİĞİNDE OTOMATİK GİRİŞ KONTROLÜ ---
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const savedUser = urlParams.get('user');
+        
+        if (savedUser) {
+            if (savedUser === "GUEST") {
+                guestLogin();
+            } else {
+                currentUser = savedUser;
+                isGuest = false;
+                loadUserData();
+                switchView("menu-view");
+                updateMenuUI();
+            }
+        }
+    };
+
+    // --- LOGIN LOGIC ---
+    function login() {
+        const name = document.getElementById("username-input").value.trim().toUpperCase();
+        if (!name) { alert("Lütfen bir kullanıcı adı girin!"); return; }
+        
+        // URL'i güncelle ve sayfayı yenilemeden geçiş yap
+        const newUrl = window.location.origin + window.location.pathname + "?user=" + name;
+        window.history.pushState({path:newUrl}, '', newUrl);
+        
+        currentUser = name;
+        isGuest = false;
+        loadUserData();
+        switchView("menu-view");
+        updateMenuUI();
+    }
+
+    function guestLogin() {
+        const newUrl = window.location.origin + window.location.pathname + "?user=GUEST";
+        window.history.pushState({path:newUrl}, '', newUrl);
+        
+        currentUser = "MİSAFİR";
+        isGuest = true;
+        userElo = 1000;
+        userStats = {};
+        switchView("menu-view");
+        updateMenuUI();
+    }
+
+    function logout() {
+        saveUserData();
+        // URL parametresini temizle
+        window.history.pushState({}, document.title, window.location.pathname);
+        currentUser = "";
+        document.getElementById("username-input").value = "";
+        switchView("login-view");
+    }
+
+    // ... (loadUserData, saveUserData, startQuiz, loadNextQuestion, processAnswer vb. fonksiyonların aynı kalacak) ...
 </script>
-</body>
-</html>
