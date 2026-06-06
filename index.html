@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VertexWhile - AI Training Hub</title>
+    <title>CodeStreak | by VertexWhile</title>
     <style>
         :root {
             --bg-color: #1e1e1e;
@@ -32,7 +32,8 @@
         .view { display: none; }
         .active { display: block; }
         
-        h1 { text-align: center; color: var(--primary-color); font-family: Consolas, monospace; }
+        h1 { text-align: center; color: var(--primary-color); font-family: Consolas, monospace; margin-bottom: 5px; }
+        .by-tag { text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; font-style: italic; }
         .text-center { text-align: center; }
         
         input[type="text"] {
@@ -120,8 +121,9 @@
 <div class="container">
     
     <div id="login-view" class="view active">
-        <h1>VERTEXWHILE<br>SİSTEM GİRİŞİ</h1>
-        <div style="max-width: 400px; margin: 50px auto;">
+        <h1>CodeStreak</h1>
+        <div class="by-tag">by VertexWhile</div>
+        <div style="max-width: 400px; margin: 30px auto;">
             <label style="color: var(--text-muted);">Kullanıcı Adı / Sicil:</label>
             <input type="text" id="username-input" placeholder="Ajan Adı">
             <button class="btn-blue" onclick="login()">🚀 Kayıtlı Profil ile Giriş Yap</button>
@@ -130,7 +132,8 @@
     </div>
 
     <div id="menu-view" class="view">
-        <h1>VERTEXWHILE<br>TRAINING HUB</h1>
+        <h1>CodeStreak</h1>
+        <div class="by-tag">by VertexWhile</div>
         <div class="top-bar">
             <span id="menu-agent-name">Ajan: </span>
             <span id="menu-elo">⭐ ELO: 1000</span>
@@ -185,10 +188,37 @@
     let isAnswered = false;
     let isFailMode = false;
 
+    // --- SAYFA YÜKLENDİĞİNDE OTOMATİK GİRİŞ KONTROLÜ ---
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const savedUser = urlParams.get('user');
+        
+        if (savedUser) {
+            if (savedUser === "GUEST") {
+                currentUser = "MİSAFİR";
+                isGuest = true;
+                userElo = 1000;
+                userStats = {};
+                switchView("menu-view");
+                updateMenuUI();
+            } else {
+                currentUser = savedUser;
+                isGuest = false;
+                loadUserData();
+                switchView("menu-view");
+                updateMenuUI();
+            }
+        }
+    };
+
     // --- LOGIN LOGIC ---
     function login() {
         const name = document.getElementById("username-input").value.trim().toUpperCase();
         if (!name) { alert("Lütfen bir kullanıcı adı girin!"); return; }
+        
+        // URL'i güncelle ve sayfayı yenilemeden geçiş yap
+        const newUrl = window.location.origin + window.location.pathname + "?user=" + encodeURIComponent(name);
+        window.history.pushState({path:newUrl}, '', newUrl);
         
         currentUser = name;
         isGuest = false;
@@ -198,17 +228,20 @@
     }
 
     function guestLogin() {
+        const newUrl = window.location.origin + window.location.pathname + "?user=GUEST";
+        window.history.pushState({path:newUrl}, '', newUrl);
+        
         currentUser = "MİSAFİR";
         isGuest = true;
         userElo = 1000;
         userStats = {};
         switchView("menu-view");
         updateMenuUI();
-        alert("Misafir oturumu açıldı. Sayfayı yenilerseniz ilerlemeniz silinir.");
     }
 
     function logout() {
         saveUserData();
+        window.history.pushState({}, document.title, window.location.pathname);
         currentUser = "";
         document.getElementById("username-input").value = "";
         switchView("login-view");
@@ -278,7 +311,7 @@
             switchView("quiz-view");
             loadNextQuestion();
         } catch (e) {
-            alert("Veritabanı okunamadı! GitHub Pages'a JSON dosyalarını yüklediğinden emin ol.\nHata: " + e.message);
+            alert("Veritabanı okunamadı! Yerel sunucudan açtığına (localhost:8000) veya GitHub Pages'a JSON dosyalarını yüklediğine emin ol.\nHata: " + e.message);
         }
     }
 
