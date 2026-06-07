@@ -330,7 +330,7 @@
                     allFailed = allFailed.concat(data.filter(q => userStats[q.id] === "yanlış" || userStats[q.id] === "boş bırakıldı"));
                 } catch(e) {} // Dosya yoksa atla
             }
-            
+        
             if (allFailed.length === 0) {
                 alert("Mükemmel! Yapamadığın veya boş bıraktığın hiçbir soru yok.");
                 return;
